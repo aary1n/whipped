@@ -23,6 +23,19 @@ class Listing:
 
 
 @dataclass
+class DriverProfile:
+    age: int | None = None
+    years_licensed: int | None = None
+    no_claims_years: int | None = None
+    claims_last_5y: int = 0
+    convictions_last_5y: int = 0
+    annual_mileage: int | None = None
+    postcode_area: str | None = None
+    parking: str | None = None
+    cover_type: str | None = None
+
+
+@dataclass
 class FeatureVector:
     make: str
     model: str
@@ -62,12 +75,14 @@ class RiskAssessment:
 
 @dataclass
 class OwnershipProjection:
+    estimated_insurance_annual_gbp: int
     estimated_insurance_5y_gbp: int
     estimated_depreciation_5y_gbp: int
     repair_risk_pct: int
     estimated_repairs_5y_gbp: int
     annual_running_cost_gbp: int
     ownership_band: str
+    insurance_band: str
     notes: list[str] = field(default_factory=list)
 
 

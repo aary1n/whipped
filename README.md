@@ -18,6 +18,38 @@ PYTHONPATH=src python scripts/run_web.py --host 127.0.0.1 --port 8000
 
 Then open `http://127.0.0.1:8000`.
 
+## Train A Real Insurance Model
+
+If you have real insurance quote data in CSV form, you can train the app to predict annual premiums from that data:
+
+```bash
+PYTHONPATH=src python scripts/train_insurance_model.py quotes/batch_01.csv quotes/batch_02.csv
+```
+
+Expected columns can use these names or close aliases:
+
+- `annual_premium_gbp`
+- `driver_age`
+- `years_licensed`
+- `no_claims_years`
+- `claims_last_5y`
+- `convictions_last_5y`
+- `annual_mileage`
+- `vehicle_year`
+- `vehicle_price_gbp`
+- `vehicle_mileage_miles`
+- `engine_size_l`
+- `make`
+- `model`
+- `fuel_type`
+- `transmission`
+- `body_type`
+- `postcode_area`
+- `parking`
+- `cover_type`
+
+When `data/insurance/insurance_model.npz` exists, the ownership forecast automatically uses that trained model for insurance instead of the fallback heuristic.
+
 ## Build A Market Database
 
 If you export listing data from Auto Trader or another marketplace into CSV files, you can turn them into a local SQLite training set:

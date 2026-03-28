@@ -8,7 +8,7 @@ from wsgiref.simple_server import make_server
 
 from whipped.app import evaluate
 from whipped.config import MARKET_DB, SAMPLE_CSV
-from whipped.domain.models import Listing, WhippedVerdict
+from whipped.domain.models import DriverProfile, Listing, WhippedVerdict
 from whipped.ingest.datasets import load_csv
 from whipped.ingest.market_database import load_training_frame
 
@@ -45,8 +45,9 @@ class WhippedWebApp:
 
         if form:
             listing = _listing_from_form(form)
+            driver = _driver_from_form(form)
             comparables = self._find_comparables(listing)
-            verdict = evaluate(listing, comparables)
+            verdict = evaluate(listing, comparables, driver)
 
         return f"""<!doctype html>
 <html lang="en">
@@ -62,8 +63,11 @@ class WhippedWebApp:
       --muted: #52606d;
       --accent: #b44d12;
       --accent-2: #0f766e;
+      --accent-3: #1d4ed8;
       --border: #e8dcc7;
       --warn: #9a3412;
+      --soft-blue: #e8f0ff;
+      --soft-teal: #dff6f2;
     }}
     * {{ box-sizing: border-box; }}
     body {{
@@ -156,6 +160,66 @@ class WhippedWebApp:
       border: 1px solid var(--border);
       border-radius: 16px;
     }}
+    .hero-metric {{
+      margin: 16px 0 18px;
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--soft-blue), white 65%);
+      border: 1px solid rgba(29, 78, 216, 0.15);
+    }}
+    .hero-metric strong {{
+      display: block;
+      font-size: 0.9rem;
+      color: var(--accent-3);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }}
+    .hero-metric span {{
+      display: block;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 0.95;
+      font-weight: bold;
+    }}
+    .hero-metric small {{
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }}
+    .section-title {{
+      margin: 22px 0 10px;
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }}
+    .ownership-grid {{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 12px 0 18px;
+    }}
+    .ownership-card {{
+      padding: 15px;
+      background: linear-gradient(180deg, var(--soft-teal), white 70%);
+      border: 1px solid rgba(15, 118, 110, 0.15);
+      border-radius: 16px;
+    }}
+    .ownership-card .k {{
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }}
+    .ownership-card .v {{
+      font-size: 1.25rem;
+    }}
+    .note-list {{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.5;
+    }}
     .k {{
       display: block;
       color: var(--muted);
@@ -208,6 +272,9 @@ class WhippedWebApp:
       .stat-grid {{
         grid-template-columns: 1fr;
       }}
+      .ownership-grid {{
+        grid-template-columns: 1fr;
+      }}
     }}
   </style>
 </head>
@@ -215,7 +282,7 @@ class WhippedWebApp:
   <main class="shell">
     <section class="hero">
       <h1>Whipped<br>Car Price Checker</h1>
-      <p class="sub">Enter listing details from Auto Trader or any used-car advert. The app shows the input data, a fair-price range, ripoff score, risk score, five-year ownership estimates, suggested counteroffer, and a simple investment-style recommendation.</p>
+      <p class="sub">Enter listing details plus the driver and area profile. The app shows the input data, a fair-price range, risk metrics, and a five-year ownership forecast including a driver-specific insurance estimate.</p>
     </section>
     <section class="grid">
       <article class="panel">
@@ -250,6 +317,16 @@ class WhippedWebApp:
         <div><label for="seller_type">Seller Type</label>{_select("seller_type", value("seller_type", "dealer"), ["dealer", "private"])}</div>
         <div><label for="body_type">Body Type</label><input id="body_type" name="body_type" value="{value('body_type', 'hatchback')}"></div>
         <div class="full"><label for="variant">Variant / Trim</label><input id="variant" name="variant" value="{value('variant', 'zetec')}"></div>
+        <div class="full section-title" style="margin:6px 0 0;">Driver Profile</div>
+        <div><label for="driver_age">Driver Age</label><input id="driver_age" name="driver_age" type="number" min="17" max="100" value="{value('driver_age', '28')}"></div>
+        <div><label for="years_licensed">Years Licensed</label><input id="years_licensed" name="years_licensed" type="number" min="0" max="80" value="{value('years_licensed', '8')}"></div>
+        <div><label for="no_claims_years">No-Claims Years</label><input id="no_claims_years" name="no_claims_years" type="number" min="0" max="20" value="{value('no_claims_years', '5')}"></div>
+        <div><label for="claims_last_5y">Claims In Last 5y</label><input id="claims_last_5y" name="claims_last_5y" type="number" min="0" max="10" value="{value('claims_last_5y', '0')}"></div>
+        <div><label for="convictions_last_5y">Convictions In Last 5y</label><input id="convictions_last_5y" name="convictions_last_5y" type="number" min="0" max="10" value="{value('convictions_last_5y', '0')}"></div>
+        <div><label for="annual_mileage">Annual Mileage</label><input id="annual_mileage" name="annual_mileage" type="number" min="0" value="{value('annual_mileage', '10000')}"></div>
+        <div><label for="postcode_area">Postcode Area</label><input id="postcode_area" name="postcode_area" value="{value('postcode_area', 'SW')}"></div>
+        <div><label for="parking">Parking</label>{_select("parking", value("parking", "driveway"), ["garage", "driveway", "street", "car_park"])}</div>
+        <div><label for="cover_type">Cover Type</label>{_select("cover_type", value("cover_type", "comprehensive"), ["comprehensive", "third_party_fire_theft", "third_party"])}</div>
         """
 
     def _render_output(
@@ -262,29 +339,51 @@ class WhippedWebApp:
             return '<p class="empty">Submit a listing to see the model output here.</p>'
 
         investment = _investment_view(verdict)
+        total_cost = (
+            verdict.ownership.estimated_insurance_5y_gbp
+            + verdict.ownership.estimated_depreciation_5y_gbp
+            + verdict.ownership.estimated_repairs_5y_gbp
+        )
         flags = "".join(f'<span class="pill warning">{escape(flag)}</span>' for flag in verdict.risk.flags) or '<span class="empty">No risk flags</span>'
+        ownership_notes = "".join(f"<li>{escape(note)}</li>" for note in verdict.ownership.notes)
         comp_rows = "".join(
             f"<tr><td>{escape(c.make.title())}</td><td>{escape(c.model.title())}</td><td>{c.year}</td><td>{_fmt_int(c.mileage_miles)} mi</td><td>£{_fmt_int(c.price_gbp)}</td></tr>"
             for c in comparables[:8]
         )
 
         return f"""
+        <div class="hero-metric">
+          <strong>Total 5-Year Cost Of Ownership</strong>
+          <span>{_fmt_currency(total_cost)}</span>
+          <small>About {_fmt_currency(verdict.ownership.annual_running_cost_gbp)} per year • ownership band: {escape(verdict.ownership.ownership_band)} • insurance band: {escape(verdict.ownership.insurance_band)}</small>
+        </div>
+
+        <div class="section-title">Deal Analysis</div>
         <div class="stat-grid">
           <div class="stat"><span class="k">Fair Range</span><span class="v">£{verdict.price_range.lower_gbp:,} to £{verdict.price_range.upper_gbp:,}</span></div>
           <div class="stat"><span class="k">Mid Price</span><span class="v">£{verdict.price_range.mid_gbp:,}</span></div>
           <div class="stat"><span class="k">Ripoff Score</span><span class="v">{verdict.ripoff.ripoff_index}/100 ({escape(verdict.ripoff.ripoff_band)})</span></div>
           <div class="stat"><span class="k">Risk Score</span><span class="v">{verdict.risk.risk_score}/100 ({escape(verdict.risk.risk_band)})</span></div>
-          <div class="stat"><span class="k">Insurance (5y)</span><span class="v">{_fmt_currency(verdict.ownership.estimated_insurance_5y_gbp)}</span></div>
-          <div class="stat"><span class="k">Depreciation (5y)</span><span class="v">{_fmt_currency(verdict.ownership.estimated_depreciation_5y_gbp)}</span></div>
-          <div class="stat"><span class="k">Repairs (5y)</span><span class="v">{_fmt_currency(verdict.ownership.estimated_repairs_5y_gbp)}</span></div>
-          <div class="stat"><span class="k">Repair Likelihood</span><span class="v">{verdict.ownership.repair_risk_pct}%</span></div>
           <div class="stat"><span class="k">Counteroffer</span><span class="v">{_fmt_currency(verdict.suggested_counteroffer_gbp)}</span></div>
           <div class="stat"><span class="k">Investment View</span><span class="v">{escape(investment)}</span></div>
         </div>
+
+        <div class="section-title">Longevity Forecast</div>
+        <div class="ownership-grid">
+          <div class="ownership-card"><span class="k">Insurance Per Year</span><span class="v">{_fmt_currency(verdict.ownership.estimated_insurance_annual_gbp)}</span></div>
+          <div class="ownership-card"><span class="k">Insurance Over 5 Years</span><span class="v">{_fmt_currency(verdict.ownership.estimated_insurance_5y_gbp)}</span></div>
+          <div class="ownership-card"><span class="k">Depreciation Over 5 Years</span><span class="v">{_fmt_currency(verdict.ownership.estimated_depreciation_5y_gbp)}</span></div>
+          <div class="ownership-card"><span class="k">Expected Repairs Over 5 Years</span><span class="v">{_fmt_currency(verdict.ownership.estimated_repairs_5y_gbp)}</span></div>
+          <div class="ownership-card"><span class="k">Repair Likelihood</span><span class="v">{verdict.ownership.repair_risk_pct}%</span></div>
+        </div>
+
         <p><strong>Input summary:</strong> {listing.year} {escape(listing.make.title())} {escape(listing.model.title())}, {escape(listing.fuel_type or "unknown fuel")}, {escape(listing.transmission or "unknown transmission")}, {_fmt_int(listing.mileage_miles)} miles, asking {_fmt_currency(listing.price_gbp)}.</p>
         <p><strong>Model explanation:</strong> {escape(verdict.explanation)}</p>
         <div><strong>Risk flags:</strong><br>{flags}</div>
-        <div style="margin-top:14px;"><strong>Longevity view:</strong><br>{"".join(f'<span class="pill">{escape(note)}</span>' for note in verdict.ownership.notes)}</div>
+        <div style="margin-top:14px;">
+          <strong>Longevity notes:</strong>
+          <ul class="note-list">{ownership_notes}</ul>
+        </div>
         <h2 style="margin-top:22px;">Comparable Data Used</h2>
         <p class="sub" style="font-size:0.95rem;">Showing the first {min(len(comparables), 8)} comparable listings used to price this car.</p>
         <table>
@@ -366,6 +465,20 @@ def _listing_from_form(form: dict[str, str]) -> Listing:
         body_type=_optional_str(form.get("body_type")),
         seller_type=_optional_str(form.get("seller_type")),
         source="localhost_ui",
+    )
+
+
+def _driver_from_form(form: dict[str, str]) -> DriverProfile:
+    return DriverProfile(
+        age=_optional_int(form.get("driver_age")),
+        years_licensed=_optional_int(form.get("years_licensed")),
+        no_claims_years=_optional_int(form.get("no_claims_years")),
+        claims_last_5y=_optional_int(form.get("claims_last_5y")) or 0,
+        convictions_last_5y=_optional_int(form.get("convictions_last_5y")) or 0,
+        annual_mileage=_optional_int(form.get("annual_mileage")),
+        postcode_area=_optional_str(form.get("postcode_area")),
+        parking=_optional_str(form.get("parking")),
+        cover_type=_optional_str(form.get("cover_type")),
     )
 
 

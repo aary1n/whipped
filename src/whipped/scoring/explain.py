@@ -38,7 +38,8 @@ def explain(
 
     parts.append(
         "Five-year ownership: "
-        f"insurance ~£{ownership.estimated_insurance_5y_gbp:,}, "
+        f"insurance ~£{ownership.estimated_insurance_5y_gbp:,} "
+        f"(~£{ownership.estimated_insurance_annual_gbp:,}/yr), "
         f"depreciation ~£{ownership.estimated_depreciation_5y_gbp:,}, "
         f"repairs ~£{ownership.estimated_repairs_5y_gbp:,} "
         f"with repair likelihood around {ownership.repair_risk_pct}%."

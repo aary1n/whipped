@@ -17,6 +17,9 @@ def test_webapp_renders_input_and_output_sections() -> None:
             "fuel_type": "petrol",
             "transmission": "manual",
             "seller_type": "dealer",
+            "driver_age": "28",
+            "years_licensed": "8",
+            "postcode_area": "SW",
         }
     )
 
@@ -24,6 +27,10 @@ def test_webapp_renders_input_and_output_sections() -> None:
     assert "Output" in html
     assert "Comparable Data Used" in html
     assert "Ripoff Score" in html
+    assert "Total 5-Year Cost Of Ownership" in html
+    assert "Longevity Forecast" in html
+    assert "Insurance Per Year" in html
+    assert "Driver Profile" in html
 
 
 def test_webapp_falls_back_to_sample_comparables() -> None:
