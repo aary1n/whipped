@@ -14,10 +14,12 @@ def test_webapp_renders_input_and_output_sections() -> None:
             "year": "2020",
             "price_gbp": "9300",
             "mileage_miles": "33000",
+            "engine_size_l": "1.0",
             "fuel_type": "petrol",
             "transmission": "manual",
             "seller_type": "dealer",
             "driver_age": "28",
+            "sex": "female",
             "years_licensed": "8",
             "postcode_area": "SW",
         }
@@ -31,6 +33,7 @@ def test_webapp_renders_input_and_output_sections() -> None:
     assert "Longevity Forecast" in html
     assert "Insurance Per Year" in html
     assert "Driver Profile" in html
+    assert "Brand Tax Analysis" in html
 
 
 def test_webapp_falls_back_to_sample_comparables() -> None:
