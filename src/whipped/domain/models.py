@@ -25,6 +25,7 @@ class Listing:
 @dataclass
 class DriverProfile:
     age: int | None = None
+    sex: str | None = None
     years_licensed: int | None = None
     no_claims_years: int | None = None
     claims_last_5y: int = 0

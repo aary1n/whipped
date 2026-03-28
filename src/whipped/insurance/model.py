@@ -27,6 +27,7 @@ NUMERIC_FIELDS = [
 ]
 
 CATEGORICAL_FIELDS = [
+    "sex",
     "make",
     "model",
     "fuel_type",
@@ -52,6 +53,7 @@ ALIASES = {
     "vehicle_mileage_miles": ["vehicle_mileage_miles", "mileage_miles", "mileage"],
     "engine_size_l": ["engine_size_l", "engine_size", "engine"],
     "condition_score": ["condition_score", "vehicle_condition_score", "condition"],
+    "sex": ["sex", "gender"],
     "make": ["make"],
     "model": ["model"],
     "fuel_type": ["fuel_type", "fuel"],
@@ -284,6 +286,7 @@ def _record_from_inputs(listing: Listing, driver: DriverProfile) -> dict[str, An
         "vehicle_mileage_miles": listing.mileage_miles,
         "engine_size_l": listing.engine_size_l,
         "condition_score": _condition_score(listing),
+        "sex": (driver.sex or "unknown").lower(),
         "make": (listing.make or "unknown").lower(),
         "model": (listing.model or "unknown").lower(),
         "fuel_type": (listing.fuel_type or "unknown").lower(),

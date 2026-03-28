@@ -20,7 +20,14 @@ MAKES = {
 
 FUELS = ["petrol", "diesel", "hybrid", "electric"]
 TRANSMISSIONS = ["manual", "automatic"]
-POSTCODE_AREAS = ["BA", "B", "M", "SW", "SE", "E", "N", "L", "G", "NE"]
+SEXES = ["female", "male"]
+POSTCODE_AREAS = [
+    "AB", "BA", "B", "BH", "BN", "BS", "CB", "CF", "CM", "CR",
+    "CV", "E", "EC", "EH", "G", "GU", "IP", "KT", "L", "LE",
+    "LS", "M", "MK", "N", "NE", "NG", "NW", "OX", "PE", "PL",
+    "PO", "RG", "S", "SE", "SL", "SO", "SW", "TN", "W", "WA",
+    "WD", "YO",
+]
 PARKING = ["garage", "driveway", "street", "car_park"]
 COVER_TYPES = ["comprehensive", "third_party_fire_theft", "third_party"]
 
@@ -47,17 +54,19 @@ def generate_synthetic_insurance_dataset(
         vehicle_price = max(2_000, int(25_000 - vehicle_age * 1_150 - vehicle_mileage * 0.03 + random.gauss(0, 1_500)))
         engine_size = round(max(0.9, min(3.2, engine_seed + random.uniform(-0.3, 0.7))), 1)
         driver_age = random.randint(18, 78)
+        sex = random.choices(SEXES, weights=[0.49, 0.51])[0]
         years_licensed = min(driver_age - 17, max(0, int(random.gauss((driver_age - 17) * 0.65, 4))))
         no_claims_years = max(0, min(years_licensed, int(random.gauss(max(0, years_licensed - 2), 2))))
         claims_last_5y = random.choices([0, 1, 2, 3], weights=[0.72, 0.19, 0.07, 0.02])[0]
         convictions_last_5y = random.choices([0, 1, 2], weights=[0.9, 0.08, 0.02])[0]
-        postcode_area = random.choices(POSTCODE_AREAS, weights=[8, 9, 9, 6, 6, 4, 4, 7, 8, 5])[0]
+        postcode_area = random.choice(POSTCODE_AREAS)
         parking = random.choices(PARKING, weights=[0.25, 0.35, 0.28, 0.12])[0]
         cover_type = random.choices(COVER_TYPES, weights=[0.74, 0.18, 0.08])[0]
         condition_score = _condition_score(vehicle_age, vehicle_mileage)
 
         premium = _annual_premium(
             driver_age=driver_age,
+            sex=sex,
             years_licensed=years_licensed,
             no_claims_years=no_claims_years,
             claims_last_5y=claims_last_5y,
@@ -82,6 +91,7 @@ def generate_synthetic_insurance_dataset(
             {
                 "annual_premium_gbp": premium,
                 "driver_age": driver_age,
+                "sex": sex,
                 "years_licensed": years_licensed,
                 "no_claims_years": no_claims_years,
                 "claims_last_5y": claims_last_5y,
@@ -118,6 +128,7 @@ def _condition_score(vehicle_age: int, vehicle_mileage: int) -> int:
 
 def _annual_premium(**row: object) -> int:
     driver_age = int(row["driver_age"])
+    sex = str(row["sex"])
     years_licensed = int(row["years_licensed"])
     no_claims_years = int(row["no_claims_years"])
     claims_last_5y = int(row["claims_last_5y"])
@@ -151,9 +162,21 @@ def _annual_premium(**row: object) -> int:
     premium += {"petrol": 30, "diesel": 70, "hybrid": 55, "electric": 110}[fuel_type]
     premium += {"manual": 0, "automatic": 60}[transmission]
     premium += {"hatchback": 0, "saloon": 35, "suv": 140}[body_type]
-    premium += {"BA": 0, "B": 45, "M": 55, "SW": 125, "SE": 145, "E": 190, "N": 165, "L": 65, "G": 30, "NE": 20}[postcode_area]
+    premium += _postcode_load(postcode_area)
     premium += {"garage": -80, "driveway": -35, "street": 95, "car_park": 25}[parking]
     premium += {"comprehensive": 0, "third_party_fire_theft": -45, "third_party": -105}[cover_type]
+    premium += {"female": -25, "male": 15}.get(sex, 0)
     premium += max(0, 72 - condition_score) * 7
     premium += random.gauss(0, 65)
     return max(280, int(round(premium)))
+
+
+def _postcode_load(postcode_area: str) -> int:
+    area_loads = {
+        "AB": 10, "BA": 0, "B": 45, "BH": 18, "BN": 30, "BS": 28, "CB": 8, "CF": 26, "CM": 40, "CR": 95,
+        "CV": 36, "E": 190, "EC": 170, "EH": 12, "G": 30, "GU": 20, "IP": 14, "KT": 42, "L": 65, "LE": 38,
+        "LS": 44, "M": 55, "MK": 18, "N": 165, "NE": 20, "NG": 34, "NW": 135, "OX": 10, "PE": 16, "PL": 8,
+        "PO": 22, "RG": 16, "S": 24, "SE": 145, "SL": 34, "SO": 18, "SW": 125, "TN": 14, "W": 150, "WA": 26,
+        "WD": 35, "YO": 12,
+    }
+    return area_loads.get(postcode_area, 25)
