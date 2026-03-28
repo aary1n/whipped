@@ -1,110 +1,159 @@
-# whipped
+# Whipped
 
-UK used-car pricing intelligence engine. Paste a listing, get a fair price band, ripoff index, hidden-risk score, and suggested counteroffer.
+UK used-car pricing intelligence engine. Enter a listing, get a statistical fair price band, hidden-risk flags, brand-tax analysis, and a 5-year ownership forecast including insurance, depreciation, and repair costs.
 
-## Quickstart
+Built for the 2026 Quant hackathon.
+
+## Prerequisites
+
+- **Python 3.11+**
+- **Node.js 18+** and npm
+- **Kaggle account** (free) for the dataset download
+
+## Setup (from scratch)
+
+### 1. Clone and install Python dependencies
 
 ```bash
+git clone <repo-url> && cd whipped
+python -m venv .venv
+
+# Windows
+.venv\Scripts\activate
+
+# macOS / Linux
+source .venv/bin/activate
+
 pip install -e ".[dev]"
-python scripts/prepare_sample_data.py
-python scripts/run_demo.py
 ```
 
-To run a localhost website for manual testing:
+### 2. Download the Kaggle dataset
+
+Go to [kaggle.com](https://www.kaggle.com/) → Account → Settings → **Create New API Token**. This gives you a `kaggle.json` with your token.
 
 ```bash
-PYTHONPATH=src python scripts/run_web.py --host 127.0.0.1 --port 8000
+KAGGLE_API_TOKEN=<your_token> python scripts/download_data.py
 ```
 
-Then open `http://127.0.0.1:8000`.
+Downloads 9 CSV files (~98k UK used-car listings) to `data/raw/used-cars-100k/`.
 
-## Generate Synthetic Insurance Data
+Dataset: [`adityadesai13/used-car-dataset-ford-and-mercedes`](https://www.kaggle.com/datasets/adityadesai13/used-car-dataset-ford-and-mercedes)
 
-If you want a standalone insurance training dataset without touching the car listing datasets, generate one like this:
+### 3. Prepare sample data
+
+```bash
+python scripts/prepare_sample_data.py
+```
+
+Samples the Kaggle CSVs into `data/sample/sample.csv` (capped at 20 rows per make/model for fast lookups). Falls back to a synthetic 150-row generator if the Kaggle data is missing.
+
+### 4. Generate synthetic insurance quotes
 
 ```bash
 PYTHONPATH=src python scripts/prepare_synthetic_insurance_data.py --rows 6000 --seed 42
 ```
 
-This writes `data/insurance/synthetic_insurance_quotes.csv` with fields for:
+Writes `data/insurance/synthetic_insurance_quotes.csv` — 6,000 realistic UK insurance quotes with driver profiles, vehicle specs, and annual premiums.
 
-- customer profile
-- postcode area
-- car type
-- vehicle condition
-- yearly insurance cost
-
-You can then train the insurance model on that synthetic dataset:
+### 5. Train the insurance model
 
 ```bash
 PYTHONPATH=src python scripts/train_insurance_model.py data/insurance/synthetic_insurance_quotes.csv
 ```
 
-## Train A Real Insurance Model
+Trains a 2-layer neural network on the synthetic data and saves weights to `data/insurance/insurance_model.npz`. When this file exists, the ownership forecast uses the trained model instead of a heuristic fallback.
 
-If you have real insurance quote data in CSV form, you can train the app to predict annual premiums from that data:
-
-```bash
-PYTHONPATH=src python scripts/train_insurance_model.py quotes/batch_01.csv quotes/batch_02.csv
-```
-
-Expected columns can use these names or close aliases:
-
-- `annual_premium_gbp`
-- `driver_age`
-- `years_licensed`
-- `no_claims_years`
-- `claims_last_5y`
-- `convictions_last_5y`
-- `annual_mileage`
-- `vehicle_year`
-- `vehicle_price_gbp`
-- `vehicle_mileage_miles`
-- `engine_size_l`
-- `make`
-- `model`
-- `fuel_type`
-- `transmission`
-- `body_type`
-- `postcode_area`
-- `parking`
-- `cover_type`
-
-When `data/insurance/insurance_model.npz` exists, the ownership forecast automatically uses that trained model for insurance instead of the fallback heuristic.
-
-## Build A Market Database
-
-If you export listing data from Auto Trader or another marketplace into CSV files, you can turn them into a local SQLite training set:
+### 6. Start the backend
 
 ```bash
-python scripts/build_market_database.py exports/autotrader_batch_01.csv exports/autotrader_batch_02.csv
+PYTHONPATH=src python scripts/run_web.py --host 127.0.0.1 --port 8000
 ```
 
-This writes `data/market/autotrader_listings.sqlite` with a `market_listings` table containing:
+Starts a WSGI server on `http://127.0.0.1:8000` serving the `/api/evaluate` endpoint.
 
-- normalized listing fields like `make`, `model`, `year`, `price_gbp`, `mileage_miles`
-- a derived `expected_price_gbp`
-- a binary `is_overpriced` label where the ask is at least 10% above expected price
-- an `investment_score` and `investment_signal` for shortlist ranking
+### 7. Start the frontend
 
-This repo currently supports importing CSV exports, not direct scraping. That keeps the pipeline safer and lets you iterate on the ML side first.
+In a second terminal:
 
-## Flow
-
-```
-listing text → parsed listing → feature extraction → fair price range
-                                                   → risk score
-                                                   → ripoff index
-                                                   → explanation + counteroffer
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
-## Layout
+Opens `http://localhost:3000`. The Next.js dev server proxies `/api/*` requests to the backend on port 8000.
 
-| Path | Owner | Purpose |
-|------|-------|---------|
-| `src/whipped/domain/` | shared | Data models |
-| `src/whipped/ingest/` | data team | Parsing & dataset loading |
-| `src/whipped/features/` | data team | Feature extraction |
-| `src/whipped/pricing/` | pricing team | Fair price range estimation |
-| `src/whipped/scoring/` | scoring team | Ripoff index, risk score, explanations |
-| `src/whipped/app.py` | app team | Demo entrypoint |
+## Quick reference
+
+| Command | What it does |
+|---------|-------------|
+| `python scripts/download_data.py` | Download Kaggle CSVs |
+| `python scripts/prepare_sample_data.py` | Build sample dataset |
+| `PYTHONPATH=src python scripts/prepare_synthetic_insurance_data.py` | Generate insurance training data |
+| `PYTHONPATH=src python scripts/train_insurance_model.py <csv>` | Train insurance neural net |
+| `PYTHONPATH=src python scripts/run_web.py` | Start backend API |
+| `cd frontend && npm run dev` | Start frontend dev server |
+| `python scripts/run_demo.py` | Run mocked demo (no data needed) |
+
+## How it works
+
+```
+listing + driver profile
+  → ingest/       parse & validate
+  → features/     extract feature vector (age, mileage band, fuel, etc.)
+  → pricing/      4-tier cascade → fair price range + confidence
+  → scoring/      ripoff index, risk flags, counteroffer, explanation
+  → insurance/    trained neural net → annual premium estimate
+  → ownership/    5-year forecast (depreciation + repairs + insurance)
+  → brand_tax/    KNN cross-make analysis → brand premium & recommendations
+```
+
+### Pricing cascade
+
+The fair-range estimator tries progressively broader filters until it finds enough comparables:
+
+1. Exact match: same make, model, year, fuel type, transmission
+2. Relaxed: same make, model, year
+3. Broad: same make, model (any year)
+4. Fallback: corpus median
+
+### Brand tax model
+
+A KNN model with a 6-feature vector (engine size, mileage, year delta, fuel/transmission/body match) finds "mechanical twins" — cars with similar specs but different badges. The price difference is the brand tax: how much extra (or less) you pay for the badge.
+
+### Insurance model
+
+A 2-layer neural network trained on synthetic UK quote data. Features include driver profile (age, sex, license years, claims history, no-claims bonus), vehicle profile (price, age, engine size, fuel type), and location (postcode area, parking type). Falls back to a rule-based heuristic if no trained model is available.
+
+## Project layout
+
+```
+whipped/
+├── src/whipped/
+│   ├── domain/models.py      Shared data models (Listing, Verdict, etc.)
+│   ├── ingest/               CSV loading & validation
+│   ├── features/             Feature extraction
+│   ├── pricing/              Fair price range, brand tax KNN
+│   ├── scoring/              Ripoff index, risk flags, explanations, ownership
+│   ├── insurance/            Synthetic data generator, neural net model
+│   ├── app.py                Core evaluation pipeline
+│   └── webapp.py             WSGI API server
+├── scripts/                  CLI entry points (download, prepare, train, run)
+├── frontend/                 Next.js 15 + React 19 + Tailwind CSS
+│   ├── app/
+│   │   ├── page.tsx          Home / landing page
+│   │   ├── analyze/          Main analysis form + results
+│   │   ├── ownership/        5-year cost forecast
+│   │   ├── market/           Comparables table + brand tax
+│   │   └── lib/              Shared types, context, helpers
+│   └── next.config.ts        API proxy config
+├── data/                     Datasets & trained models (gitignored)
+└── pyproject.toml            Python dependencies (pandas + numpy)
+```
+
+## Tech stack
+
+- **Backend:** Python 3.11, pandas, numpy, stdlib WSGI server
+- **Frontend:** Next.js 15, React 19, TypeScript, Tailwind CSS
+- **ML:** Custom 2-layer neural net (numpy only, no PyTorch/sklearn)
+- **Data:** Kaggle UK used-car dataset (98k+ listings) + synthetic insurance quotes
