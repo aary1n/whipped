@@ -992,6 +992,7 @@ def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> di
         "investment_view": investment_view,
         "risk_flags": verdict.risk.flags,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "ownership": {
             "insurance_annual_gbp": own.estimated_insurance_annual_gbp,
             "insurance_5y_gbp": own.estimated_insurance_5y_gbp,
@@ -1007,6 +1008,9 @@ def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> di
 =======
         "brand_tax": brand_tax_payload,
 >>>>>>> 646e72b (Add KNN brand-tax model and data analysis folder)
+=======
+        "brand_tax": brand_tax_payload,
+>>>>>>> origin/tam/clustering
         "comparables": [
             {
                 "make": c.make, "model": c.model, "year": c.year,

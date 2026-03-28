@@ -38,6 +38,7 @@ interface DriverProfile {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 interface Ownership {
   insurance_annual_gbp: number;
   insurance_5y_gbp: number;
@@ -49,6 +50,8 @@ interface Ownership {
   insurance_band: string;
   notes: string[];
 =======
+=======
+>>>>>>> origin/tam/clustering
 interface BrandTaxEntry {
   make: string;
   model: string;
@@ -64,7 +67,10 @@ interface BrandTax {
   is_good_deal: boolean;
   twins: BrandTaxEntry[];
   recommendations: BrandTaxEntry[];
+<<<<<<< HEAD
 >>>>>>> 646e72b (Add KNN brand-tax model and data analysis folder)
+=======
+>>>>>>> origin/tam/clustering
 }
 
 interface VerdictOutput {
@@ -85,11 +91,15 @@ interface VerdictOutput {
   investment_view: "Potential buy" | "Watchlist" | "Avoid";
   risk_flags: string[];
 <<<<<<< HEAD
+<<<<<<< HEAD
   ownership: Ownership;
   explanation: string;
 =======
   brand_tax: BrandTax | null;
 >>>>>>> 646e72b (Add KNN brand-tax model and data analysis folder)
+=======
+  brand_tax: BrandTax | null;
+>>>>>>> origin/tam/clustering
   comparables: ComparableListing[];
 }
 
@@ -110,7 +120,10 @@ export default function WhippedTerminal() {
   });
   const [driverOpen, setDriverOpen] = useState(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/tam/clustering
   const [brandTaxOpen, setBrandTaxOpen] = useState(false);
 
 >>>>>>> 646e72b (Add KNN brand-tax model and data analysis folder)
@@ -297,6 +310,7 @@ export default function WhippedTerminal() {
                 </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 {/* ── 2. Pricing Verdict ── */}
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
                   {/* Scores */}
@@ -402,6 +416,8 @@ export default function WhippedTerminal() {
 
                 {/* ── 4. Risk Flags ── */}
 =======
+=======
+>>>>>>> origin/tam/clustering
                 {/* Brand Tax */}
                 {verdict.brand_tax && (
                   <div className="bg-slate-900 border border-slate-800 rounded-lg overflow-hidden">
