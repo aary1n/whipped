@@ -141,11 +141,9 @@ export default function WhippedTerminal() {
   const recBorder = (v: string) => v === 'Avoid' ? 'rgb(244,63,94)' : v === 'Watchlist' ? 'rgb(245,158,11)' : 'rgb(16,185,129)';
 
   const v = verdict; // shorthand
-  const own = v?.ownership ?? {
-    insurance_annual_gbp: 0, insurance_5y_gbp: 0, depreciation_5y_gbp: 0,
-    repairs_5y_gbp: 0, repair_risk_pct: 0, annual_running_cost_gbp: 0,
-    ownership_band: '', insurance_band: '', notes: [] as string[],
-  };
+  const own = v?.ownership;
+  const hasOwn = own != null && own.insurance_annual_gbp !== 0;
+  const fmtOwn = (val: number | undefined) => val != null && val !== 0 ? fmt(val) : '—';
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-300 font-sans p-4 selection:bg-teal-900 selection:text-teal-100">
@@ -258,9 +256,11 @@ export default function WhippedTerminal() {
                     <span className="text-lg font-mono text-slate-300">{fmt(v.mid_price)}</span>
                   </div>
                   <div className={CELL}>
-                    <span className={CELL_LABEL}>Confidence</span>
-                    <span className="text-lg font-mono text-slate-300">{pct(v.confidence)}</span>
-                    <span className="text-[10px] font-mono text-slate-600">{v.comparable_count} comps · {v.strategy_used?.replace(/_/g, ' ') ?? ''}</span>
+                    <span className={CELL_LABEL}>Comparables</span>
+                    <span className="text-lg font-mono text-slate-300">{v.comparable_count ?? 0} <span className="text-sm text-slate-600">found</span></span>
+                    <span className={`text-[10px] font-mono mt-0.5 ${(v.confidence ?? 0) >= 0.7 ? 'text-emerald-500' : (v.confidence ?? 0) >= 0.4 ? 'text-amber-500' : 'text-rose-500'}`}>
+                      {(v.confidence ?? 0) >= 0.7 ? 'high' : (v.confidence ?? 0) >= 0.4 ? 'medium' : 'low'} confidence · {v.strategy_used?.replace(/_/g, ' ') ?? ''}
+                    </span>
                   </div>
                   <div className={CELL} style={{ borderTop: `2px solid ${recBorder(v.investment_view)}` }}>
                     <span className={CELL_LABEL}>Recommendation</span>
@@ -310,51 +310,64 @@ export default function WhippedTerminal() {
                   <div className="bg-slate-800/50 px-5 py-3 border-b border-slate-800 flex items-center gap-2">
                     <Wrench size={14} className="text-teal-500" />
                     <h3 className="text-xs font-bold text-slate-200 uppercase tracking-widest">5-Year Ownership Forecast</h3>
+                    {hasOwn && <span className={`ml-auto text-[10px] font-mono ${bandColor(own.ownership_band)}`}>{own.ownership_band} running costs</span>}
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-800">
-                    <div className={CELL}>
-                      <span className={CELL_LABEL}>Insurance (annual)</span>
-                      <span className="text-lg font-mono text-slate-300">{fmt(own.insurance_annual_gbp)}</span>
-                      <span className={`text-[10px] font-mono mt-0.5 ${bandColor(own.insurance_band)}`}>{own.insurance_band}</span>
-                    </div>
-                    <div className={CELL}>
-                      <span className={CELL_LABEL}>Insurance (5yr)</span>
-                      <span className="text-lg font-mono text-slate-300">{fmt(own.insurance_5y_gbp)}</span>
-                    </div>
-                    <div className={CELL}>
-                      <span className={CELL_LABEL}>Depreciation (5yr)</span>
-                      <span className="text-lg font-mono text-slate-300">{fmt(own.depreciation_5y_gbp)}</span>
-                    </div>
-                    <div className={CELL}>
-                      <span className={CELL_LABEL}>Repairs (5yr)</span>
-                      <span className="text-lg font-mono text-slate-300">{fmt(own.repairs_5y_gbp)}</span>
-                      <span className="text-[10px] font-mono text-slate-600 mt-0.5">{own.repair_risk_pct}% repair likelihood</span>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-800">
-                    <div className={CELL}>
-                      <span className={CELL_LABEL}>Annual Running Cost</span>
-                      <span className="text-lg font-mono text-slate-300">{fmt(own.annual_running_cost_gbp)}</span>
-                    </div>
-                    <div className={CELL}>
-                      <span className={CELL_LABEL}>Total 5-Year Cost</span>
-                      <span className="text-lg font-mono text-slate-100 font-bold">{fmt(v.total_cost_5y)}</span>
-                      <span className="text-[10px] font-mono text-slate-600 mt-0.5">purchase + insurance + depreciation + repairs</span>
-                    </div>
-                    <div className={CELL}>
-                      <span className={CELL_LABEL}>Ownership Band</span>
-                      <span className={`text-lg font-mono ${bandColor(own.ownership_band)}`}>{own.ownership_band}</span>
-                    </div>
-                    <div className={CELL}>
-                      <span className={CELL_LABEL}>Cost on Top of Ask</span>
-                      <span className="text-lg font-mono text-rose-500">+{fmt(v.total_cost_5y - formState.price_gbp)}</span>
-                    </div>
-                  </div>
-                  {own.notes.length > 0 && (
-                    <div className="px-5 py-3 border-t border-slate-800 flex flex-wrap gap-2">
-                      {own.notes.map((note, i) => (
-                        <span key={i} className="text-xs font-mono text-slate-500 bg-slate-800/50 px-2 py-1 rounded">{note}</span>
-                      ))}
+                  {hasOwn ? (
+                    <>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-800">
+                        <div className={CELL}>
+                          <span className={CELL_LABEL}>Insurance (annual)</span>
+                          <span className="text-lg font-mono text-slate-300">{fmtOwn(own.insurance_annual_gbp)}</span>
+                          <span className={`text-[10px] font-mono mt-0.5 ${bandColor(own.insurance_band)}`}>{own.insurance_band} band</span>
+                        </div>
+                        <div className={CELL}>
+                          <span className={CELL_LABEL}>Insurance (5yr total)</span>
+                          <span className="text-lg font-mono text-slate-300">{fmtOwn(own.insurance_5y_gbp)}</span>
+                          <span className="text-[10px] font-mono text-slate-600 mt-0.5">inc. ~12% annual inflation</span>
+                        </div>
+                        <div className={CELL}>
+                          <span className={CELL_LABEL}>Depreciation (5yr)</span>
+                          <span className="text-lg font-mono text-slate-300">{fmtOwn(own.depreciation_5y_gbp)}</span>
+                          <span className="text-[10px] font-mono text-slate-600 mt-0.5">{own.depreciation_5y_gbp && formState.price_gbp ? `~${Math.round(own.depreciation_5y_gbp / formState.price_gbp * 100)}% of purchase price` : ''}</span>
+                        </div>
+                        <div className={CELL}>
+                          <span className={CELL_LABEL}>Repairs (5yr)</span>
+                          <span className="text-lg font-mono text-slate-300">{fmtOwn(own.repairs_5y_gbp)}</span>
+                          <span className="text-[10px] font-mono text-amber-600 mt-0.5">{own.repair_risk_pct}% repair likelihood</span>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-800">
+                        <div className={CELL}>
+                          <span className={CELL_LABEL}>Annual Running Cost</span>
+                          <span className="text-lg font-mono text-slate-300">{fmtOwn(own.annual_running_cost_gbp)}</span>
+                          <span className="text-[10px] font-mono text-slate-600 mt-0.5">insurance + depreciation + repairs</span>
+                        </div>
+                        <div className={CELL}>
+                          <span className={CELL_LABEL}>Total 5-Year Cost</span>
+                          <span className="text-lg font-mono text-slate-100 font-bold">{fmt(v.total_cost_5y)}</span>
+                          <span className="text-[10px] font-mono text-slate-600 mt-0.5">purchase + all running costs</span>
+                        </div>
+                        <div className={CELL}>
+                          <span className={CELL_LABEL}>Cost on Top of Purchase</span>
+                          <span className="text-lg font-mono text-rose-500">+{fmt(v.total_cost_5y - formState.price_gbp)}</span>
+                          <span className="text-[10px] font-mono text-slate-600 mt-0.5">extra you'll spend over 5 years</span>
+                        </div>
+                        <div className={CELL}>
+                          <span className={CELL_LABEL}>Ownership Band</span>
+                          <span className={`text-lg font-mono font-bold ${bandColor(own.ownership_band)}`}>{own.ownership_band}</span>
+                        </div>
+                      </div>
+                      {(own.notes ?? []).length > 0 && (
+                        <div className="px-5 py-3 border-t border-slate-800 space-y-1">
+                          {own.notes.map((note, i) => (
+                            <p key={i} className="text-xs font-mono text-slate-500">{note}</p>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <div className="p-6 text-center text-sm font-mono text-slate-600">
+                      Ownership data unavailable — try restarting the backend server.
                     </div>
                   )}
                 </div>
