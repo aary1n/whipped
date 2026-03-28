@@ -87,6 +87,16 @@ class OwnershipProjection:
 
 
 @dataclass
+class BrandTaxResult:
+    brand_tax_gbp: int           # positive = premium over DNA twins, negative = discount
+    avg_twin_price_gbp: int
+    twin_count: int
+    twins: list[dict]            # [{make, model, year, price_gbp, brand_tax_gbp}]
+    is_good_deal: bool
+    recommendations: list[dict] = field(default_factory=list)  # cluster members cheaper than target, sorted asc by price
+
+
+@dataclass
 class WhippedVerdict:
     listing: Listing
     price_range: PriceRange
@@ -96,3 +106,4 @@ class WhippedVerdict:
     explanation: str
     action_recommendation: str = "unknown"   # strong_buy | negotiate | avoid | insufficient_data
     suggested_counteroffer_gbp: int | None = None
+    brand_tax: BrandTaxResult | None = None

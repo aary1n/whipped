@@ -36,6 +36,23 @@ interface DriverProfile {
   cover_type: string;
 }
 
+interface BrandTaxEntry {
+  make: string;
+  model: string;
+  year: number;
+  price_gbp: number;
+  brand_tax_gbp: number;
+}
+
+interface BrandTax {
+  brand_tax_gbp: number;
+  avg_twin_price_gbp: number;
+  twin_count: number;
+  is_good_deal: boolean;
+  twins: BrandTaxEntry[];
+  recommendations: BrandTaxEntry[];
+}
+
 interface VerdictOutput {
   total_cost_5y: number;
   fair_range: [number, number];
@@ -46,6 +63,7 @@ interface VerdictOutput {
   action_recommendation: string;
   investment_view: "Potential buy" | "Watchlist" | "Avoid";
   risk_flags: string[];
+  brand_tax: BrandTax | null;
   comparables: ComparableListing[];
 }
 
@@ -72,6 +90,7 @@ export default function WhippedTerminal() {
     cover_type: '',
   });
   const [driverOpen, setDriverOpen] = useState(false);
+  const [brandTaxOpen, setBrandTaxOpen] = useState(false);
 
   const [verdict, setVerdict] = useState<VerdictOutput | null>(null);
   const [isExecuting, setIsExecuting] = useState(false);
@@ -369,6 +388,104 @@ export default function WhippedTerminal() {
                     </div>
                   </div>
                 </div>
+
+                {/* Brand Tax */}
+                {verdict.brand_tax && (
+                  <div className="bg-slate-900 border border-slate-800 rounded-lg overflow-hidden">
+                    <button
+                      type="button"
+                      onClick={() => setBrandTaxOpen(o => !o)}
+                      className="w-full flex items-center justify-between px-5 py-3 bg-slate-800/50 border-b border-slate-800 hover:bg-slate-800/80 transition-colors"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs font-bold text-slate-200 uppercase tracking-widest">Brand Tax Analysis</span>
+                        <span className={`text-xs font-mono px-2 py-0.5 rounded ${
+                          verdict.brand_tax.is_good_deal
+                            ? 'bg-emerald-950/60 text-emerald-400 border border-emerald-900/50'
+                            : 'bg-rose-950/60 text-rose-400 border border-rose-900/50'
+                        }`}>
+                          {verdict.brand_tax.is_good_deal ? '−' : '+'}{formatGBP(Math.abs(verdict.brand_tax.brand_tax_gbp))} brand premium
+                        </span>
+                        <span className="text-[10px] text-slate-500 font-mono">{verdict.brand_tax.twin_count} DNA twins · avg {formatGBP(verdict.brand_tax.avg_twin_price_gbp)}</span>
+                      </div>
+                      <ChevronDown size={14} className={`text-slate-500 transition-transform duration-200 ${brandTaxOpen ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {brandTaxOpen && (
+                      <div className="p-5 flex flex-col gap-5">
+                        {/* DNA Twins table */}
+                        <div>
+                          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">DNA Twins — same year, similar spec, different brand</p>
+                          <div className="overflow-auto">
+                            <table className="w-full text-left text-sm whitespace-nowrap">
+                              <thead className="bg-slate-950/50 text-[10px] uppercase tracking-wider text-slate-500 font-bold">
+                                <tr>
+                                  <th className="px-4 py-2">Asset</th>
+                                  <th className="px-4 py-2">Year</th>
+                                  <th className="px-4 py-2 text-right">Price</th>
+                                  <th className="px-4 py-2 text-right">Their Brand Tax</th>
+                                </tr>
+                              </thead>
+                              <tbody className="divide-y divide-slate-800 font-mono text-slate-300">
+                                {verdict.brand_tax.twins.map((t, i) => (
+                                  <tr key={i} className="hover:bg-slate-800/30 transition-colors">
+                                    <td className="px-4 py-2">{t.make} {t.model}</td>
+                                    <td className="px-4 py-2">{t.year}</td>
+                                    <td className="px-4 py-2 text-right">{formatGBP(t.price_gbp)}</td>
+                                    <td className={`px-4 py-2 text-right ${
+                                      t.brand_tax_gbp < 0 ? 'text-emerald-400' : 'text-rose-400'
+                                    }`}>
+                                      {t.brand_tax_gbp >= 0 ? '+' : ''}{formatGBP(t.brand_tax_gbp)}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                        {/* Recommendations */}
+                        {verdict.brand_tax.recommendations.length > 0 ? (
+                          <div>
+                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Cheaper Alternatives in This Cluster</p>
+                            <div className="overflow-auto">
+                              <table className="w-full text-left text-sm whitespace-nowrap">
+                                <thead className="bg-slate-950/50 text-[10px] uppercase tracking-wider text-slate-500 font-bold">
+                                  <tr>
+                                    <th className="px-4 py-2">Asset</th>
+                                    <th className="px-4 py-2">Year</th>
+                                    <th className="px-4 py-2 text-right">Price</th>
+                                    <th className="px-4 py-2 text-right">Saving vs Target</th>
+                                    <th className="px-4 py-2 text-right">Brand Tax</th>
+                                  </tr>
+                                </thead>
+                                <tbody className="divide-y divide-slate-800 font-mono text-slate-300">
+                                  {verdict.brand_tax.recommendations.map((r, i) => (
+                                    <tr key={i} className="hover:bg-slate-800/30 transition-colors">
+                                      <td className="px-4 py-2">{r.make} {r.model}</td>
+                                      <td className="px-4 py-2">{r.year}</td>
+                                      <td className="px-4 py-2 text-right text-emerald-400">{formatGBP(r.price_gbp)}</td>
+                                      <td className="px-4 py-2 text-right text-emerald-400">
+                                        −{formatGBP(formState.price_gbp - r.price_gbp)}
+                                      </td>
+                                      <td className={`px-4 py-2 text-right ${
+                                        r.brand_tax_gbp < 0 ? 'text-emerald-400' : 'text-rose-400'
+                                      }`}>
+                                        {r.brand_tax_gbp >= 0 ? '+' : ''}{formatGBP(r.brand_tax_gbp)}
+                                      </td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        ) : (
+                          <p className="text-xs font-mono text-slate-500">No cheaper alternatives found in this cluster.</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 {/* Risk flags */}
                 <div className="bg-slate-900 border border-slate-800 rounded-lg p-5">
