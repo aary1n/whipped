@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from whipped.domain.models import DriverProfile, Listing, WhippedVerdict
 from whipped.features.extract import extract
+from whipped.pricing.brand_tax import compute as compute_brand_tax
 from whipped.pricing.fair_range import estimate
 from whipped.scoring.explain import explain
 from whipped.scoring.ownership import project_ownership
@@ -32,4 +33,5 @@ def evaluate(
         explanation=explanation_text,
         action_recommendation=action,
         suggested_counteroffer_gbp=counteroffer,
+        brand_tax=compute_brand_tax(listing, comparables),
     )

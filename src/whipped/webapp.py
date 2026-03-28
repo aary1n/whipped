@@ -449,6 +449,56 @@ class WhippedWebApp:
       border-radius: 18px;
       background: white;
     }}
+    .alt-section {{
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(253,232,223,0.85));
+      border: 1px solid rgba(124, 45, 18, 0.12);
+    }}
+    .alt-grid {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }}
+    .alt-box {{
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: white;
+      padding: 14px;
+    }}
+    .alt-box h3 {{
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-4);
+    }}
+    .alt-list {{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.55;
+    }}
+    .alt-list strong {{
+      color: var(--ink);
+    }}
+    .alt-meta {{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }}
+    .mini-pill {{
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft-amber);
+      color: var(--accent-4);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }}
     .empty {{
       color: var(--muted);
       font-style: italic;
@@ -486,6 +536,9 @@ class WhippedWebApp:
         grid-template-columns: 1fr;
       }}
       .hero-stats {{
+        grid-template-columns: 1fr;
+      }}
+      .alt-grid {{
         grid-template-columns: 1fr;
       }}
       .form-actions {{
@@ -606,6 +659,7 @@ class WhippedWebApp:
         ownership_notes = "".join(f"<li>{escape(note)}</li>" for note in verdict.ownership.notes)
         risk_text = escape(", ".join(verdict.risk.flags[:2])) if verdict.risk.flags else "No major warning signs detected."
         driver_summary = _driver_summary(driver)
+        brand_tax_html = _render_brand_tax(verdict)
         comp_rows = "".join(
             f"<tr><td>{escape(c.make.title())}</td><td>{escape(c.model.title())}</td><td>{c.year}</td><td>{_fmt_int(c.mileage_miles)} mi</td><td>£{_fmt_int(c.price_gbp)}</td></tr>"
             for c in comparables[:8]
@@ -662,6 +716,7 @@ class WhippedWebApp:
           <strong>Longevity notes:</strong>
           <ul class="note-list">{ownership_notes}</ul>
         </div>
+        {brand_tax_html}
         <h2 style="margin-top:22px;">Comparable Data Used</h2>
         <p class="sub" style="font-size:0.95rem;">Showing the first {min(len(comparables), 8)} comparable listings used to price this car.</p>
         <div class="comp-table-wrap">
@@ -676,16 +731,38 @@ class WhippedWebApp:
 
     def _find_comparables(self, listing: Listing) -> list[Listing]:
         db_matches = _load_market_comparables(listing, MARKET_DB)
-        if len(db_matches) >= 3:
-            return db_matches
+        if db_matches:
+            exact = [
+                candidate
+                for candidate in db_matches
+                if candidate.make.lower() == listing.make.lower()
+                and candidate.model.lower() == listing.model.lower()
+            ]
+            others = [
+                candidate
+                for candidate in db_matches
+                if not (
+                    candidate.make.lower() == listing.make.lower()
+                    and candidate.model.lower() == listing.model.lower()
+                )
+            ]
+            return exact + others
 
-        filtered = [
+        exact = [
             candidate
             for candidate in self._sample_comparables
             if candidate.make.lower() == listing.make.lower()
             and candidate.model.lower() == listing.model.lower()
         ]
-        return filtered or self._sample_comparables
+        others = [
+            candidate
+            for candidate in self._sample_comparables
+            if not (
+                candidate.make.lower() == listing.make.lower()
+                and candidate.model.lower() == listing.model.lower()
+            )
+        ]
+        return (exact + others) or self._sample_comparables
 
     def _load_sample_comparables(self) -> list[Listing]:
         if KAGGLE_RAW_DIR.exists() and any(KAGGLE_RAW_DIR.glob("*.csv")):
@@ -783,11 +860,47 @@ def _driver_summary(driver: DriverProfile | None) -> str:
     if driver is None:
         return "No driver profile supplied"
     age = f"{driver.age} yrs old" if driver.age is not None else "unknown age"
+    sex = driver.sex or "unknown sex"
     licensed = (
         f"{driver.years_licensed} yrs licensed" if driver.years_licensed is not None else "unknown driving history"
     )
     area = (driver.postcode_area or "unknown area").upper()
-    return f"{age}, {licensed}, {area}"
+    return f"{age}, {sex}, {licensed}, {area}"
+
+
+def _render_brand_tax(verdict: WhippedVerdict) -> str:
+    bt = verdict.brand_tax
+    if bt is None:
+        return ""
+
+    twins = "".join(
+        f"<li><strong>{escape(str(t['make']).title())} {escape(str(t['model']).title())}</strong> ({t['year']}) at £{int(t['price_gbp']):,} • brand tax {int(t['brand_tax_gbp']):+,.0f}</li>"
+        for t in bt.twins[:5]
+    )
+    recommendations = "".join(
+        f"<li><strong>{escape(str(r['make']).title())} {escape(str(r['model']).title())}</strong> ({r['year']}) at £{int(r['price_gbp']):,} • save £{((verdict.listing.price_gbp or 0) - int(r['price_gbp'])):,}</li>"
+        for r in bt.recommendations[:5]
+    )
+    direction = "discount" if bt.is_good_deal else "brand premium"
+    signed_tax = f"{bt.brand_tax_gbp:+,}"
+
+    return f"""
+    <section class="alt-section">
+      <div class="section-title" style="margin-top:0;">Brand Tax Analysis</div>
+      <p class="sub" style="font-size:0.96rem;">This compares the target car with similar same-year cars from other brands to estimate whether you are paying extra for the badge alone.</p>
+      <div class="alt-meta">
+        <span class="mini-pill">{signed_tax} {escape(direction)}</span>
+        <span class="mini-pill">{bt.twin_count} DNA twins</span>
+        <span class="mini-pill">Twin avg £{bt.avg_twin_price_gbp:,}</span>
+      </div>
+      <div class="alt-grid">
+        <div class="alt-box">
+          <h3>DNA Twins</h3>
+          <ul class="alt-list">{twins}</ul>
+        </div>
+      </div>
+    </section>
+    """
 
 
 def _select(name: str, current: str, options: list[str]) -> str:
@@ -851,6 +964,16 @@ def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> di
         if c.make.lower() == make and c.model.lower() == model
     ][:15]
 
+    bt = verdict.brand_tax
+    brand_tax_payload = {
+        "brand_tax_gbp": bt.brand_tax_gbp,
+        "avg_twin_price_gbp": bt.avg_twin_price_gbp,
+        "twin_count": bt.twin_count,
+        "is_good_deal": bt.is_good_deal,
+        "twins": bt.twins,
+        "recommendations": bt.recommendations,
+    } if bt is not None else None
+
     return {
         "total_cost_5y": total_5y,
         "fair_range": [verdict.price_range.lower_gbp, verdict.price_range.upper_gbp],
@@ -868,6 +991,8 @@ def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> di
         "action_recommendation": action,
         "investment_view": investment_view,
         "risk_flags": verdict.risk.flags,
+<<<<<<< HEAD
+<<<<<<< HEAD
         "ownership": {
             "insurance_annual_gbp": own.estimated_insurance_annual_gbp,
             "insurance_5y_gbp": own.estimated_insurance_5y_gbp,
@@ -880,6 +1005,12 @@ def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> di
             "notes": own.notes,
         },
         "explanation": verdict.explanation,
+=======
+        "brand_tax": brand_tax_payload,
+>>>>>>> 646e72b (Add KNN brand-tax model and data analysis folder)
+=======
+        "brand_tax": brand_tax_payload,
+>>>>>>> origin/tam/clustering
         "comparables": [
             {
                 "make": c.make, "model": c.model, "year": c.year,
