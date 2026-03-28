@@ -23,6 +23,7 @@ NUMERIC_FIELDS = [
     "vehicle_price_gbp",
     "vehicle_mileage_miles",
     "engine_size_l",
+    "condition_score",
 ]
 
 CATEGORICAL_FIELDS = [
@@ -50,6 +51,7 @@ ALIASES = {
     "vehicle_price_gbp": ["vehicle_price_gbp", "price_gbp", "car_price"],
     "vehicle_mileage_miles": ["vehicle_mileage_miles", "mileage_miles", "mileage"],
     "engine_size_l": ["engine_size_l", "engine_size", "engine"],
+    "condition_score": ["condition_score", "vehicle_condition_score", "condition"],
     "make": ["make"],
     "model": ["model"],
     "fuel_type": ["fuel_type", "fuel"],
@@ -101,6 +103,11 @@ def train_insurance_model(csv_paths: list[Path], output_path: Path, epochs: int 
     data = data.dropna(subset=[REQUIRED_TARGET, "driver_age", "vehicle_year", "vehicle_price_gbp"])
     data["vehicle_age"] = pd.Timestamp.utcnow().year - data["vehicle_year"]
     data["vehicle_age"] = data["vehicle_age"].clip(lower=0)
+    if "condition_score" in data.columns:
+        derived_condition = data.apply(_condition_from_row, axis=1)
+        data["condition_score"] = data["condition_score"].fillna(derived_condition)
+    else:
+        data["condition_score"] = data.apply(_condition_from_row, axis=1)
 
     numeric_mean = data[NUMERIC_FIELDS].mean().to_numpy(dtype=float)
     numeric_std = data[NUMERIC_FIELDS].std().replace(0, 1).fillna(1).to_numpy(dtype=float)
@@ -276,6 +283,7 @@ def _record_from_inputs(listing: Listing, driver: DriverProfile) -> dict[str, An
         "vehicle_price_gbp": listing.price_gbp,
         "vehicle_mileage_miles": listing.mileage_miles,
         "engine_size_l": listing.engine_size_l,
+        "condition_score": _condition_score(listing),
         "make": (listing.make or "unknown").lower(),
         "model": (listing.model or "unknown").lower(),
         "fuel_type": (listing.fuel_type or "unknown").lower(),
@@ -285,3 +293,25 @@ def _record_from_inputs(listing: Listing, driver: DriverProfile) -> dict[str, An
         "parking": (driver.parking or "unknown").lower(),
         "cover_type": (driver.cover_type or "unknown").lower(),
     }
+
+
+def _condition_score(listing: Listing) -> float:
+    current_year = pd.Timestamp.utcnow().year
+    age = max(0, current_year - listing.year)
+    mileage = listing.mileage_miles or 45_000
+
+    score = 92.0
+    score -= min(35.0, age * 2.8)
+    score -= min(32.0, mileage / 6_500)
+    if (listing.seller_type or "").lower() == "dealer":
+        score += 4.0
+    return max(20.0, min(98.0, score))
+
+
+def _condition_from_row(row: pd.Series) -> float:
+    vehicle_age = float(row.get("vehicle_age") or 0)
+    mileage = float(row.get("vehicle_mileage_miles") or 45_000)
+    score = 92.0
+    score -= min(35.0, vehicle_age * 2.8)
+    score -= min(32.0, mileage / 6_500)
+    return max(20.0, min(98.0, score))

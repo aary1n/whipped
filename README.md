@@ -18,6 +18,28 @@ PYTHONPATH=src python scripts/run_web.py --host 127.0.0.1 --port 8000
 
 Then open `http://127.0.0.1:8000`.
 
+## Generate Synthetic Insurance Data
+
+If you want a standalone insurance training dataset without touching the car listing datasets, generate one like this:
+
+```bash
+PYTHONPATH=src python scripts/prepare_synthetic_insurance_data.py --rows 6000 --seed 42
+```
+
+This writes `data/insurance/synthetic_insurance_quotes.csv` with fields for:
+
+- customer profile
+- postcode area
+- car type
+- vehicle condition
+- yearly insurance cost
+
+You can then train the insurance model on that synthetic dataset:
+
+```bash
+PYTHONPATH=src python scripts/train_insurance_model.py data/insurance/synthetic_insurance_quotes.csv
+```
+
 ## Train A Real Insurance Model
 
 If you have real insurance quote data in CSV form, you can train the app to predict annual premiums from that data:
