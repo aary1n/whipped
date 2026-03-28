@@ -851,6 +851,16 @@ def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> di
         if c.make.lower() == make and c.model.lower() == model
     ][:15]
 
+    bt = verdict.brand_tax
+    brand_tax_payload = {
+        "brand_tax_gbp": bt.brand_tax_gbp,
+        "avg_twin_price_gbp": bt.avg_twin_price_gbp,
+        "twin_count": bt.twin_count,
+        "is_good_deal": bt.is_good_deal,
+        "twins": bt.twins,
+        "recommendations": bt.recommendations,
+    } if bt is not None else None
+
     return {
         "total_cost_5y": total_5y,
         "fair_range": [verdict.price_range.lower_gbp, verdict.price_range.upper_gbp],
@@ -868,6 +878,7 @@ def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> di
         "action_recommendation": action,
         "investment_view": investment_view,
         "risk_flags": verdict.risk.flags,
+<<<<<<< HEAD
         "ownership": {
             "insurance_annual_gbp": own.estimated_insurance_annual_gbp,
             "insurance_5y_gbp": own.estimated_insurance_5y_gbp,
@@ -880,6 +891,9 @@ def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> di
             "notes": own.notes,
         },
         "explanation": verdict.explanation,
+=======
+        "brand_tax": brand_tax_payload,
+>>>>>>> 646e72b (Add KNN brand-tax model and data analysis folder)
         "comparables": [
             {
                 "make": c.make, "model": c.model, "year": c.year,
