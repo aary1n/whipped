@@ -4,7 +4,8 @@
       "Bash(pip install:*)",
       "Bash(python -m pytest tests/ -v)",
       "Bash(python scripts/prepare_sample_data.py)",
-      "Bash(python scripts/run_demo.py)"
+      "Bash(python scripts/run_demo.py)",
+      "Bash(python scripts/test_sample_data.py)"
     ]
   }
 }
