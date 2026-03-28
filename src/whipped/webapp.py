@@ -61,6 +61,7 @@ class WhippedWebApp:
             comparables = self._find_comparables(listing)
             driver_data = body.get("driver")
             driver = DriverProfile(
+                sex=_optional_str(driver_data.get("sex")) if driver_data else None,
                 age=_optional_int(driver_data.get("age")) if driver_data else None,
                 years_licensed=_optional_int(driver_data.get("years_licensed")) if driver_data else None,
                 no_claims_years=_optional_int(driver_data.get("no_claims_years")) if driver_data else None,
@@ -854,12 +855,31 @@ def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> di
         "total_cost_5y": total_5y,
         "fair_range": [verdict.price_range.lower_gbp, verdict.price_range.upper_gbp],
         "mid_price": verdict.price_range.mid_gbp,
+        "confidence": verdict.price_range.confidence,
+        "comparable_count": verdict.price_range.comparable_count,
+        "strategy_used": verdict.price_range.strategy_used,
         "ripoff_index": verdict.ripoff.ripoff_index,
+        "ripoff_band": verdict.ripoff.ripoff_band,
+        "pricing_position": verdict.ripoff.pricing_position,
         "risk_score": verdict.risk.risk_score,
+        "risk_band": verdict.risk.risk_band,
+        "risk_notes": verdict.risk.notes,
         "counteroffer": verdict.suggested_counteroffer_gbp,
         "action_recommendation": action,
         "investment_view": investment_view,
         "risk_flags": verdict.risk.flags,
+        "ownership": {
+            "insurance_annual_gbp": own.estimated_insurance_annual_gbp,
+            "insurance_5y_gbp": own.estimated_insurance_5y_gbp,
+            "depreciation_5y_gbp": own.estimated_depreciation_5y_gbp,
+            "repairs_5y_gbp": own.estimated_repairs_5y_gbp,
+            "repair_risk_pct": own.repair_risk_pct,
+            "annual_running_cost_gbp": own.annual_running_cost_gbp,
+            "ownership_band": own.ownership_band,
+            "insurance_band": own.insurance_band,
+            "notes": own.notes,
+        },
+        "explanation": verdict.explanation,
         "comparables": [
             {
                 "make": c.make, "model": c.model, "year": c.year,

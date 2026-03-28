@@ -10,6 +10,7 @@ interface ListingInput {
   engine_size_l: number;
   fuel_type: string;
   transmission: string;
+  driver_sex: string;
 }
 
 interface VerdictOutput {
@@ -19,15 +20,15 @@ interface VerdictOutput {
   ripoff_index: number;
   risk_score: number;
   counteroffer: number;
-  investment_view: "Potential buy" | "Watchlist" | "Avoid";
+  recommendation: "Potential buy" | "Watchlist" | "Avoid";
   risk_flags: string[];
   comparables: ListingInput[];
 }
 
 const mockComparables: ListingInput[] = [
-  { make: "Porsche", model: "911 Carrera S", year: 2019, price_gbp: 82000, mileage_miles: 24000, engine_size_l: 3.0, fuel_type: "Petrol", transmission: "PDK" },
-  { make: "Porsche", model: "911 Carrera S", year: 2019, price_gbp: 84500, mileage_miles: 21500, engine_size_l: 3.0, fuel_type: "Petrol", transmission: "PDK" },
-  { make: "Porsche", model: "911 Carrera S", year: 2020, price_gbp: 89000, mileage_miles: 18000, engine_size_l: 3.0, fuel_type: "Petrol", transmission: "PDK" },
+  { make: "Porsche", model: "911 Carrera S", year: 2019, price_gbp: 82000, mileage_miles: 24000, engine_size_l: 3.0, fuel_type: "Petrol", transmission: "PDK", driver_sex: "Male" },
+  { make: "Porsche", model: "911 Carrera S", year: 2019, price_gbp: 84500, mileage_miles: 21500, engine_size_l: 3.0, fuel_type: "Petrol", transmission: "PDK", driver_sex: "Male" },
+  { make: "Porsche", model: "911 Carrera S", year: 2020, price_gbp: 89000, mileage_miles: 18000, engine_size_l: 3.0, fuel_type: "Petrol", transmission: "PDK", driver_sex: "Male" },
 ];
 
 const mockOutput: VerdictOutput = {
@@ -37,7 +38,7 @@ const mockOutput: VerdictOutput = {
   ripoff_index: 88,
   risk_score: 74,
   counteroffer: 81500,
-  investment_view: "Avoid",
+  recommendation: "Avoid",
   risk_flags: ["Bore scoring risk on early 991.2", "PDK service due at 40k", "High volatility in 992 allocations"],
   comparables: mockComparables
 };
@@ -51,7 +52,8 @@ export default function WhippedTerminal() {
     mileage_miles: 22000,
     engine_size_l: 3.0,
     fuel_type: 'Petrol',
-    transmission: 'PDK'
+    transmission: 'PDK',
+    driver_sex: 'Male'
   });
 
   const [verdict, setVerdict] = useState<VerdictOutput | null>(mockOutput);
@@ -61,11 +63,11 @@ export default function WhippedTerminal() {
     const { name, value } = e.target;
     setFormState(prev => ({
       ...prev,
-      [name]: name === 'make' || name === 'model' || name === 'fuel_type' || name === 'transmission' ? value : Number(value)
+      [name]: name === 'make' || name === 'model' || name === 'fuel_type' || name === 'transmission' || name === 'driver_sex' ? value : Number(value)
     }));
   };
 
-  const executeArbitrage = (e: React.FormEvent) => {
+  const executeValuation = (e: React.FormEvent) => {
     e.preventDefault();
     setIsExecuting(true);
     setTimeout(() => {
@@ -89,10 +91,10 @@ export default function WhippedTerminal() {
       <div className="max-w-[1600px] mx-auto h-[calc(100vh-2rem)] flex flex-col">
         
         {/* Header bar */}
-        <header className="flex items-center justify-between mb-4 pb-2 border-b border-slate-800">
+        <header className="flex items-center justify-between mb-4 pb-2 border-b border-slate-800 shrink-0">
           <div className="flex items-center gap-2 text-slate-100">
             <Activity size={20} className="text-teal-500" />
-            <h1 className="font-bold tracking-widest text-sm uppercase">Whipped <span className="text-slate-500 font-normal">| Quant Arb Engine v2.1.0</span></h1>
+            <h1 className="font-bold tracking-widest text-sm uppercase">Whipped <span className="text-slate-500 font-normal">| Valuation & Risk Engine v2.1.0</span></h1>
           </div>
           <div className="text-xs font-mono text-slate-500 flex items-center gap-4">
             <span>SYS: <span className="text-emerald-500">ONLINE</span></span>
@@ -100,132 +102,143 @@ export default function WhippedTerminal() {
           </div>
         </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 min-h-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 min-h-0 overflow-hidden">
           
-          {/* LEFT COLUMN: Input Panel */}
-          <div className="lg:col-span-4 xl:col-span-3 bg-slate-900 border border-slate-800 rounded-lg flex flex-col overflow-hidden shadow-2xl">
-            <div className="bg-slate-800/50 px-4 py-3 border-b border-slate-800 flex items-center gap-2">
+          {/* LEFT COLUMN: Input Panel / Sidebar */}
+          <div className="lg:col-span-4 xl:col-span-3 bg-slate-900 border border-slate-800 rounded-lg flex flex-col h-full shadow-2xl">
+            <div className="bg-slate-800/50 px-4 py-3 border-b border-slate-800 flex items-center gap-2 shrink-0">
               <Database size={14} className="text-teal-500" />
-              <h2 className="text-xs font-bold tracking-widest text-slate-200 uppercase">Asset Parameters</h2>
+              <h2 className="text-xs font-bold tracking-widest text-slate-200 uppercase">Vehicle & Driver Specs</h2>
             </div>
             
-            <form onSubmit={executeArbitrage} className="p-4 flex flex-col flex-1 gap-4 overflow-y-auto">
-              <div className="grid grid-cols-2 gap-3">
-                <div className="col-span-2">
-                  <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Make</label>
-                  <input type="text" name="make" value={formState.make} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
-                </div>
-                <div className="col-span-2">
-                  <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Model</label>
-                  <input type="text" name="model" value={formState.model} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
-                </div>
-                
-                <div>
-                  <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Year</label>
-                  <input type="number" name="year" value={formState.year} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
-                </div>
-                <div>
-                  <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Ask Price (£)</label>
-                  <input type="number" name="price_gbp" value={formState.price_gbp} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
-                </div>
-                
-                <div>
-                  <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Mileage</label>
-                  <input type="number" name="mileage_miles" value={formState.mileage_miles} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
-                </div>
-                <div>
-                  <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Engine (L)</label>
-                  <input type="number" step="0.1" name="engine_size_l" value={formState.engine_size_l} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
+            <div className="flex-1 overflow-y-auto custom-scrollbar">
+              <form onSubmit={executeValuation} className="p-4 flex flex-col gap-4 min-h-full">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="col-span-2">
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Make</label>
+                    <input type="text" name="make" value={formState.make} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
+                  </div>
+                  <div className="col-span-2">
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Model</label>
+                    <input type="text" name="model" value={formState.model} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Year</label>
+                    <input type="number" name="year" value={formState.year} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Listed Price (£)</label>
+                    <input type="number" name="price_gbp" value={formState.price_gbp} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Mileage</label>
+                    <input type="number" name="mileage_miles" value={formState.mileage_miles} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Engine (L)</label>
+                    <input type="number" step="0.1" name="engine_size_l" value={formState.engine_size_l} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all" />
+                  </div>
+
+                  <div className="col-span-2">
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Fuel Type</label>
+                    <select name="fuel_type" value={formState.fuel_type} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all appearance-none">
+                      <option>Petrol</option>
+                      <option>Diesel</option>
+                      <option>Hybrid</option>
+                      <option>Electric</option>
+                    </select>
+                  </div>
+                  
+                  <div className="col-span-2">
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Transmission</label>
+                    <select name="transmission" value={formState.transmission} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all appearance-none">
+                      <option>Manual</option>
+                      <option>Auto</option>
+                      <option>PDK</option>
+                      <option>DSG</option>
+                    </select>
+                  </div>
+
+                  <div className="col-span-2 pt-2 mt-2 border-t border-slate-800">
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Driver Profile (Sex)</label>
+                    <select name="driver_sex" value={formState.driver_sex} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all appearance-none">
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
                 </div>
 
-                <div className="col-span-2">
-                  <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Fuel Type</label>
-                  <select name="fuel_type" value={formState.fuel_type} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all appearance-none">
-                    <option>Petrol</option>
-                    <option>Diesel</option>
-                    <option>Hybrid</option>
-                    <option>Electric</option>
-                  </select>
+                <div className="mt-auto pt-6">
+                  <button 
+                    type="submit" 
+                    disabled={isExecuting}
+                    className={`w-full flex items-center justify-center gap-2 py-3 rounded text-xs font-bold tracking-[0.2em] uppercase transition-all ${isExecuting ? 'bg-slate-800 text-slate-500' : 'bg-teal-900 hover:bg-teal-800 text-teal-400 border border-teal-800 hover:border-teal-600 shadow-[0_0_15px_rgba(20,184,166,0.15)]'}`}
+                  >
+                    <Crosshair size={16} className={isExecuting ? 'animate-spin' : ''} />
+                    {isExecuting ? 'Processing...' : 'Run Valuation Model'}
+                  </button>
                 </div>
-                <div className="col-span-2">
-                  <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Transmission</label>
-                  <select name="transmission" value={formState.transmission} onChange={handleInputChange} className="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1.5 text-sm font-mono focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all appearance-none">
-                    <option>Manual</option>
-                    <option>Auto</option>
-                    <option>PDK</option>
-                    <option>DSG</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="mt-auto pt-6">
-                <button 
-                  type="submit" 
-                  disabled={isExecuting}
-                  className={`w-full flex items-center justify-center gap-2 py-3 rounded text-xs font-bold tracking-[0.2em] uppercase transition-all ${isExecuting ? 'bg-slate-800 text-slate-500' : 'bg-teal-900 hover:bg-teal-800 text-teal-400 border border-teal-800 hover:border-teal-600 shadow-[0_0_15px_rgba(20,184,166,0.15)]'}`}
-                >
-                  <Crosshair size={16} className={isExecuting ? 'animate-spin' : ''} />
-                  {isExecuting ? 'Computing...' : 'Execute Arbitrage'}
-                </button>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
 
           {/* RIGHT COLUMN: Terminal / Output */}
-          <div className="lg:col-span-8 xl:col-span-9 flex flex-col gap-6 overflow-y-auto min-h-0">
+          <div className="lg:col-span-8 xl:col-span-9 flex flex-col gap-6 overflow-y-auto h-full pr-2">
             
             {verdict ? (
               <>
                 {/* Top Section: Hero & Grid */}
-                <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 shrink-0">
                   
                   {/* Hero Metric */}
                   <div className="xl:col-span-1 bg-slate-900 border border-slate-800 rounded-lg p-6 flex flex-col justify-center relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-teal-900/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                     <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 flex items-center gap-2">
-                      <TrendingDown size={14} /> Total 5Y TCO
+                      <TrendingDown size={14} /> 5-Year TCO
                     </h3>
                     <div className="text-4xl lg:text-5xl font-mono text-slate-100 tracking-tight">
                       {formatGBP(verdict.total_cost_5y)}
                     </div>
                     <div className="mt-4 text-xs font-mono text-slate-500">
-                      Delta vs Asset Price: <span className="text-rose-500">+{formatGBP(verdict.total_cost_5y - formState.price_gbp)}</span>
+                      Delta vs Listed Price: <span className="text-rose-500">+{formatGBP(verdict.total_cost_5y - formState.price_gbp)}</span>
                     </div>
                   </div>
 
                   {/* Deal Analysis Grid */}
                   <div className="xl:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-px bg-slate-800 rounded-lg overflow-hidden border border-slate-800">
                     <div className="bg-slate-900 p-4 flex flex-col justify-center">
-                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Fair Range</span>
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Fair Market Range</span>
                       <span className="text-lg font-mono text-slate-300">{formatGBP(verdict.fair_range[0])} - {formatGBP(verdict.fair_range[1])}</span>
                     </div>
                     <div className="bg-slate-900 p-4 flex flex-col justify-center">
-                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Mid Price</span>
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Market Midpoint</span>
                       <span className="text-lg font-mono text-slate-300">{formatGBP(verdict.mid_price)}</span>
                     </div>
                     <div className="bg-slate-900 p-4 flex flex-col justify-center">
-                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Ripoff Score</span>
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Price Premium Score</span>
                       <span className={`text-2xl font-mono ${getScoreColor(verdict.ripoff_index)}`}>{verdict.ripoff_index}<span className="text-sm text-slate-600">/100</span></span>
                     </div>
                     <div className="bg-slate-900 p-4 flex flex-col justify-center">
-                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Risk Score</span>
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Asset Risk Score</span>
                       <span className={`text-2xl font-mono ${getScoreColor(verdict.risk_score)}`}>{verdict.risk_score}<span className="text-sm text-slate-600">/100</span></span>
                     </div>
                     <div className="bg-slate-900 p-4 flex flex-col justify-center">
-                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Max Bid (Counter)</span>
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Target Counteroffer</span>
                       <span className="text-xl font-mono text-teal-400">{formatGBP(verdict.counteroffer)}</span>
                     </div>
-                    <div className="bg-slate-900 p-4 flex flex-col justify-center border-t-2 border-t-transparent data-[view=Avoid]:border-t-rose-500 data-[view=Watchlist]:border-t-amber-500 data-[view='Potential buy']:border-t-emerald-500" data-view={verdict.investment_view}>
-                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Terminal View</span>
-                      <span className={`text-lg font-bold uppercase tracking-wider ${verdict.investment_view === 'Avoid' ? 'text-rose-500' : verdict.investment_view === 'Watchlist' ? 'text-amber-500' : 'text-emerald-500'}`}>
-                        {verdict.investment_view}
+                    <div className="bg-slate-900 p-4 flex flex-col justify-center border-t-2 border-t-transparent data-[view=Avoid]:border-t-rose-500 data-[view=Watchlist]:border-t-amber-500 data-[view='Potential buy']:border-t-emerald-500" data-view={verdict.recommendation}>
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">System Recommendation</span>
+                      <span className={`text-lg font-bold uppercase tracking-wider ${verdict.recommendation === 'Avoid' ? 'text-rose-500' : verdict.recommendation === 'Watchlist' ? 'text-amber-500' : 'text-emerald-500'}`}>
+                        {verdict.recommendation}
                       </span>
                     </div>
                   </div>
                 </div>
 
                 {/* Risk & Longevity */}
-                <div className="bg-slate-900 border border-slate-800 rounded-lg p-5">
+                <div className="bg-slate-900 border border-slate-800 rounded-lg p-5 shrink-0">
                   <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                     <ShieldAlert size={14} className="text-rose-500" /> Active Risk Flags
                   </h3>
@@ -242,16 +255,16 @@ export default function WhippedTerminal() {
                   </div>
                 </div>
 
-                {/* Order Book / Comparables */}
-                <div className="bg-slate-900 border border-slate-800 rounded-lg overflow-hidden flex-1 flex flex-col">
-                  <div className="bg-slate-800/50 px-5 py-3 border-b border-slate-800">
-                    <h3 className="text-xs font-bold text-slate-200 uppercase tracking-widest">Order Book (Comparables)</h3>
+                {/* Market Comparables */}
+                <div className="bg-slate-900 border border-slate-800 rounded-lg overflow-hidden flex-1 flex flex-col min-h-[300px]">
+                  <div className="bg-slate-800/50 px-5 py-3 border-b border-slate-800 shrink-0">
+                    <h3 className="text-xs font-bold text-slate-200 uppercase tracking-widest">Market Comparables</h3>
                   </div>
                   <div className="overflow-auto flex-1 p-0">
                     <table className="w-full text-left text-sm whitespace-nowrap">
                       <thead className="bg-slate-950/50 text-[10px] uppercase tracking-wider text-slate-500 font-bold sticky top-0">
                         <tr>
-                          <th className="px-5 py-3">Asset</th>
+                          <th className="px-5 py-3">Vehicle</th>
                           <th className="px-5 py-3">Year</th>
                           <th className="px-5 py-3">Mileage</th>
                           <th className="px-5 py-3">Engine / Trans</th>
