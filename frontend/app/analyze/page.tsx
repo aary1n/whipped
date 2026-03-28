@@ -10,11 +10,14 @@ import { INPUT, LABEL, CELL, CELL_LABEL, fmt, scoreColor, recColor, recBorder } 
 
 
 
-function Tip({ text }: { text: string }) {
+function Tip({ text, position = 'right' }: { text: string; position?: 'right' | 'left' }) {
+  const pos = position === 'left'
+    ? 'right-full top-full mt-1 mr-1'
+    : 'left-full top-1/2 -translate-y-1/2 ml-2';
   return (
     <span className="relative group inline-flex ml-1 cursor-help">
       <Info size={11} className="text-slate-600 group-hover:text-slate-400 transition-colors" />
-      <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 text-[11px] text-slate-300 font-normal normal-case tracking-normal whitespace-normal w-48 text-left opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-50 shadow-lg">
+      <span className={`absolute ${pos} px-2.5 py-1.5 rounded bg-slate-800 border border-slate-700 text-[11px] text-slate-300 font-normal normal-case tracking-normal whitespace-normal w-48 text-left opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-50 shadow-lg`}>
         {text}
       </span>
     </span>
@@ -199,7 +202,7 @@ export default function AnalyzePage() {
                     <span className="text-lg font-mono text-slate-300">{fmt(verdict.mid_price)}</span>
                 </div>
                 <div className={`${CELL} text-teal-400`}>
-                    <span className={CELL_LABEL}>Target Counteroffer<Tip text="A suggested negotiation price based on market position and risk. N/A for bargains or low-confidence results." /></span>
+                    <span className={CELL_LABEL}>Target Counteroffer<Tip text="A suggested negotiation price based on market position and risk. N/A for bargains or low-confidence results." position="left" /></span>
                     <span className="text-xl font-mono">{verdict.counteroffer ? fmt(verdict.counteroffer) : "N/A"}</span>
                 </div>
                 <div className={CELL}>
