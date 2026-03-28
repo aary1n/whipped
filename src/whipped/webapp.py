@@ -644,6 +644,7 @@ class WhippedWebApp:
               <ul>
                 <li>See whether the asking price looks fair or overpriced.</li>
                 <li>Compare five-year insurance, depreciation, and repair costs.</li>
+                <li>Run negotiation scenarios and inspect contribution factors.</li>
                 <li>Use the counteroffer and comparable listings before you contact the seller.</li>
               </ul>
             </div>
@@ -663,6 +664,27 @@ class WhippedWebApp:
         comp_rows = "".join(
             f"<tr><td>{escape(c.make.title())}</td><td>{escape(c.model.title())}</td><td>{c.year}</td><td>{_fmt_int(c.mileage_miles)} mi</td><td>£{_fmt_int(c.price_gbp)}</td></tr>"
             for c in comparables[:8]
+        )
+        factor_rows = "".join(
+          "<tr>"
+          f"<td>{escape(f.name)}</td>"
+          f"<td>{'+' if f.impact_gbp > 0 else ''}{_fmt_currency(f.impact_gbp)}</td>"
+          f"<td>{escape(f.direction)}</td>"
+          f"<td>{escape(f.detail)}</td>"
+          "</tr>"
+          for f in verdict.explanation_factors[:6]
+        )
+        negotiation_points = "".join(f"<li>{escape(point)}</li>" for point in verdict.negotiation_points)
+        counter_rows = "".join(
+          "<tr>"
+          f"<td>{escape(item.title)}</td>"
+          f"<td>{_fmt_currency(item.asking_price_gbp)}</td>"
+          f"<td>{_fmt_currency(item.mid_price_gbp)}</td>"
+          f"<td>{item.ripoff_index}</td>"
+          f"<td>{'+' if item.delta_ripoff_index > 0 else ''}{item.delta_ripoff_index}</td>"
+          f"<td>{'+' if item.delta_total_ownership_5y_gbp > 0 else ''}{_fmt_currency(item.delta_total_ownership_5y_gbp)}</td>"
+          "</tr>"
+          for item in verdict.counterfactuals
         )
 
         return f"""
@@ -717,6 +739,32 @@ class WhippedWebApp:
           <ul class="note-list">{ownership_notes}</ul>
         </div>
         {brand_tax_html}
+
+        <h2 style="margin-top:22px;">Explainability Studio</h2>
+        <p class="sub" style="font-size:0.95rem;">Ranked contributors behind this recommendation and ownership profile.</p>
+        <div class="comp-table-wrap">
+          <table>
+            <thead>
+              <tr><th>Factor</th><th>Impact</th><th>Direction</th><th>Reason</th></tr>
+            </thead>
+            <tbody>{factor_rows}</tbody>
+          </table>
+        </div>
+        <div style="margin-top:14px;">
+          <strong>Negotiation talking points:</strong>
+          <ul class="note-list">{negotiation_points}</ul>
+        </div>
+
+        <h2 style="margin-top:22px;">Counterfactual Negotiation Simulator</h2>
+        <p class="sub" style="font-size:0.95rem;">What-if scenarios show how valuation, ripoff pressure, and ownership costs move when key assumptions change.</p>
+        <div class="comp-table-wrap">
+          <table>
+            <thead>
+              <tr><th>Scenario</th><th>Asking</th><th>Model Mid</th><th>Ripoff</th><th>Delta Ripoff</th><th>Delta 5Y Ownership</th></tr>
+            </thead>
+            <tbody>{counter_rows}</tbody>
+          </table>
+        </div>
         <h2 style="margin-top:22px;">Comparable Data Used</h2>
         <p class="sub" style="font-size:0.95rem;">Showing the first {min(len(comparables), 8)} comparable listings used to price this car.</p>
         <div class="comp-table-wrap">
@@ -1004,6 +1052,31 @@ def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> di
         },
         "explanation": verdict.explanation,
         "brand_tax": brand_tax_payload,
+        "explainability_factors": [
+          {
+            "name": factor.name,
+            "impact_gbp": factor.impact_gbp,
+            "direction": factor.direction,
+            "detail": factor.detail,
+          }
+          for factor in verdict.explanation_factors
+        ],
+        "negotiation_points": verdict.negotiation_points,
+        "counterfactuals": [
+          {
+            "scenario_key": item.scenario_key,
+            "title": item.title,
+            "asking_price_gbp": item.asking_price_gbp,
+            "mid_price_gbp": item.mid_price_gbp,
+            "ripoff_index": item.ripoff_index,
+            "total_ownership_5y_gbp": item.total_ownership_5y_gbp,
+            "counteroffer_gbp": item.counteroffer_gbp,
+            "delta_mid_price_gbp": item.delta_mid_price_gbp,
+            "delta_ripoff_index": item.delta_ripoff_index,
+            "delta_total_ownership_5y_gbp": item.delta_total_ownership_5y_gbp,
+          }
+          for item in verdict.counterfactuals
+        ],
         "comparables": [
             {
                 "make": c.make, "model": c.model, "year": c.year,

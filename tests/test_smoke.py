@@ -45,6 +45,19 @@ def test_end_to_end_returns_verdict():
     assert verdict.ownership.estimated_insurance_5y_gbp > 0
     assert verdict.ownership.estimated_depreciation_5y_gbp > 0
     assert verdict.explanation
+    assert verdict.explanation_factors
+    assert verdict.negotiation_points
+    assert len(verdict.counterfactuals) >= 2
+
+
+def test_counterfactuals_include_expected_scenarios() -> None:
+    listing = Listing(make="ford", model="fiesta", year=2020,
+                      mileage_miles=33_000, fuel_type="petrol", price_gbp=9_300)
+    verdict = evaluate(listing, _COMPS)
+
+    keys = {item.scenario_key for item in verdict.counterfactuals}
+    assert "mileage_plus_10k" in keys
+    assert "offer_at_midpoint" in keys
 
 
 def test_fair_deal_ripoff_band():

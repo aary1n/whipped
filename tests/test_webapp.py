@@ -34,6 +34,8 @@ def test_webapp_renders_input_and_output_sections() -> None:
     assert "Insurance Per Year" in html
     assert "Driver Profile" in html
     assert "Brand Tax Analysis" in html
+    assert "Explainability Studio" in html
+    assert "Counterfactual Negotiation Simulator" in html
 
 
 def test_webapp_falls_back_to_sample_comparables() -> None:

@@ -98,6 +98,28 @@ class BrandTaxResult:
 
 
 @dataclass
+class ExplanationFactor:
+    name: str
+    impact_gbp: int
+    direction: str
+    detail: str
+
+
+@dataclass
+class CounterfactualResult:
+    scenario_key: str
+    title: str
+    asking_price_gbp: int | None
+    mid_price_gbp: int
+    ripoff_index: int
+    total_ownership_5y_gbp: int
+    counteroffer_gbp: int | None
+    delta_mid_price_gbp: int
+    delta_ripoff_index: int
+    delta_total_ownership_5y_gbp: int
+
+
+@dataclass
 class WhippedVerdict:
     listing: Listing
     price_range: PriceRange
@@ -108,3 +130,6 @@ class WhippedVerdict:
     action_recommendation: str = "unknown"   # strong_buy | negotiate | avoid | insufficient_data
     suggested_counteroffer_gbp: int | None = None
     brand_tax: BrandTaxResult | None = None
+    explanation_factors: list[ExplanationFactor] = field(default_factory=list)
+    negotiation_points: list[str] = field(default_factory=list)
+    counterfactuals: list[CounterfactualResult] = field(default_factory=list)

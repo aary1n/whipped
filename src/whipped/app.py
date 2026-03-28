@@ -4,13 +4,45 @@ from whipped.domain.models import DriverProfile, Listing, WhippedVerdict
 from whipped.features.extract import extract
 from whipped.pricing.brand_tax import compute as compute_brand_tax
 from whipped.pricing.fair_range import estimate
+from whipped.scoring.counterfactual import simulate as simulate_counterfactuals
 from whipped.scoring.explain import explain
+from whipped.scoring.explainability import build_explainability
 from whipped.scoring.ownership import project_ownership
 from whipped.scoring.ripoff import compute as compute_ripoff
 from whipped.scoring.risk import assess as assess_risk
 
 
 def evaluate(
+    listing: Listing,
+    comparables: list[Listing],
+    driver: DriverProfile | None = None,
+) -> WhippedVerdict:
+    base = _evaluate_core(listing, comparables, driver)
+    factors, points = build_explainability(listing, base)
+    counterfactuals = simulate_counterfactuals(
+        listing=listing,
+        comparables=comparables,
+        driver=driver,
+        baseline=base,
+        evaluator=_evaluate_core,
+    )
+
+    return WhippedVerdict(
+        listing=base.listing,
+        price_range=base.price_range,
+        risk=base.risk,
+        ripoff=base.ripoff,
+        ownership=base.ownership,
+        explanation=base.explanation,
+        action_recommendation=base.action_recommendation,
+        suggested_counteroffer_gbp=base.suggested_counteroffer_gbp,
+        explanation_factors=factors,
+        negotiation_points=points,
+        counterfactuals=counterfactuals,
+    )
+
+
+def _evaluate_core(
     listing: Listing,
     comparables: list[Listing],
     driver: DriverProfile | None = None,
