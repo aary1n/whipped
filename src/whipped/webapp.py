@@ -7,9 +7,9 @@ from urllib.parse import parse_qs
 from wsgiref.simple_server import make_server
 
 from whipped.app import evaluate
-from whipped.config import MARKET_DB, SAMPLE_CSV
+from whipped.config import KAGGLE_RAW_DIR, MARKET_DB, SAMPLE_CSV
 from whipped.domain.models import DriverProfile, Listing, WhippedVerdict
-from whipped.ingest.datasets import load_csv
+from whipped.ingest.datasets import load_csv, load_kaggle_raw
 from whipped.ingest.market_database import load_training_frame
 
 
@@ -408,8 +408,16 @@ class WhippedWebApp:
         return filtered or self._sample_comparables
 
     def _load_sample_comparables(self) -> list[Listing]:
+        if KAGGLE_RAW_DIR.exists() and any(KAGGLE_RAW_DIR.glob("*.csv")):
+            listings = load_kaggle_raw(KAGGLE_RAW_DIR)
+            if listings:
+                print(f"[webapp] Loaded {len(listings):,} comparables from Kaggle raw data.")
+                return listings
         if SAMPLE_CSV.exists():
-            return load_csv(SAMPLE_CSV)
+            listings = load_csv(SAMPLE_CSV)
+            print(f"[webapp] Kaggle raw data not found — loaded {len(listings):,} comparables from sample CSV.")
+            return listings
+        print("[webapp] No comparables found — using minimal hardcoded fallback.")
         return [
             Listing(make="ford", model="fiesta", year=2020, fuel_type="petrol", mileage_miles=30_000, transmission="manual", price_gbp=9_500),
             Listing(make="ford", model="fiesta", year=2020, fuel_type="petrol", mileage_miles=35_000, transmission="manual", price_gbp=9_200),
