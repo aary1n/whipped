@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from html import escape
 from pathlib import Path
 from typing import Any
@@ -26,6 +27,11 @@ class WhippedWebApp:
 
     def __call__(self, environ: dict[str, Any], start_response: Any) -> list[bytes]:
         method = environ.get("REQUEST_METHOD", "GET").upper()
+        path = environ.get("PATH_INFO", "/")
+
+        if path == "/api/evaluate" and method == "POST":
+            return self._handle_api(environ, start_response)
+
         if method == "POST":
             size = int(environ.get("CONTENT_LENGTH") or 0)
             body = environ["wsgi.input"].read(size).decode("utf-8")
@@ -36,6 +42,45 @@ class WhippedWebApp:
 
         payload = html.encode("utf-8")
         start_response("200 OK", [("Content-Type", "text/html; charset=utf-8"), ("Content-Length", str(len(payload)))])
+        return [payload]
+
+    def _handle_api(self, environ: dict[str, Any], start_response: Any) -> list[bytes]:
+        try:
+            size = int(environ.get("CONTENT_LENGTH") or 0)
+            body = json.loads(environ["wsgi.input"].read(size).decode("utf-8"))
+            listing = Listing(
+                make=str(body.get("make", "")).lower().strip(),
+                model=str(body.get("model", "")).lower().strip(),
+                year=int(body.get("year", 0)),
+                price_gbp=int(body.get("price_gbp", 0)) or None,
+                mileage_miles=int(body["mileage_miles"]) if body.get("mileage_miles") else None,
+                engine_size_l=float(body["engine_size_l"]) if body.get("engine_size_l") else None,
+                fuel_type=str(body["fuel_type"]).lower() if body.get("fuel_type") else None,
+                transmission=str(body["transmission"]).lower() if body.get("transmission") else None,
+            )
+            comparables = self._find_comparables(listing)
+            driver_data = body.get("driver")
+            driver = DriverProfile(
+                age=_optional_int(driver_data.get("age")) if driver_data else None,
+                years_licensed=_optional_int(driver_data.get("years_licensed")) if driver_data else None,
+                no_claims_years=_optional_int(driver_data.get("no_claims_years")) if driver_data else None,
+                claims_last_5y=_optional_int(driver_data.get("claims_last_5y")) or 0 if driver_data else 0,
+                annual_mileage=_optional_int(driver_data.get("annual_mileage")) if driver_data else None,
+                postcode_area=_optional_str(driver_data.get("postcode_area")) if driver_data else None,
+                parking=_optional_str(driver_data.get("parking")) if driver_data else None,
+                cover_type=_optional_str(driver_data.get("cover_type")) if driver_data else None,
+            ) if driver_data else None
+            verdict = evaluate(listing, comparables, driver)
+            payload = json.dumps(_verdict_to_api(verdict, comparables)).encode("utf-8")
+            headers = [
+                ("Content-Type", "application/json"),
+                ("Content-Length", str(len(payload))),
+                ("Access-Control-Allow-Origin", "*"),
+            ]
+            start_response("200 OK", headers)
+        except Exception as exc:
+            payload = json.dumps({"error": str(exc)}).encode("utf-8")
+            start_response("500 Internal Server Error", [("Content-Type", "application/json")])
         return [payload]
 
     def _render_page(self, form: dict[str, str]) -> str:
@@ -533,3 +578,51 @@ def _fmt_int(value: int | None) -> str:
 
 def _fmt_currency(value: int | None) -> str:
     return f"£{value:,}" if value is not None else "n/a"
+
+
+def _verdict_to_api(verdict: "WhippedVerdict", comparables: list[Listing]) -> dict:
+    own = verdict.ownership
+    total_5y = (
+        (verdict.listing.price_gbp or 0)
+        + own.estimated_insurance_5y_gbp
+        + own.estimated_depreciation_5y_gbp
+        + own.estimated_repairs_5y_gbp
+    )
+    action = verdict.action_recommendation
+    if action == "strong_buy":
+        investment_view = "Potential buy"
+    elif action == "avoid":
+        investment_view = "Avoid"
+    elif action == "insufficient_data":
+        investment_view = "Watchlist"
+    else:
+        investment_view = "Potential buy" if verdict.ripoff.ripoff_index < 65 else "Watchlist"
+
+    make, model = verdict.listing.make.lower(), verdict.listing.model.lower()
+    matched = [
+        c for c in comparables
+        if c.make.lower() == make and c.model.lower() == model
+    ][:15]
+
+    return {
+        "total_cost_5y": total_5y,
+        "fair_range": [verdict.price_range.lower_gbp, verdict.price_range.upper_gbp],
+        "mid_price": verdict.price_range.mid_gbp,
+        "ripoff_index": verdict.ripoff.ripoff_index,
+        "risk_score": verdict.risk.risk_score,
+        "counteroffer": verdict.suggested_counteroffer_gbp,
+        "action_recommendation": action,
+        "investment_view": investment_view,
+        "risk_flags": verdict.risk.flags,
+        "comparables": [
+            {
+                "make": c.make, "model": c.model, "year": c.year,
+                "price_gbp": c.price_gbp or 0,
+                "mileage_miles": c.mileage_miles or 0,
+                "engine_size_l": c.engine_size_l or 0.0,
+                "fuel_type": c.fuel_type or "",
+                "transmission": c.transmission or "",
+            }
+            for c in matched
+        ],
+    }
