@@ -42,6 +42,8 @@ def test_end_to_end_returns_verdict():
     assert verdict.price_range.mid_gbp > 0
     assert 0 <= verdict.ripoff.ripoff_index <= 100
     assert 0 <= verdict.risk.risk_score <= 100
+    assert verdict.ownership.estimated_insurance_5y_gbp > 0
+    assert verdict.ownership.estimated_depreciation_5y_gbp > 0
     assert verdict.explanation
 
 

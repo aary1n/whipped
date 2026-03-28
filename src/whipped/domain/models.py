@@ -61,10 +61,22 @@ class RiskAssessment:
 
 
 @dataclass
+class OwnershipProjection:
+    estimated_insurance_5y_gbp: int
+    estimated_depreciation_5y_gbp: int
+    repair_risk_pct: int
+    estimated_repairs_5y_gbp: int
+    annual_running_cost_gbp: int
+    ownership_band: str
+    notes: list[str] = field(default_factory=list)
+
+
+@dataclass
 class WhippedVerdict:
     listing: Listing
     price_range: PriceRange
     risk: RiskAssessment
     ripoff: RipoffAssessment
+    ownership: OwnershipProjection
     explanation: str
     suggested_counteroffer_gbp: int | None = None

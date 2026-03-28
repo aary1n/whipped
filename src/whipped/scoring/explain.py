@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from whipped.domain.models import Listing, PriceRange, RipoffAssessment, RiskAssessment
+from whipped.domain.models import Listing, OwnershipProjection, PriceRange, RipoffAssessment, RiskAssessment
 
 MIN_CONFIDENCE_FOR_COUNTEROFFER = 0.3
 MIN_COMPARABLES_FOR_COUNTEROFFER = 8
@@ -13,6 +13,7 @@ def explain(
     price_range: PriceRange,
     ripoff: RipoffAssessment,
     risk: RiskAssessment,
+    ownership: OwnershipProjection,
 ) -> tuple[str, int | None]:
     """Return (explanation, suggested_counteroffer_gbp)."""
     parts: list[str] = []
@@ -34,6 +35,14 @@ def explain(
 
     if risk.flags:
         parts.append(f"Risk [{risk.risk_band}]: {risk.notes}")
+
+    parts.append(
+        "Five-year ownership: "
+        f"insurance ~£{ownership.estimated_insurance_5y_gbp:,}, "
+        f"depreciation ~£{ownership.estimated_depreciation_5y_gbp:,}, "
+        f"repairs ~£{ownership.estimated_repairs_5y_gbp:,} "
+        f"with repair likelihood around {ownership.repair_risk_pct}%."
+    )
 
     counteroffer = _counteroffer(listing, price_range, risk)
     if counteroffer and listing.price_gbp and counteroffer < listing.price_gbp:
