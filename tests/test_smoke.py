@@ -1,9 +1,10 @@
 from whipped.app import evaluate
 from whipped.domain.models import Listing, WhippedVerdict
 from whipped.features.extract import extract
+from whipped.ingest.datasets import is_valid_comparable
 from whipped.ingest.listings import parse_listing
 
-# 10 comparables shared by pipeline tests
+# 10 valid comparables — enough for a usable but not strong range
 _COMPS = [
     Listing(make="ford", model="fiesta", year=y, fuel_type="petrol",
             mileage_miles=m, price_gbp=p)
@@ -15,6 +16,8 @@ _COMPS = [
     ]
 ]
 
+
+# --- existing tests ---
 
 def test_parse_listing_extracts_make():
     listing = parse_listing("2019 Ford Fiesta 1.0l petrol 30,000 miles £7,500")
@@ -58,8 +61,70 @@ def test_risk_high_mileage_flag():
     assert "mileage" in flag_text or "private" in flag_text
 
 
+# --- safety / guardrail tests ---
+
+def test_invalid_prices_rejected_by_validator():
+    assert not is_valid_comparable(Listing(make="ford", model="fiesta", year=2020, price_gbp=-500))
+    assert not is_valid_comparable(Listing(make="ford", model="fiesta", year=2020, price_gbp=0))
+    assert not is_valid_comparable(Listing(make="ford", model="fiesta", year=2020, price_gbp=None))
+    assert not is_valid_comparable(Listing(make="ford", model="fiesta", year=1985, price_gbp=5_000))
+    assert is_valid_comparable(Listing(make="ford", model="fiesta", year=2020, price_gbp=500))
+
+
+def test_fair_range_never_negative():
+    listing = Listing(make="ford", model="fiesta", year=2020, price_gbp=9_300)
+    verdict = evaluate(listing, _COMPS)
+    assert verdict.price_range.lower_gbp >= 0
+    assert verdict.price_range.mid_gbp >= 0
+    assert verdict.price_range.upper_gbp >= 0
+
+
+def test_fair_range_internally_ordered():
+    listing = Listing(make="ford", model="fiesta", year=2020, price_gbp=9_300)
+    verdict = evaluate(listing, _COMPS)
+    pr = verdict.price_range
+    assert pr.lower_gbp <= pr.mid_gbp <= pr.upper_gbp
+
+
+def test_counteroffer_never_negative():
+    # Use a listing where counteroffer might be generated
+    listing = Listing(make="ford", model="fiesta", year=2020,
+                      mileage_miles=33_000, fuel_type="petrol", price_gbp=15_000)
+    verdict = evaluate(listing, _COMPS)
+    if verdict.suggested_counteroffer_gbp is not None:
+        assert verdict.suggested_counteroffer_gbp >= 500
+
+
+def test_sparse_comps_confidence_capped():
+    sparse = [
+        Listing(make="ford", model="fiesta", year=2020, price_gbp=p)
+        for p in [8_000, 9_000, 9_500, 8_500]  # only 4 comps
+    ]
+    listing = Listing(make="ford", model="fiesta", year=2020, price_gbp=9_000)
+    verdict = evaluate(listing, sparse)
+    assert verdict.price_range.confidence <= 0.25
+
+
+def test_sparse_comps_no_counteroffer():
+    sparse = [
+        Listing(make="ford", model="fiesta", year=2020, price_gbp=p)
+        for p in [8_000, 9_000, 9_500, 8_500]  # only 4 comps — below threshold
+    ]
+    listing = Listing(make="ford", model="fiesta", year=2020, price_gbp=15_000)
+    verdict = evaluate(listing, sparse)
+    assert verdict.suggested_counteroffer_gbp is None
+
+
+def test_unknown_vehicle_no_data_no_counteroffer():
+    listing = Listing(make="lada", model="niva", year=2005, price_gbp=2_000)
+    verdict = evaluate(listing, _COMPS)
+    assert verdict.price_range.strategy_used == "no_data"
+    assert verdict.price_range.confidence == 0.0
+    assert verdict.suggested_counteroffer_gbp is None
+
+
 def test_no_comparables_returns_low_confidence():
     listing = Listing(make="rover", model="75", year=2001,
                       mileage_miles=120_000, price_gbp=1_500)
     verdict = evaluate(listing, _COMPS)
-    assert verdict.price_range.confidence <= 0.3
+    assert verdict.price_range.confidence == 0.0
