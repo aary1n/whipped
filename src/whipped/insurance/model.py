@@ -74,6 +74,7 @@ class InsuranceModel:
     output_bias: float
     training_rows: int
     target_mean: float
+    target_std: float
 
     def predict_annual_premium(self, listing: Listing, driver: DriverProfile) -> int:
         row = _record_from_inputs(listing, driver)
@@ -86,7 +87,8 @@ class InsuranceModel:
             numeric_std=self.numeric_std,
         )
         hidden = np.maximum(0.0, features @ self.hidden_weights + self.hidden_bias)
-        prediction = hidden @ self.output_weights + self.output_bias
+        prediction_norm = hidden @ self.output_weights + self.output_bias
+        prediction = prediction_norm * self.target_std + self.target_mean
         return max(250, int(round(float(prediction[0]))))
 
 
@@ -115,14 +117,17 @@ def train_insurance_model(csv_paths: list[Path], output_path: Path, epochs: int 
         numeric_mean=numeric_mean,
         numeric_std=numeric_std,
     )
-    y = data[REQUIRED_TARGET].to_numpy(dtype=float).reshape(-1, 1)
+    y_raw = data[REQUIRED_TARGET].to_numpy(dtype=float).reshape(-1, 1)
+    target_mean = float(y_raw.mean())
+    target_std = float(y_raw.std()) or 1.0
+    y = (y_raw - target_mean) / target_std
 
     hidden_size = min(32, max(8, x.shape[1] // 2))
     rng = np.random.default_rng(42)
     w1 = rng.normal(0.0, 0.15, size=(x.shape[1], hidden_size))
     b1 = np.zeros((1, hidden_size))
     w2 = rng.normal(0.0, 0.15, size=(hidden_size, 1))
-    b2 = np.array([[y.mean()]])
+    b2 = np.array([[float(y.mean())]])
 
     for _ in range(epochs):
         z1 = x @ w1 + b1
@@ -155,7 +160,8 @@ def train_insurance_model(csv_paths: list[Path], output_path: Path, epochs: int 
         output_weights=w2[:, 0],
         output_bias=float(b2[0, 0]),
         training_rows=int(len(data)),
-        target_mean=float(y.mean()),
+        target_mean=target_mean,
+        target_std=target_std,
     )
     save_insurance_model(model, output_path)
     return model
@@ -176,6 +182,7 @@ def save_insurance_model(model: InsuranceModel, path: Path) -> None:
         output_bias=np.array([model.output_bias]),
         training_rows=np.array([model.training_rows]),
         target_mean=np.array([model.target_mean]),
+        target_std=np.array([model.target_std]),
     )
 
 
@@ -196,6 +203,7 @@ def load_insurance_model(path: Path) -> InsuranceModel | None:
         output_bias=float(payload["output_bias"][0]),
         training_rows=int(payload["training_rows"][0]),
         target_mean=float(payload["target_mean"][0]),
+        target_std=float(payload["target_std"][0]),
     )
 
 
