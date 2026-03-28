@@ -1,41 +1,39 @@
-"""Generate human-readable explanation and counteroffer."""
 from __future__ import annotations
 
-from whipped.domain.models import Listing, PriceRange, RipoffIndex, RiskScore
+from whipped.domain.models import Listing, PriceRange, RipoffAssessment, RiskAssessment
 
 
 def explain(
     listing: Listing,
     price_range: PriceRange,
-    ripoff: RipoffIndex,
-    risk: RiskScore,
+    ripoff: RipoffAssessment,
+    risk: RiskAssessment,
 ) -> tuple[str, int | None]:
-    """Return (explanation_text, suggested_counteroffer)."""
+    """Return (explanation, suggested_counteroffer_gbp)."""
     parts: list[str] = []
 
-    if price_range.mid > 0:
+    if price_range.mid_gbp > 0:
         parts.append(
-            f"Fair price range: £{price_range.low:,}–£{price_range.high:,} "
-            f"(based on {price_range.n_comparables} comparables)."
+            f"Fair range: £{price_range.lower_gbp:,}–£{price_range.upper_gbp:,} "
+            f"({price_range.comparable_count} comparables, {price_range.strategy_used})."
         )
 
-    if listing.asking_price:
-        parts.append(f"Asking £{listing.asking_price:,} — rated '{ripoff.label}' ({ripoff.score}/100).")
+    if listing.price_gbp:
+        parts.append(f"Asking £{listing.price_gbp:,} — {ripoff.ripoff_band} ({ripoff.ripoff_index}/100). {ripoff.notes}")
 
-    if risk.factors:
-        parts.append(f"Risks: {'; '.join(risk.factors)}.")
+    if risk.flags:
+        parts.append(f"Risk [{risk.risk_band}]: {risk.notes}")
 
-    counteroffer = _suggest_counteroffer(listing, price_range, risk)
-    if counteroffer and listing.asking_price and counteroffer < listing.asking_price:
-        parts.append(f"Suggested counteroffer: £{counteroffer:,}.")
+    counteroffer = _counteroffer(listing, price_range, risk)
+    if counteroffer and listing.price_gbp and counteroffer < listing.price_gbp:
+        parts.append(f"Suggested offer: £{counteroffer:,}.")
 
     return " ".join(parts), counteroffer
 
 
-def _suggest_counteroffer(
-    listing: Listing, price_range: PriceRange, risk: RiskScore
-) -> int | None:
-    if price_range.mid == 0:
+def _counteroffer(listing: Listing, price_range: PriceRange, risk: RiskAssessment) -> int | None:
+    if price_range.mid_gbp == 0:
         return None
-    discount = risk.score / 200  # up to 50% discount for max risk
-    return int(price_range.mid * (1 - discount))
+    # Base: midpoint; discount up to 25% for max risk
+    discount = (risk.risk_score / 100) * 0.25
+    return int(price_range.mid_gbp * (1 - discount))

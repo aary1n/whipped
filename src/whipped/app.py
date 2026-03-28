@@ -1,33 +1,27 @@
-"""Pipeline orchestrator — wires all stages together."""
 from __future__ import annotations
 
-from whipped.domain.models import Listing, Verdict
+from whipped.domain.models import Listing, WhippedVerdict
 from whipped.features.extract import extract
-from whipped.ingest.datasets import load_csv
 from whipped.pricing.fair_range import estimate
 from whipped.scoring.explain import explain
 from whipped.scoring.ripoff import compute as compute_ripoff
 from whipped.scoring.risk import assess as assess_risk
-from whipped.config import SAMPLE_CSV
 
 
-def evaluate(listing: Listing, comparables: list[Listing] | None = None) -> Verdict:
-    if comparables is None:
-        comparables = load_csv(SAMPLE_CSV)
-
+def evaluate(listing: Listing, comparables: list[Listing]) -> WhippedVerdict:
     features = extract(listing)
     price_range = estimate(features, comparables)
 
-    asking = listing.asking_price or price_range.mid
+    asking = listing.price_gbp or price_range.mid_gbp
     ripoff = compute_ripoff(asking, price_range)
-    risk = assess_risk(listing, features)
+    risk = assess_risk(listing, features, price_range)
     explanation_text, counteroffer = explain(listing, price_range, ripoff, risk)
 
-    return Verdict(
+    return WhippedVerdict(
         listing=listing,
         price_range=price_range,
-        ripoff=ripoff,
         risk=risk,
+        ripoff=ripoff,
         explanation=explanation_text,
-        counteroffer=counteroffer,
+        suggested_counteroffer_gbp=counteroffer,
     )

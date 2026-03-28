@@ -1,27 +1,60 @@
-"""Assess hidden risks in a listing."""
 from __future__ import annotations
 
-from whipped.domain.models import FeatureVector, Listing, RiskScore
+from whipped.domain.models import FeatureVector, Listing, PriceRange, RiskAssessment
 
 HIGH_MILEAGE_PER_YEAR = 15_000
+MAX_REASONABLE_AGE = 15
+SUSPICIOUS_PRICE_RATIO = 0.75   # asking < 75% of lower_gbp
+WIDE_SPREAD_RATIO = 0.6         # (upper-lower)/mid > 0.6
+MIN_CONFIDENT_COMPARABLES = 5
+
+_BAND = [(25, "low"), (50, "medium"), (75, "high")]
 
 
-def assess(listing: Listing, features: FeatureVector) -> RiskScore:
-    factors: list[str] = []
+def assess(listing: Listing, features: FeatureVector, price_range: PriceRange) -> RiskAssessment:
+    flags: list[str] = []
 
-    if features.age > 0 and features.mileage:
-        avg_annual = features.mileage / features.age
-        if avg_annual > HIGH_MILEAGE_PER_YEAR:
-            factors.append(f"high mileage for age ({int(avg_annual):,}/yr)")
-
-    if listing.mileage is None:
-        factors.append("mileage not disclosed")
-
-    if listing.fuel_type is None:
-        factors.append("fuel type not specified")
+    # --- listing-only flags ---
+    if features.mileage_miles is None:
+        flags.append("mileage not disclosed")
+    elif features.age > 0:
+        avg = features.mileage_miles / features.age
+        if avg > HIGH_MILEAGE_PER_YEAR:
+            flags.append(f"high mileage for age ({int(avg):,} mi/yr)")
 
     if features.mileage_band == "very_high":
-        factors.append("very high total mileage")
+        flags.append("very high total mileage (>100k)")
 
-    score = min(100, len(factors) * 25)
-    return RiskScore(score=score, factors=factors)
+    if features.age > MAX_REASONABLE_AGE:
+        flags.append(f"older vehicle ({features.age} yrs)")
+
+    if listing.fuel_type is None:
+        flags.append("fuel type not specified")
+
+    if listing.seller_type == "private":
+        flags.append("private seller (no dealer warranty)")
+
+    # --- pricing-aware flags ---
+    if price_range.comparable_count < MIN_CONFIDENT_COMPARABLES:
+        flags.append(f"sparse comparables ({price_range.comparable_count})")
+
+    if price_range.mid_gbp > 0:
+        spread_ratio = (price_range.upper_gbp - price_range.lower_gbp) / price_range.mid_gbp
+        if spread_ratio > WIDE_SPREAD_RATIO:
+            flags.append("wide price spread in comparables")
+
+        if listing.price_gbp and listing.price_gbp < price_range.lower_gbp * SUSPICIOUS_PRICE_RATIO:
+            flags.append("suspiciously low price — inspect carefully")
+
+    score = min(100, len(flags) * 20)
+    band = _band_for(score)
+    notes = "; ".join(flags) if flags else "No significant risk factors identified."
+
+    return RiskAssessment(risk_score=score, risk_band=band, flags=flags, notes=notes)
+
+
+def _band_for(score: int) -> str:
+    for threshold, band in _BAND:
+        if score <= threshold:
+            return band
+    return "very_high"

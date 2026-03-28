@@ -18,11 +18,11 @@ def _row_to_listing(row: pd.Series) -> Listing:
         make=str(row.get("make", "unknown")),
         model=str(row.get("model", "unknown")),
         year=int(row.get("year", 0)),
-        mileage=_safe_int(row.get("mileage")),
+        mileage_miles=_safe_int(row.get("mileage")),
         fuel_type=_safe_str(row.get("fuel_type") or row.get("fuelType")),
         transmission=_safe_str(row.get("transmission")),
-        engine_size=_safe_float(row.get("engine_size") or row.get("engineSize")),
-        asking_price=_safe_int(row.get("price")),
+        engine_size_l=_safe_float(row.get("engine_size") or row.get("engineSize")),
+        price_gbp=_safe_int(row.get("price")),
     )
 
 

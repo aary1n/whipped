@@ -1,4 +1,3 @@
-"""Extract features from a Listing for pricing and scoring."""
 from __future__ import annotations
 
 from datetime import date
@@ -17,15 +16,15 @@ MILEAGE_BANDS = [
 
 def extract(listing: Listing) -> FeatureVector:
     age = CURRENT_YEAR - listing.year
-    mileage_band = _mileage_band(listing.mileage)
-
     return FeatureVector(
+        make=listing.make.lower(),
+        model=listing.model.lower(),
         age=age,
-        mileage=listing.mileage,
-        mileage_band=mileage_band,
+        mileage_miles=listing.mileage_miles,
+        mileage_band=_mileage_band(listing.mileage_miles),
         fuel_type=listing.fuel_type,
         transmission=listing.transmission,
-        engine_size=listing.engine_size,
+        engine_size_l=listing.engine_size_l,
     )
 
 

@@ -8,50 +8,63 @@ class Listing:
     make: str
     model: str
     year: int
-    mileage: int | None = None
+    price_gbp: int | None = None
+    mileage_miles: int | None = None
     fuel_type: str | None = None
     transmission: str | None = None
-    engine_size: float | None = None
-    asking_price: int | None = None
+    engine_size_l: float | None = None
+    variant: str | None = None
+    body_type: str | None = None
+    seller_type: str | None = None  # "dealer" | "private"
+    location: str | None = None
+    source: str | None = None
+    listing_id: str | None = None
     raw_text: str | None = None
 
 
 @dataclass
 class FeatureVector:
+    make: str
+    model: str
     age: int
-    mileage: int | None = None
+    mileage_miles: int | None = None
     mileage_band: str | None = None
     fuel_type: str | None = None
     transmission: str | None = None
-    engine_size: float | None = None
+    engine_size_l: float | None = None
 
 
 @dataclass
 class PriceRange:
-    low: int
-    mid: int
-    high: int
-    confidence: float  # 0.0 to 1.0
-    n_comparables: int = 0
+    lower_gbp: int
+    mid_gbp: int
+    upper_gbp: int
+    confidence: float          # 0.0–1.0
+    comparable_count: int = 0
+    strategy_used: str = "unknown"
 
 
 @dataclass
-class RipoffIndex:
-    score: int  # 0 (great deal) to 100 (extreme ripoff)
-    label: str  # e.g. "fair", "overpriced", "bargain"
+class RipoffAssessment:
+    ripoff_index: int          # 0 (bargain) – 100 (extreme ripoff)
+    ripoff_band: str           # "bargain" | "good_deal" | "fair" | "overpriced" | "ripoff" | "extreme_ripoff"
+    pricing_position: str      # "below range" | "within range" | "above range" | "unknown"
+    notes: str = ""
 
 
 @dataclass
-class RiskScore:
-    score: int  # 0 (low risk) to 100 (high risk)
-    factors: list[str] = field(default_factory=list)
+class RiskAssessment:
+    risk_score: int            # 0–100
+    risk_band: str             # "low" | "medium" | "high" | "very_high"
+    flags: list[str] = field(default_factory=list)
+    notes: str = ""
 
 
 @dataclass
-class Verdict:
+class WhippedVerdict:
     listing: Listing
     price_range: PriceRange
-    ripoff: RipoffIndex
-    risk: RiskScore
+    risk: RiskAssessment
+    ripoff: RipoffAssessment
     explanation: str
-    counteroffer: int | None = None
+    suggested_counteroffer_gbp: int | None = None

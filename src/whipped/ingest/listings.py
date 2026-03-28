@@ -13,10 +13,10 @@ def parse_listing(text: str) -> Listing:
         make=_extract_first(r"\b(ford|vauxhall|bmw|audi|toyota|honda|vw|mercedes)\b", text, "unknown"),
         model=_extract_first(r"(?:ford|vauxhall|bmw|audi|toyota|honda|vw|mercedes)\s+(\w+)", text, "unknown"),
         year=int(_extract_first(r"\b(20[0-2]\d|19[89]\d)\b", text, "2020")),
-        mileage=_extract_int(r"([\d,]+)\s*(?:miles|mi)", text),
+        mileage_miles=_extract_int(r"([\d,]+)\s*(?:miles|mi)", text),
         fuel_type=_extract_first(r"\b(petrol|diesel|hybrid|electric)\b", text),
-        engine_size=_extract_float(r"(\d\.\d)\s*(?:l|litre)", text),
-        asking_price=_extract_int(r"[£$]([\d,]+)", text),
+        engine_size_l=_extract_float(r"(\d\.\d)\s*(?:l|litre)", text),
+        price_gbp=_extract_int(r"[£$]([\d,]+)", text),
         raw_text=text,
     )
 
