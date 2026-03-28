@@ -94,4 +94,5 @@ class WhippedVerdict:
     ripoff: RipoffAssessment
     ownership: OwnershipProjection
     explanation: str
+    action_recommendation: str = "unknown"   # strong_buy | negotiate | avoid | insufficient_data
     suggested_counteroffer_gbp: int | None = None

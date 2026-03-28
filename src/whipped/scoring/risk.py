@@ -7,6 +7,7 @@ MAX_REASONABLE_AGE = 15
 SUSPICIOUS_PRICE_RATIO = 0.75   # asking < 75% of lower_gbp
 WIDE_SPREAD_RATIO = 0.6         # (upper-lower)/mid > 0.6
 MIN_CONFIDENT_COMPARABLES = 5
+RISK_BASELINE = 5               # every used car has some inherent uncertainty
 
 _BAND = [(25, "low"), (50, "medium"), (75, "high")]
 
@@ -46,7 +47,7 @@ def assess(listing: Listing, features: FeatureVector, price_range: PriceRange) -
         if listing.price_gbp and listing.price_gbp < price_range.lower_gbp * SUSPICIOUS_PRICE_RATIO:
             flags.append("suspiciously low price — inspect carefully")
 
-    score = min(100, len(flags) * 20)
+    score = max(RISK_BASELINE, min(100, len(flags) * 20))
     band = _band_for(score)
     notes = "; ".join(flags) if flags else "No significant risk factors identified."
 

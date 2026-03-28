@@ -21,7 +21,7 @@ def evaluate(
     ripoff = compute_ripoff(asking, price_range)
     risk = assess_risk(listing, features, price_range)
     ownership = project_ownership(listing, features, price_range, risk, driver)
-    explanation_text, counteroffer = explain(listing, price_range, ripoff, risk, ownership)
+    explanation_text, counteroffer, action = explain(listing, price_range, ripoff, risk, ownership)
 
     return WhippedVerdict(
         listing=listing,
@@ -30,5 +30,6 @@ def evaluate(
         ripoff=ripoff,
         ownership=ownership,
         explanation=explanation_text,
+        action_recommendation=action,
         suggested_counteroffer_gbp=counteroffer,
     )
