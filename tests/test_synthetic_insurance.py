@@ -13,6 +13,8 @@ def test_generate_synthetic_insurance_dataset(tmp_path: Path) -> None:
     assert len(frame) == 200
     assert csv_path.exists()
     assert "annual_premium_gbp" in frame.columns
+    assert "sex" in frame.columns
     assert "condition_score" in frame.columns
     assert "postcode_area" in frame.columns
+    assert frame["postcode_area"].nunique() > 20
     assert frame["annual_premium_gbp"].min() > 0

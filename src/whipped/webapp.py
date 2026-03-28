@@ -559,6 +559,7 @@ class WhippedWebApp:
           <p class="form-help">These fields change the insurance forecast the most. Use the actual driver, cover type, and parking situation.</p>
           <div class="fields">
             <div><label for="driver_age">Driver Age</label><input id="driver_age" name="driver_age" type="number" min="17" max="100" value="{value('driver_age', '28')}"></div>
+            <div><label for="sex">Sex</label>{_select("sex", value("sex", "female"), ["female", "male"])}</div>
             <div><label for="years_licensed">Years Licensed</label><input id="years_licensed" name="years_licensed" type="number" min="0" max="80" value="{value('years_licensed', '8')}"></div>
             <div><label for="no_claims_years">No-Claims Years</label><input id="no_claims_years" name="no_claims_years" type="number" min="0" max="20" value="{value('no_claims_years', '5')}"></div>
             <div><label for="claims_last_5y">Claims In Last 5y</label><input id="claims_last_5y" name="claims_last_5y" type="number" min="0" max="10" value="{value('claims_last_5y', '0')}"></div>
@@ -757,6 +758,7 @@ def _listing_from_form(form: dict[str, str]) -> Listing:
 def _driver_from_form(form: dict[str, str]) -> DriverProfile:
     return DriverProfile(
         age=_optional_int(form.get("driver_age")),
+        sex=_optional_str(form.get("sex")),
         years_licensed=_optional_int(form.get("years_licensed")),
         no_claims_years=_optional_int(form.get("no_claims_years")),
         claims_last_5y=_optional_int(form.get("claims_last_5y")) or 0,
