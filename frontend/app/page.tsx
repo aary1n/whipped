@@ -37,8 +37,6 @@ interface DriverProfile {
   cover_type: string;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 interface Ownership {
   insurance_annual_gbp: number;
   insurance_5y_gbp: number;
@@ -49,9 +47,8 @@ interface Ownership {
   ownership_band: string;
   insurance_band: string;
   notes: string[];
-=======
-=======
->>>>>>> origin/tam/clustering
+}
+
 interface BrandTaxEntry {
   make: string;
   model: string;
@@ -67,10 +64,6 @@ interface BrandTax {
   is_good_deal: boolean;
   twins: BrandTaxEntry[];
   recommendations: BrandTaxEntry[];
-<<<<<<< HEAD
->>>>>>> 646e72b (Add KNN brand-tax model and data analysis folder)
-=======
->>>>>>> origin/tam/clustering
 }
 
 interface VerdictOutput {
@@ -90,16 +83,9 @@ interface VerdictOutput {
   action_recommendation: string;
   investment_view: "Potential buy" | "Watchlist" | "Avoid";
   risk_flags: string[];
-<<<<<<< HEAD
-<<<<<<< HEAD
   ownership: Ownership;
   explanation: string;
-=======
   brand_tax: BrandTax | null;
->>>>>>> 646e72b (Add KNN brand-tax model and data analysis folder)
-=======
-  brand_tax: BrandTax | null;
->>>>>>> origin/tam/clustering
   comparables: ComparableListing[];
 }
 
@@ -119,14 +105,7 @@ export default function WhippedTerminal() {
     claims_last_5y: 0, annual_mileage: '', postcode_area: '', parking: '', cover_type: '',
   });
   const [driverOpen, setDriverOpen] = useState(false);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/tam/clustering
   const [brandTaxOpen, setBrandTaxOpen] = useState(false);
-
->>>>>>> 646e72b (Add KNN brand-tax model and data analysis folder)
   const [verdict, setVerdict] = useState<VerdictOutput | null>(null);
   const [isExecuting, setIsExecuting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -309,8 +288,6 @@ export default function WhippedTerminal() {
                   </div>
                 </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
                 {/* ── 2. Pricing Verdict ── */}
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
                   {/* Scores */}
@@ -414,12 +391,8 @@ export default function WhippedTerminal() {
                   )}
                 </div>
 
-                {/* ── 4. Risk Flags ── */}
-=======
-=======
->>>>>>> origin/tam/clustering
-                {/* Brand Tax */}
-                {verdict.brand_tax && (
+                {/* ── 4. Brand Tax Analysis ── */}
+                {v.brand_tax && (
                   <div className="bg-slate-900 border border-slate-800 rounded-lg overflow-hidden">
                     <button
                       type="button"
@@ -429,42 +402,39 @@ export default function WhippedTerminal() {
                       <div className="flex items-center gap-3">
                         <span className="text-xs font-bold text-slate-200 uppercase tracking-widest">Brand Tax Analysis</span>
                         <span className={`text-xs font-mono px-2 py-0.5 rounded ${
-                          verdict.brand_tax.is_good_deal
+                          v.brand_tax.is_good_deal
                             ? 'bg-emerald-950/60 text-emerald-400 border border-emerald-900/50'
                             : 'bg-rose-950/60 text-rose-400 border border-rose-900/50'
                         }`}>
-                          {verdict.brand_tax.is_good_deal ? '−' : '+'}{formatGBP(Math.abs(verdict.brand_tax.brand_tax_gbp))} brand premium
+                          {v.brand_tax.is_good_deal ? '−' : '+'}{fmt(Math.abs(v.brand_tax.brand_tax_gbp))} brand premium
                         </span>
-                        <span className="text-[10px] text-slate-500 font-mono">{verdict.brand_tax.twin_count} DNA twins · avg {formatGBP(verdict.brand_tax.avg_twin_price_gbp)}</span>
+                        <span className="text-[10px] text-slate-500 font-mono">{v.brand_tax.twin_count} DNA twins · avg {fmt(v.brand_tax.avg_twin_price_gbp)}</span>
                       </div>
                       <ChevronDown size={14} className={`text-slate-500 transition-transform duration-200 ${brandTaxOpen ? 'rotate-180' : ''}`} />
                     </button>
 
                     {brandTaxOpen && (
                       <div className="p-5 flex flex-col gap-5">
-                        {/* DNA Twins table */}
                         <div>
-                          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">DNA Twins — same year, similar spec, different brand</p>
+                          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">DNA Twins — similar year &amp; spec, different brand</p>
                           <div className="overflow-auto">
                             <table className="w-full text-left text-sm whitespace-nowrap">
                               <thead className="bg-slate-950/50 text-[10px] uppercase tracking-wider text-slate-500 font-bold">
                                 <tr>
-                                  <th className="px-4 py-2">Asset</th>
+                                  <th className="px-4 py-2">Car</th>
                                   <th className="px-4 py-2">Year</th>
                                   <th className="px-4 py-2 text-right">Price</th>
                                   <th className="px-4 py-2 text-right">Their Brand Tax</th>
                                 </tr>
                               </thead>
                               <tbody className="divide-y divide-slate-800 font-mono text-slate-300">
-                                {verdict.brand_tax.twins.map((t, i) => (
+                                {v.brand_tax.twins.map((t, i) => (
                                   <tr key={i} className="hover:bg-slate-800/30 transition-colors">
                                     <td className="px-4 py-2">{t.make} {t.model}</td>
                                     <td className="px-4 py-2">{t.year}</td>
-                                    <td className="px-4 py-2 text-right">{formatGBP(t.price_gbp)}</td>
-                                    <td className={`px-4 py-2 text-right ${
-                                      t.brand_tax_gbp < 0 ? 'text-emerald-400' : 'text-rose-400'
-                                    }`}>
-                                      {t.brand_tax_gbp >= 0 ? '+' : ''}{formatGBP(t.brand_tax_gbp)}
+                                    <td className="px-4 py-2 text-right">{fmt(t.price_gbp)}</td>
+                                    <td className={`px-4 py-2 text-right ${t.brand_tax_gbp < 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+                                      {t.brand_tax_gbp >= 0 ? '+' : ''}{fmt(t.brand_tax_gbp)}
                                     </td>
                                   </tr>
                                 ))}
@@ -473,15 +443,14 @@ export default function WhippedTerminal() {
                           </div>
                         </div>
 
-                        {/* Recommendations */}
-                        {verdict.brand_tax.recommendations.length > 0 ? (
+                        {v.brand_tax.recommendations.length > 0 ? (
                           <div>
                             <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Cheaper Alternatives in This Cluster</p>
                             <div className="overflow-auto">
                               <table className="w-full text-left text-sm whitespace-nowrap">
                                 <thead className="bg-slate-950/50 text-[10px] uppercase tracking-wider text-slate-500 font-bold">
                                   <tr>
-                                    <th className="px-4 py-2">Asset</th>
+                                    <th className="px-4 py-2">Car</th>
                                     <th className="px-4 py-2">Year</th>
                                     <th className="px-4 py-2 text-right">Price</th>
                                     <th className="px-4 py-2 text-right">Saving vs Target</th>
@@ -489,18 +458,16 @@ export default function WhippedTerminal() {
                                   </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-800 font-mono text-slate-300">
-                                  {verdict.brand_tax.recommendations.map((r, i) => (
+                                  {v.brand_tax.recommendations.map((r, i) => (
                                     <tr key={i} className="hover:bg-slate-800/30 transition-colors">
                                       <td className="px-4 py-2">{r.make} {r.model}</td>
                                       <td className="px-4 py-2">{r.year}</td>
-                                      <td className="px-4 py-2 text-right text-emerald-400">{formatGBP(r.price_gbp)}</td>
+                                      <td className="px-4 py-2 text-right text-emerald-400">{fmt(r.price_gbp)}</td>
                                       <td className="px-4 py-2 text-right text-emerald-400">
-                                        −{formatGBP(formState.price_gbp - r.price_gbp)}
+                                        −{fmt(formState.price_gbp - r.price_gbp)}
                                       </td>
-                                      <td className={`px-4 py-2 text-right ${
-                                        r.brand_tax_gbp < 0 ? 'text-emerald-400' : 'text-rose-400'
-                                      }`}>
-                                        {r.brand_tax_gbp >= 0 ? '+' : ''}{formatGBP(r.brand_tax_gbp)}
+                                      <td className={`px-4 py-2 text-right ${r.brand_tax_gbp < 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+                                        {r.brand_tax_gbp >= 0 ? '+' : ''}{fmt(r.brand_tax_gbp)}
                                       </td>
                                     </tr>
                                   ))}
@@ -516,8 +483,7 @@ export default function WhippedTerminal() {
                   </div>
                 )}
 
-                {/* Risk flags */}
->>>>>>> 646e72b (Add KNN brand-tax model and data analysis folder)
+                {/* ── 5. Risk Flags ── */}
                 <div className="bg-slate-900 border border-slate-800 rounded-lg p-5">
                   <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 flex items-center gap-2">
                     <ShieldAlert size={14} className="text-rose-500" /> Risk Flags
