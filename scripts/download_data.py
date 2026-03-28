@@ -1,14 +1,14 @@
 """Download and extract the Kaggle used-car dataset.
 
 Usage:
-    python scripts/download_data.py
+    KAGGLE_API_TOKEN=<your_token> python scripts/download_data.py
 
-Auth (pick one):
-    1. Set KAGGLE_API_TOKEN env var (your token from kaggle.com/settings/account)
-    2. Place kaggle.json in ~/.kaggle/kaggle.json  (downloaded from same page)
+Get your token:
+    kaggle.com → Account → Settings → "Create New API Token" → copy the token string
 """
 from __future__ import annotations
 
+import glob
 import os
 import subprocess
 import sys
@@ -20,9 +20,47 @@ RAW_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
 EXTRACT_DIR = RAW_DIR / "used-cars-100k"
 ZIP_PATH = RAW_DIR / "used-car-dataset-ford-and-mercedes.zip"
 
+
+def main() -> None:
+    if EXTRACT_DIR.exists() and any(EXTRACT_DIR.glob("*.csv")):
+        print(f"Data already present at {EXTRACT_DIR} — nothing to do.")
+        return
+
+    token = os.environ.get("KAGGLE_API_TOKEN")
+    if not token:
+        print(
+            "KAGGLE_API_TOKEN is not set.\n\n"
+            "  1. Go to kaggle.com > Account > Settings > 'Create New API Token'\n"
+            "  2. Copy the token string (starts with KGAT_...)\n"
+            "  3. Re-run with:\n\n"
+            "       KAGGLE_API_TOKEN=<your_token> python scripts/download_data.py\n"
+        )
+        sys.exit(1)
+
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    print(f"Downloading {DATASET} ...")
+    _kaggle("datasets", "download", DATASET, "--path", str(RAW_DIR), token=token)
+
+    print(f"Extracting to {EXTRACT_DIR} ...")
+    EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(ZIP_PATH, "r") as zf:
+        zf.extractall(EXTRACT_DIR)
+
+    n = len(list(EXTRACT_DIR.glob("*.csv")))
+    print(f"Done. {n} CSV files ready in {EXTRACT_DIR.relative_to(Path.cwd())}")
+
+
+def _kaggle(*args: str, token: str) -> None:
+    env = {**os.environ, "KAGGLE_API_TOKEN": token}
+    result = subprocess.run([_find_kaggle(), *args], env=env, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(result.stderr.strip() or result.stdout.strip())
+        sys.exit(1)
+    if result.stdout.strip():
+        print(result.stdout.strip())
+
+
 def _find_kaggle() -> str:
-    """Return kaggle executable path, searching common Windows user-install locations."""
-    import glob
     patterns = [
         str(Path.home() / "AppData" / "Roaming" / "Python" / "Python*" / "Scripts" / "kaggle.exe"),
         str(Path.home() / "AppData" / "Local" / "Programs" / "Python" / "Python*" / "Scripts" / "kaggle.exe"),
@@ -31,41 +69,7 @@ def _find_kaggle() -> str:
         matches = glob.glob(pattern)
         if matches:
             return matches[0]
-    return "kaggle"  # hope it's on PATH
-
-
-def _kaggle(*args: str) -> None:
-    exe = _find_kaggle()
-    result = subprocess.run([exe, *args], capture_output=True, text=True)
-    if result.returncode != 0:
-        print(result.stderr.strip())
-        sys.exit(1)
-    print(result.stdout.strip())
-
-
-def main() -> None:
-    if EXTRACT_DIR.exists() and any(EXTRACT_DIR.glob("*.csv")):
-        print(f"Data already present at {EXTRACT_DIR} — nothing to do.")
-        return
-
-    if not os.environ.get("KAGGLE_API_TOKEN") and not (Path.home() / ".kaggle" / "kaggle.json").exists():
-        print(
-            "No Kaggle auth found.\n"
-            "  Option 1: export KAGGLE_API_TOKEN=<your_token>  (from kaggle.com/settings/account)\n"
-            "  Option 2: download kaggle.json from the same page and place it at ~/.kaggle/kaggle.json"
-        )
-        sys.exit(1)
-
-    RAW_DIR.mkdir(parents=True, exist_ok=True)
-    print(f"Downloading {DATASET} ...")
-    _kaggle("datasets", "download", DATASET, "--path", str(RAW_DIR))
-
-    print(f"Extracting to {EXTRACT_DIR} ...")
-    EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(ZIP_PATH, "r") as zf:
-        zf.extractall(EXTRACT_DIR)
-
-    print(f"Done. {len(list(EXTRACT_DIR.glob('*.csv')))} CSV files in {EXTRACT_DIR}")
+    return "kaggle"
 
 
 if __name__ == "__main__":

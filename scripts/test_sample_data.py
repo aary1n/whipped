@@ -9,7 +9,7 @@ from whipped.ingest.datasets import load_csv
 CASES = [
     ("Ford Fiesta 2020",      Listing(make="ford",     model="fiesta",  year=2020, mileage_miles=33_000, fuel_type="petrol",  price_gbp=9_300)),
     ("Vauxhall Corsa 2019",   Listing(make="vauxhall", model="corsa",   year=2019, mileage_miles=45_000, fuel_type="petrol",  price_gbp=7_500)),
-    ("BMW 3series 2018",      Listing(make="bmw",      model="3series", year=2018, mileage_miles=60_000, fuel_type="diesel",  price_gbp=14_000)),
+    ("BMW 3 Series 2018",     Listing(make="bmw",      model="3 series", year=2018, mileage_miles=60_000, fuel_type="diesel",  price_gbp=14_000)),
     ("Toyota Yaris 2021",     Listing(make="toyota",   model="yaris",   year=2021, mileage_miles=20_000, fuel_type="hybrid",  price_gbp=13_000)),
     ("Unknown make (sparse)", Listing(make="rover",    model="75",      year=2001, mileage_miles=120_000,                     price_gbp=1_500)),
 ]

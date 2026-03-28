@@ -1,7 +1,7 @@
 from whipped.app import evaluate
 from whipped.domain.models import Listing, WhippedVerdict
 from whipped.features.extract import extract
-from whipped.ingest.datasets import is_valid_comparable
+from whipped.ingest.datasets import is_valid_comparable, make_from_filename, _kaggle_row_to_listing
 from whipped.ingest.listings import parse_listing
 
 # 10 valid comparables — enough for a usable but not strong range
@@ -130,3 +130,61 @@ def test_no_comparables_returns_low_confidence():
                       mileage_miles=120_000, price_gbp=1_500)
     verdict = evaluate(listing, _COMPS)
     assert verdict.price_range.confidence == 0.0
+
+
+# --- Kaggle ingestion tests ---
+
+def test_make_from_filename():
+    assert make_from_filename("ford.csv") == "ford"
+    assert make_from_filename("merc.csv") == "mercedes"
+    assert make_from_filename("hyundi.csv") == "hyundai"
+    assert make_from_filename("focus.csv") is None      # excluded subset
+    assert make_from_filename("cclass.csv") is None     # excluded subset
+    assert make_from_filename("unclean focus.csv") is None
+
+
+def test_kaggle_row_normalisation():
+    import pandas as pd
+    row = pd.Series({
+        "model": " Fiesta",
+        "year": "2019",
+        "price": "8500",
+        "mileage": "42000",
+        "fuelType": "Petrol",
+        "transmission": "Manual",
+        "engineSize": "1.0",
+    })
+    listing = _kaggle_row_to_listing(row, "ford")
+    assert listing.make == "ford"
+    assert listing.model == "fiesta"          # stripped and lowercased
+    assert listing.year == 2019
+    assert listing.price_gbp == 8500
+    assert listing.mileage_miles == 42000
+    assert listing.fuel_type == "petrol"      # lowercased
+    assert listing.transmission == "manual"   # lowercased
+    assert listing.engine_size_l == 1.0
+
+
+def test_invalid_row_rejection_on_kaggle_ingest():
+    import pandas as pd
+    bad_rows = [
+        pd.Series({"model": " Fiesta", "year": "2020", "price": "0",      "mileage": "30000", "fuelType": "Petrol", "transmission": "Manual", "engineSize": "1.0"}),
+        pd.Series({"model": " Fiesta", "year": "2020", "price": "-100",   "mileage": "30000", "fuelType": "Petrol", "transmission": "Manual", "engineSize": "1.0"}),
+        pd.Series({"model": " Fiesta", "year": "1985", "price": "4000",   "mileage": "90000", "fuelType": "Petrol", "transmission": "Manual", "engineSize": "1.0"}),
+        pd.Series({"model": " Fiesta", "year": "2020", "price": "8000",   "mileage": "-1",    "fuelType": "Petrol", "transmission": "Manual", "engineSize": "1.0"}),
+    ]
+    for row in bad_rows:
+        listing = _kaggle_row_to_listing(row, "ford")
+        assert not is_valid_comparable(listing), f"Expected invalid: {listing}"
+
+
+def test_sample_csv_has_positive_prices():
+    """Sample CSV (if present) must contain only positive prices."""
+    from whipped.config import SAMPLE_CSV
+    if not SAMPLE_CSV.exists():
+        return  # sample not yet generated; skip
+    import csv
+    with open(SAMPLE_CSV) as f:
+        for row in csv.DictReader(f):
+            price = float(row.get("price", 0))
+            assert price >= 500, f"Bad price in sample.csv: {price}"

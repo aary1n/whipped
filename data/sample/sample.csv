@@ -1,101 +1,3250 @@
 make,model,year,mileage,fuel_type,transmission,engine_size,price
-ford,focus,2010,102196,diesel,manual,1.4,1573
-mercedes,cclass,2011,82397,diesel,manual,1.1,1552
-bmw,3series,2013,71237,hybrid,manual,2.1,2655
-honda,civic,2013,63878,hybrid,automatic,2.6,2371
-ford,fiesta,2022,110620,petrol,automatic,1.7,9473
-toyota,yaris,2011,17156,diesel,manual,1.7,3113
-toyota,yaris,2019,39671,petrol,automatic,2.1,7607
-mercedes,cclass,2014,113711,hybrid,automatic,2.2,2634
-ford,focus,2010,91673,petrol,automatic,3.0,2050
-honda,civic,2014,64429,hybrid,automatic,1.3,2768
-toyota,yaris,2013,92841,diesel,manual,2.2,2771
-vauxhall,corsa,2017,54735,diesel,manual,2.4,5692
-ford,fiesta,2013,112715,petrol,automatic,1.8,2951
-toyota,yaris,2013,90909,diesel,automatic,2.8,2827
-vw,golf,2012,39718,petrol,manual,2.5,2184
-honda,civic,2024,81484,diesel,automatic,1.4,11824
-vauxhall,corsa,2018,69686,petrol,manual,2.7,5721
-honda,civic,2019,13326,diesel,automatic,2.2,7941
-vw,golf,2018,37953,hybrid,manual,2.4,6944
-audi,a3,2022,89012,diesel,manual,1.6,10192
-vauxhall,corsa,2017,5425,hybrid,automatic,2.9,5980
-ford,focus,2023,86959,diesel,manual,1.3,9304
-vauxhall,corsa,2018,107056,hybrid,manual,2.2,4579
-toyota,yaris,2024,114008,diesel,manual,1.1,10827
-ford,focus,2011,100932,diesel,manual,3.0,1710
-vw,golf,2018,26643,diesel,automatic,2.9,6358
-mercedes,cclass,2022,100673,hybrid,manual,2.4,7608
-toyota,yaris,2017,72839,diesel,manual,1.5,5153
-ford,focus,2015,7757,hybrid,manual,2.2,4968
-ford,fiesta,2013,13834,petrol,automatic,1.1,3342
-bmw,3series,2014,92684,diesel,manual,2.1,2818
-vw,golf,2013,107841,diesel,automatic,1.4,1780
-ford,focus,2020,61498,diesel,automatic,1.8,7696
-ford,focus,2010,57772,hybrid,automatic,2.6,1825
-ford,focus,2013,30112,petrol,automatic,1.3,3296
-ford,focus,2017,110909,hybrid,manual,1.1,4553
-mercedes,cclass,2023,6934,petrol,manual,1.3,12971
-honda,civic,2024,12685,petrol,automatic,1.0,15490
-honda,civic,2014,107769,diesel,automatic,1.8,3700
-mercedes,cclass,2020,99163,diesel,manual,1.4,6011
-bmw,3series,2010,80914,hybrid,manual,2.5,2122
-mercedes,cclass,2024,116767,hybrid,manual,1.1,11183
-mercedes,cclass,2011,116587,petrol,manual,2.2,1646
-ford,focus,2024,79668,petrol,manual,2.2,11626
-honda,civic,2020,81503,hybrid,automatic,2.9,7320
-bmw,3series,2014,56876,petrol,automatic,1.9,3785
-ford,focus,2010,65068,hybrid,manual,1.1,1907
-toyota,yaris,2024,14016,petrol,automatic,1.6,16215
-vw,golf,2023,76200,hybrid,automatic,2.2,12304
-ford,fiesta,2020,112099,hybrid,automatic,2.9,6155
-ford,focus,2024,22601,diesel,manual,2.8,14935
-audi,a3,2019,32607,hybrid,automatic,1.4,6907
-audi,a3,2018,69032,diesel,manual,1.2,5222
-ford,fiesta,2015,106072,petrol,automatic,1.3,3303
-vw,golf,2018,97493,diesel,manual,1.2,5705
-vauxhall,corsa,2018,9722,diesel,manual,1.9,6493
-ford,fiesta,2014,52795,petrol,automatic,1.4,3375
-mercedes,cclass,2024,119650,diesel,manual,2.9,11051
-bmw,3series,2023,26299,petrol,automatic,1.0,12800
-honda,civic,2022,92806,hybrid,manual,1.5,8140
-ford,focus,2016,119316,petrol,automatic,1.4,3627
-audi,a3,2023,109247,petrol,manual,1.0,8586
-bmw,3series,2016,48025,diesel,manual,2.9,4435
-honda,civic,2020,115580,hybrid,automatic,2.9,7043
-ford,focus,2024,39237,petrol,automatic,1.1,13358
-toyota,yaris,2016,84457,hybrid,manual,1.8,3791
-bmw,3series,2014,10817,hybrid,automatic,1.0,4184
-bmw,3series,2015,61531,petrol,automatic,2.2,3586
-ford,focus,2021,44363,hybrid,automatic,2.3,8675
-mercedes,cclass,2012,30144,diesel,automatic,2.4,3161
-vauxhall,corsa,2019,79593,diesel,automatic,2.1,6620
-honda,civic,2022,81019,hybrid,automatic,1.9,9308
-vw,golf,2020,33010,hybrid,automatic,2.6,9315
-ford,focus,2014,72561,hybrid,automatic,1.2,3028
-bmw,3series,2020,45687,petrol,manual,1.3,9736
-ford,focus,2017,59321,hybrid,manual,2.4,5360
-honda,civic,2017,57383,petrol,manual,2.3,5750
-ford,focus,2022,60724,petrol,manual,2.6,10058
-mercedes,cclass,2017,11582,hybrid,manual,2.8,5999
-vw,golf,2020,74616,hybrid,automatic,2.9,7449
-vw,golf,2019,111824,hybrid,automatic,2.7,4289
-vw,golf,2017,38972,petrol,automatic,2.5,5096
-mercedes,cclass,2017,87149,petrol,automatic,1.9,4462
-toyota,yaris,2015,75798,petrol,manual,1.3,3351
-honda,civic,2021,25028,hybrid,manual,1.1,9011
-honda,civic,2010,32110,diesel,automatic,2.8,2274
-ford,fiesta,2023,105348,hybrid,automatic,2.0,10498
-honda,civic,2023,114540,diesel,manual,2.0,9075
-audi,a3,2016,68654,petrol,automatic,1.7,4060
-vauxhall,corsa,2023,66261,petrol,manual,2.8,10389
-ford,fiesta,2011,89246,diesel,manual,2.7,2046
-toyota,yaris,2013,64598,diesel,automatic,2.5,3031
-honda,civic,2014,103567,diesel,automatic,2.7,2308
-ford,fiesta,2015,34389,hybrid,manual,2.6,4218
-ford,fiesta,2022,9067,petrol,manual,2.7,11344
-vw,golf,2020,19993,hybrid,manual,1.9,8315
-audi,a3,2022,53351,petrol,manual,2.6,10641
-ford,fiesta,2024,45888,hybrid,automatic,1.8,14730
-bmw,3series,2011,82607,hybrid,manual,1.2,2081
-ford,focus,2022,79177,petrol,automatic,2.1,7735
+audi,a1,2016,13022,petrol,manual,1.4,13100
+audi,a1,2016,75189,diesel,manual,1.6,9895
+audi,a1,2017,12148,petrol,manual,1.0,13995
+audi,a1,2016,44898,petrol,manual,1.4,11496
+audi,a1,2017,15100,petrol,manual,1.4,16000
+audi,a1,2018,6625,petrol,manual,1.0,13498
+audi,a1,2016,38000,petrol,manual,1.4,12995
+audi,a1,2015,26811,petrol,manual,1.4,12798
+audi,a1,2015,37847,petrol,manual,1.4,9999
+audi,a1,2017,27209,petrol,manual,2.0,19250
+audi,a1,2016,49470,petrol,manual,1.4,11950
+audi,a1,2013,22089,petrol,semi-auto,1.4,10379
+audi,a1,2017,25552,petrol,manual,1.4,13995
+audi,a1,2016,13961,petrol,manual,1.4,14995
+audi,a1,2019,4467,petrol,manual,1.5,21644
+audi,a1,2019,10661,petrol,manual,1.5,20000
+audi,a1,2015,27013,petrol,manual,1.4,10291
+audi,a1,2017,10909,petrol,manual,1.0,11949
+audi,a1,2013,51476,petrol,automatic,1.4,9799
+audi,a1,2017,15361,petrol,manual,1.4,13995
+audi,a2,2003,100000,diesel,manual,1.4,2490
+audi,a3,2016,34979,petrol,manual,1.2,11762
+audi,a3,2016,16793,diesel,manual,2.0,16600
+audi,a3,2016,38786,diesel,manual,2.0,14821
+audi,a3,2019,14739,diesel,manual,1.6,17996
+audi,a3,2019,4007,diesel,automatic,1.6,20006
+audi,a3,2019,10065,petrol,manual,1.0,21656
+audi,a3,2017,33761,diesel,manual,1.6,12750
+audi,a3,2019,5901,diesel,manual,1.6,20100
+audi,a3,2017,23450,diesel,manual,1.6,12560
+audi,a3,2016,68310,diesel,manual,2.0,13500
+audi,a3,2013,50500,petrol,manual,1.4,11399
+audi,a3,2018,17992,petrol,manual,1.5,18950
+audi,a3,2016,18725,petrol,manual,1.4,14000
+audi,a3,2015,78011,diesel,manual,2.0,9299
+audi,a3,2014,24003,petrol,manual,1.4,13299
+audi,a3,2016,122000,diesel,manual,1.6,7791
+audi,a3,2019,8078,diesel,manual,1.6,19900
+audi,a3,2017,17775,petrol,semi-auto,2.0,25990
+audi,a3,2016,90818,diesel,manual,1.6,8600
+audi,a3,2015,55200,diesel,manual,2.0,12230
+audi,a4,2020,1000,diesel,semi-auto,2.0,31500
+audi,a4,2016,33303,diesel,manual,2.0,14998
+audi,a4,2016,32379,diesel,manual,2.0,14998
+audi,a4,2018,10767,petrol,semi-auto,2.0,23450
+audi,a4,2017,30795,petrol,manual,1.4,14798
+audi,a4,2019,3500,diesel,semi-auto,3.0,45950
+audi,a4,2019,5484,diesel,semi-auto,2.0,38950
+audi,a4,2015,41594,diesel,automatic,2.0,16950
+audi,a4,2019,10134,diesel,semi-auto,2.0,23000
+audi,a4,2016,56235,diesel,manual,2.0,11500
+audi,a4,2016,40882,diesel,automatic,2.0,16500
+audi,a4,2017,12993,petrol,manual,1.4,17700
+audi,a4,2017,91212,diesel,manual,2.0,13490
+audi,a4,2017,26882,petrol,semi-auto,2.0,19970
+audi,a4,2019,21275,petrol,manual,2.0,19496
+audi,a4,2015,21794,diesel,automatic,2.0,13799
+audi,a4,2019,6000,petrol,manual,2.0,21990
+audi,a4,2019,3306,diesel,automatic,2.0,25000
+audi,a4,2011,90000,diesel,manual,2.0,5995
+audi,a4,2019,1000,diesel,automatic,2.0,26490
+audi,a5,2020,1500,diesel,semi-auto,2.0,28888
+audi,a5,2015,49112,diesel,semi-auto,3.0,16990
+audi,a5,2017,14079,diesel,automatic,2.0,24700
+audi,a5,2017,15114,diesel,semi-auto,2.0,22998
+audi,a5,2019,5712,diesel,semi-auto,2.0,30728
+audi,a5,2018,11744,diesel,automatic,2.0,22999
+audi,a5,2016,52405,diesel,manual,2.0,17322
+audi,a5,2019,10,petrol,manual,2.0,38990
+audi,a5,2019,8053,diesel,semi-auto,2.0,33499
+audi,a5,2019,5432,petrol,semi-auto,2.0,34444
+audi,a5,2015,32328,diesel,automatic,2.0,15293
+audi,a5,2019,6810,petrol,automatic,2.0,24590
+audi,a5,2016,54000,diesel,manual,2.0,15995
+audi,a5,2019,100,petrol,manual,2.0,25990
+audi,a5,2013,62090,diesel,manual,2.0,9991
+audi,a5,2019,8933,diesel,automatic,2.0,26500
+audi,a5,2018,5300,petrol,manual,2.0,23444
+audi,a5,2019,6066,petrol,automatic,2.0,22000
+audi,a5,2019,5000,diesel,automatic,2.0,31990
+audi,a5,2015,39251,diesel,automatic,2.0,16680
+audi,a6,2017,33070,diesel,semi-auto,2.0,19990
+audi,a6,2018,18200,diesel,semi-auto,2.0,22500
+audi,a6,2017,32000,diesel,semi-auto,2.0,21195
+audi,a6,2017,46424,diesel,manual,2.0,15999
+audi,a6,2019,3866,diesel,automatic,3.0,32326
+audi,a6,2018,29000,petrol,semi-auto,1.8,20950
+audi,a6,2016,107150,diesel,manual,2.0,11000
+audi,a6,2019,50,diesel,automatic,2.0,31900
+audi,a6,2018,30,diesel,manual,3.0,37995
+audi,a6,2004,100730,petrol,automatic,4.2,8995
+audi,a6,2017,90620,diesel,manual,2.0,13000
+audi,a6,2016,54813,diesel,semi-auto,2.0,14998
+audi,a6,2016,29486,diesel,manual,2.0,18600
+audi,a6,2020,2511,diesel,automatic,2.0,28000
+audi,a6,2015,22761,diesel,semi-auto,3.0,21298
+audi,a6,2017,22631,diesel,automatic,3.0,27990
+audi,a6,2019,6498,diesel,automatic,2.0,30444
+audi,a6,2019,5999,diesel,automatic,2.0,30000
+audi,a6,2016,33931,diesel,semi-auto,3.0,20992
+audi,a6,2016,32000,diesel,automatic,3.0,24990
+audi,a7,2015,31000,diesel,automatic,3.0,16990
+audi,a7,2017,34132,diesel,semi-auto,3.0,21150
+audi,a7,2016,40484,diesel,semi-auto,3.0,21895
+audi,a7,2015,47000,diesel,manual,3.0,21990
+audi,a7,2017,30884,diesel,automatic,3.0,22000
+audi,a7,2017,39309,diesel,automatic,3.0,24490
+audi,a7,2019,6785,diesel,automatic,3.0,46480
+audi,a7,2019,20,diesel,semi-auto,2.0,39950
+audi,a7,2018,13082,petrol,semi-auto,3.0,35995
+audi,a7,2014,61140,diesel,automatic,3.0,14086
+audi,a7,2017,27647,diesel,automatic,3.0,26490
+audi,a7,2019,933,diesel,semi-auto,2.0,41995
+audi,a7,2011,74408,diesel,automatic,3.0,12750
+audi,a7,2019,2800,diesel,automatic,3.0,47750
+audi,a7,2019,6000,diesel,semi-auto,2.0,33000
+audi,a7,2020,1200,diesel,semi-auto,3.0,38990
+audi,a7,2020,500,diesel,semi-auto,3.0,51995
+audi,a7,2015,44230,diesel,semi-auto,3.0,20981
+audi,a7,2011,72000,petrol,semi-auto,3.0,12950
+audi,a7,2016,55500,petrol,automatic,4.0,43000
+audi,a8,2018,2146,diesel,semi-auto,3.0,36950
+audi,a8,1997,122000,petrol,automatic,4.2,4650
+audi,a8,2017,3793,diesel,automatic,3.0,34930
+audi,a8,2018,10249,diesel,semi-auto,3.0,33998
+audi,a8,2018,11341,diesel,semi-auto,3.0,36000
+audi,a8,2019,1000,petrol,automatic,3.0,53000
+audi,a8,2018,4524,diesel,semi-auto,3.0,35000
+audi,a8,2019,178,diesel,automatic,3.0,52850
+audi,a8,2015,30306,petrol,automatic,6.3,32000
+audi,a8,2019,2931,diesel,automatic,3.0,37490
+audi,a8,2019,1910,diesel,automatic,3.0,42500
+audi,a8,2019,7890,diesel,automatic,3.0,38975
+audi,a8,2019,5904,diesel,semi-auto,3.0,39496
+audi,a8,2018,5022,diesel,automatic,3.0,37902
+audi,a8,2018,7919,diesel,automatic,3.0,39700
+audi,a8,2018,12285,diesel,semi-auto,3.0,34000
+audi,a8,2017,15830,diesel,automatic,3.0,25999
+audi,a8,2018,7500,diesel,semi-auto,3.0,37970
+audi,a8,2018,2249,diesel,automatic,3.0,38572
+audi,a8,2018,6098,diesel,semi-auto,3.0,37900
+audi,q2,2020,6000,petrol,manual,1.0,22669
+audi,q2,2020,4000,petrol,semi-auto,1.5,25888
+audi,q2,2019,10025,diesel,semi-auto,1.6,20760
+audi,q2,2019,3000,petrol,semi-auto,2.0,32000
+audi,q2,2019,4200,petrol,manual,1.0,18940
+audi,q2,2017,10044,petrol,manual,1.4,18490
+audi,q2,2019,2915,diesel,manual,1.6,20995
+audi,q2,2019,4195,diesel,manual,1.6,22450
+audi,q2,2019,5249,diesel,manual,1.6,19751
+audi,q2,2017,24986,petrol,manual,1.4,18950
+audi,q2,2019,1000,diesel,manual,1.6,22495
+audi,q2,2019,5988,diesel,manual,1.6,18896
+audi,q2,2019,5624,petrol,manual,1.5,23444
+audi,q2,2019,3902,petrol,manual,1.5,22800
+audi,q2,2019,2683,petrol,manual,1.5,25250
+audi,q2,2019,7813,petrol,automatic,1.5,24950
+audi,q2,2017,12343,petrol,manual,1.4,18860
+audi,q2,2019,853,petrol,semi-auto,1.5,34990
+audi,q2,2019,2466,diesel,automatic,2.0,26697
+audi,q2,2017,9547,petrol,semi-auto,1.4,19850
+audi,q3,2019,6119,petrol,semi-auto,2.0,30790
+audi,q3,2019,107,diesel,manual,2.0,26990
+audi,q3,2015,18693,diesel,automatic,2.0,14290
+audi,q3,2015,49050,diesel,semi-auto,2.0,16490
+audi,q3,2020,1500,petrol,automatic,2.0,39888
+audi,q3,2017,36107,diesel,manual,2.0,15490
+audi,q3,2015,14973,petrol,semi-auto,2.0,19970
+audi,q3,2018,13303,petrol,automatic,2.0,24400
+audi,q3,2019,3500,petrol,manual,1.5,24850
+audi,q3,2017,41887,diesel,semi-auto,2.0,19350
+audi,q3,2019,3000,diesel,manual,1.5,27950
+audi,q3,2016,26325,diesel,manual,2.0,18600
+audi,q3,2019,6000,petrol,manual,1.5,27990
+audi,q3,2019,9859,diesel,automatic,2.0,27950
+audi,q3,2015,46600,diesel,manual,2.0,17990
+audi,q3,2013,61278,diesel,manual,2.0,11498
+audi,q3,2019,3009,petrol,semi-auto,2.0,39990
+audi,q3,2019,7419,diesel,manual,2.0,26888
+audi,q3,2017,39544,petrol,manual,1.4,15790
+audi,q3,2015,35117,diesel,semi-auto,2.0,17797
+audi,q5,2015,89483,diesel,automatic,2.0,14700
+audi,q5,2019,3003,diesel,automatic,2.0,35950
+audi,q5,2019,9788,petrol,automatic,2.0,35850
+audi,q5,2017,18331,petrol,semi-auto,2.0,30981
+audi,q5,2017,18053,diesel,semi-auto,2.0,24800
+audi,q5,2019,569,diesel,automatic,2.0,45990
+audi,q5,2019,85,petrol,semi-auto,2.0,34998
+audi,q5,2019,8417,diesel,automatic,2.0,35500
+audi,q5,2019,5446,diesel,semi-auto,2.0,34596
+audi,q5,2017,20770,petrol,semi-auto,3.0,38799
+audi,q5,2019,14598,diesel,automatic,2.0,34991
+audi,q5,2020,2500,petrol,automatic,2.0,38500
+audi,q5,2019,11612,diesel,semi-auto,2.0,32400
+audi,q5,2016,25257,diesel,semi-auto,2.0,21350
+audi,q5,2017,16855,petrol,semi-auto,3.0,37980
+audi,q5,2018,7566,petrol,semi-auto,3.0,42500
+audi,q5,2017,18495,diesel,semi-auto,2.0,24990
+audi,q5,2018,16022,petrol,semi-auto,3.0,37990
+audi,q5,2018,14504,petrol,automatic,3.0,36400
+audi,q5,2008,83000,diesel,manual,2.0,8495
+audi,q7,2018,15425,diesel,semi-auto,4.0,56950
+audi,q7,2020,10,diesel,semi-auto,3.0,62985
+audi,q7,2013,48000,diesel,automatic,3.0,19990
+audi,q7,2019,5000,diesel,automatic,3.0,52990
+audi,q7,2019,8293,diesel,semi-auto,3.0,44990
+audi,q7,2015,21245,diesel,semi-auto,3.0,34995
+audi,q7,2019,38,diesel,semi-auto,3.0,44636
+audi,q7,2019,11475,diesel,semi-auto,3.0,45990
+audi,q7,2017,29627,diesel,automatic,4.0,49850
+audi,q7,2019,6000,diesel,automatic,3.0,53490
+audi,q7,2014,43209,diesel,semi-auto,3.0,20498
+audi,q7,2019,7750,diesel,automatic,3.0,55000
+audi,q7,2019,5000,diesel,automatic,3.0,66000
+audi,q7,2016,31022,diesel,semi-auto,3.0,32498
+audi,q7,2019,10342,diesel,semi-auto,3.0,44990
+audi,q7,2019,9000,diesel,automatic,3.0,38480
+audi,q7,2019,16000,diesel,automatic,3.0,41950
+audi,q7,2016,36816,diesel,semi-auto,3.0,29498
+audi,q7,2015,37000,diesel,automatic,3.0,28000
+audi,q7,2019,6000,diesel,semi-auto,3.0,51750
+audi,q8,2019,9432,diesel,semi-auto,3.0,53981
+audi,q8,2019,8300,petrol,automatic,3.0,58000
+audi,q8,2020,1500,diesel,automatic,3.0,63888
+audi,q8,2019,2040,diesel,automatic,3.0,51990
+audi,q8,2019,5000,diesel,automatic,3.0,56990
+audi,q8,2019,3062,diesel,semi-auto,3.0,49990
+audi,q8,2019,9641,diesel,automatic,4.0,82930
+audi,q8,2019,4278,diesel,automatic,3.0,50786
+audi,q8,2020,3000,diesel,semi-auto,3.0,63000
+audi,q8,2019,9804,diesel,automatic,3.0,51990
+audi,q8,2019,5415,diesel,semi-auto,3.0,55970
+audi,q8,2019,1000,diesel,automatic,3.0,54500
+audi,q8,2019,7606,diesel,semi-auto,3.0,57970
+audi,q8,2018,18782,diesel,semi-auto,3.0,56990
+audi,q8,2020,768,diesel,semi-auto,3.0,62900
+audi,q8,2019,5800,diesel,automatic,4.0,89750
+audi,q8,2019,6470,diesel,automatic,3.0,52850
+audi,q8,2019,9002,diesel,automatic,3.0,53000
+audi,q8,2019,9126,diesel,automatic,3.0,56000
+audi,q8,2020,4174,diesel,semi-auto,4.0,86995
+audi,r8,2018,3562,petrol,automatic,5.2,94990
+audi,r8,2019,2369,petrol,automatic,5.2,116000
+audi,r8,2007,39000,petrol,automatic,4.2,42992
+audi,r8,2019,100,petrol,automatic,5.2,125000
+audi,r8,2018,3800,petrol,semi-auto,5.2,93950
+audi,r8,2008,52500,petrol,automatic,4.2,33950
+audi,r8,2020,70,petrol,semi-auto,5.2,137995
+audi,r8,2019,500,petrol,semi-auto,5.2,125000
+audi,r8,2019,4000,petrol,semi-auto,5.2,129000
+audi,r8,2019,3000,petrol,automatic,5.2,119450
+audi,r8,2016,10172,petrol,semi-auto,5.2,79900
+audi,r8,2018,5044,petrol,automatic,5.2,95950
+audi,r8,2019,13663,petrol,automatic,5.2,125000
+audi,r8,2019,7800,petrol,semi-auto,5.2,119995
+audi,r8,2013,19834,petrol,manual,4.2,47995
+audi,r8,2019,6954,petrol,automatic,5.2,109990
+audi,r8,2014,31930,petrol,automatic,5.2,59990
+audi,r8,2016,28888,petrol,automatic,5.2,74500
+audi,r8,2015,23924,petrol,automatic,4.2,54945
+audi,r8,2013,10800,petrol,semi-auto,4.2,54850
+audi,rs3,2016,29920,petrol,semi-auto,2.5,29888
+audi,rs3,2015,60457,petrol,semi-auto,2.5,26995
+audi,rs3,2016,36123,petrol,automatic,2.5,33000
+audi,rs3,2018,17515,petrol,automatic,2.5,36490
+audi,rs3,2015,49000,petrol,semi-auto,2.5,26795
+audi,rs3,2015,35395,petrol,semi-auto,2.5,29250
+audi,rs3,2016,50796,petrol,automatic,2.5,29000
+audi,rs3,2016,26930,petrol,semi-auto,2.5,29350
+audi,rs3,2015,15016,petrol,automatic,2.5,28985
+audi,rs3,2019,3584,petrol,semi-auto,2.5,47990
+audi,rs3,2017,17889,petrol,semi-auto,2.5,36990
+audi,rs3,2016,49459,petrol,semi-auto,2.5,28500
+audi,rs3,2020,10,petrol,automatic,2.5,42490
+audi,rs3,2020,320,petrol,automatic,2.5,42490
+audi,rs3,2015,48798,petrol,automatic,2.5,27995
+audi,rs3,2019,5894,petrol,semi-auto,2.5,37900
+audi,rs3,2019,10250,petrol,automatic,2.5,39000
+audi,rs3,2019,4550,petrol,automatic,2.5,41990
+audi,rs3,2018,5431,petrol,semi-auto,2.5,39995
+audi,rs3,2018,15400,petrol,semi-auto,2.5,36996
+audi,rs4,2020,2000,petrol,semi-auto,2.9,69950
+audi,rs4,2014,58460,petrol,semi-auto,4.2,26490
+audi,rs4,2019,5121,petrol,automatic,2.9,59990
+audi,rs4,2006,66000,petrol,manual,4.2,17999
+audi,rs4,2014,60000,petrol,manual,4.2,25975
+audi,rs4,2020,6000,petrol,semi-auto,2.9,71990
+audi,rs4,2018,12500,petrol,automatic,2.9,50888
+audi,rs4,2020,2200,petrol,semi-auto,2.9,69995
+audi,rs4,2013,68000,petrol,automatic,4.2,23888
+audi,rs4,2015,35905,petrol,semi-auto,4.2,29995
+audi,rs4,2019,10388,petrol,semi-auto,2.9,55990
+audi,rs4,2019,4761,petrol,semi-auto,2.9,56991
+audi,rs4,2019,4100,petrol,automatic,2.9,56795
+audi,rs4,2018,33827,petrol,semi-auto,2.9,49990
+audi,rs4,2019,5151,petrol,semi-auto,2.9,57990
+audi,rs4,2018,22767,petrol,semi-auto,2.9,49990
+audi,rs4,2014,70823,petrol,semi-auto,4.2,24990
+audi,rs4,2019,5159,petrol,automatic,2.9,59450
+audi,rs4,2018,23996,petrol,automatic,2.9,49950
+audi,rs4,2020,2500,petrol,semi-auto,2.9,69691
+audi,rs5,2018,28249,petrol,semi-auto,2.9,42500
+audi,rs5,2019,9771,petrol,automatic,2.9,54883
+audi,rs5,2018,5876,petrol,semi-auto,2.9,53900
+audi,rs5,2019,4009,petrol,automatic,2.9,55292
+audi,rs5,2019,2000,petrol,automatic,2.9,53990
+audi,rs5,2018,13121,petrol,automatic,2.9,42000
+audi,rs5,2019,6000,petrol,automatic,2.9,66990
+audi,rs5,2017,8966,petrol,automatic,2.9,43996
+audi,rs5,2019,16,petrol,automatic,2.9,49750
+audi,rs5,2019,9108,petrol,automatic,2.9,55450
+audi,rs5,2014,39210,petrol,semi-auto,4.2,23400
+audi,rs5,2019,3382,petrol,semi-auto,2.9,58995
+audi,rs5,2019,5089,petrol,semi-auto,2.9,59995
+audi,rs5,2019,5000,petrol,automatic,2.9,54000
+audi,rs5,2018,9641,petrol,semi-auto,2.9,47895
+audi,rs5,2019,4474,petrol,automatic,2.9,54990
+audi,rs5,2017,18630,petrol,semi-auto,2.9,41970
+audi,rs5,2019,1000,petrol,automatic,2.9,63950
+audi,rs5,2019,6500,petrol,automatic,2.9,56000
+audi,rs5,2015,66000,petrol,automatic,4.2,25950
+audi,rs6,2015,28123,petrol,automatic,4.0,43990
+audi,rs6,2017,30921,petrol,semi-auto,4.0,53990
+audi,rs6,2017,20814,petrol,semi-auto,4.0,56990
+audi,rs6,2017,8546,petrol,semi-auto,4.0,54998
+audi,rs6,2014,59894,petrol,automatic,4.0,37000
+audi,rs6,2017,47501,petrol,semi-auto,4.0,52000
+audi,rs6,2016,49050,petrol,semi-auto,4.0,44985
+audi,rs6,2016,29000,petrol,automatic,4.0,44950
+audi,rs6,2020,3220,petrol,semi-auto,4.0,97500
+audi,rs6,2016,41854,petrol,automatic,4.0,49500
+audi,rs6,2018,3840,petrol,automatic,4.0,70000
+audi,rs6,2014,43752,petrol,automatic,4.0,44491
+audi,rs6,2017,39300,petrol,semi-auto,4.0,54490
+audi,rs6,2016,51600,petrol,automatic,4.0,47490
+audi,rs6,2016,27000,petrol,automatic,4.0,52950
+audi,rs6,2016,22500,petrol,semi-auto,4.0,49950
+audi,rs6,2017,18881,petrol,automatic,4.0,61490
+audi,rs6,2020,1500,petrol,semi-auto,4.0,109495
+audi,rs6,2017,39300,petrol,automatic,4.0,54990
+audi,rs6,2015,11484,petrol,semi-auto,4.0,51995
+audi,rs7,2014,56000,petrol,automatic,4.0,33490
+audi,s3,2016,22445,petrol,semi-auto,2.0,22745
+audi,s3,2015,20000,petrol,manual,2.0,19940
+audi,s3,2017,12500,petrol,manual,2.0,23990
+audi,s3,2016,34500,petrol,semi-auto,2.0,19300
+audi,s3,2015,46965,petrol,semi-auto,2.0,19000
+audi,s3,2014,38473,petrol,automatic,2.0,17990
+audi,s3,2017,25000,petrol,automatic,2.0,25850
+audi,s3,2016,60000,petrol,automatic,2.0,21950
+audi,s3,2016,42000,petrol,semi-auto,2.0,20950
+audi,s3,2015,32000,petrol,manual,2.0,18790
+audi,s3,2016,68180,petrol,automatic,2.0,18500
+audi,s3,2014,63000,petrol,semi-auto,2.0,17500
+audi,s3,2017,26500,petrol,semi-auto,2.0,23950
+audi,s3,2015,48800,petrol,manual,2.0,17950
+audi,s3,2003,106000,petrol,manual,1.8,4990
+audi,s3,2017,21000,petrol,manual,2.0,25450
+audi,s3,2015,37150,petrol,automatic,2.0,19990
+audi,s3,2018,24500,petrol,automatic,2.0,27995
+audi,s4,2004,88024,petrol,automatic,4.2,6990
+audi,s4,2007,101000,petrol,manual,4.2,5995
+audi,s4,2018,29000,petrol,automatic,3.0,29995
+audi,s4,2019,1481,diesel,automatic,3.0,42888
+audi,s4,2019,4129,diesel,automatic,0.0,39850
+audi,s4,2017,20278,petrol,automatic,3.0,23700
+audi,s4,2020,1500,diesel,automatic,3.0,45888
+audi,s4,2005,62000,petrol,automatic,4.2,5895
+audi,s4,2019,5600,diesel,automatic,3.0,41000
+audi,s4,2019,6000,diesel,automatic,3.0,42888
+audi,s4,2019,4900,diesel,automatic,0.0,45000
+audi,s4,2020,1500,diesel,automatic,0.0,44888
+audi,s5,2014,32000,petrol,semi-auto,3.0,18950
+audi,s5,2011,93820,petrol,automatic,3.0,11495
+audi,s5,2013,35000,petrol,automatic,3.0,17495
+audi,s8,2017,22579,petrol,automatic,4.0,44991
+audi,s8,2015,25500,petrol,automatic,4.0,31250
+audi,s8,2015,40102,petrol,automatic,4.0,24000
+audi,s8,2017,29583,petrol,automatic,4.0,34990
+audi,sq5,2014,69682,diesel,automatic,3.0,19400
+audi,sq5,2013,95012,diesel,automatic,3.0,17940
+audi,sq5,2017,24575,petrol,automatic,3.0,38950
+audi,sq5,2015,82820,diesel,automatic,3.0,20000
+audi,sq5,2018,37000,petrol,automatic,3.0,35950
+audi,sq5,2017,22216,petrol,automatic,3.0,36990
+audi,sq5,2014,40000,diesel,automatic,3.0,22200
+audi,sq5,2015,37306,diesel,automatic,3.0,23195
+audi,sq5,2019,1500,diesel,automatic,0.0,48800
+audi,sq5,2016,46709,diesel,automatic,3.0,28888
+audi,sq5,2020,1500,diesel,automatic,0.0,56450
+audi,sq5,2015,76518,diesel,automatic,3.0,20295
+audi,sq5,2017,27000,petrol,automatic,3.0,36950
+audi,sq5,2017,13000,petrol,automatic,3.0,38995
+audi,sq5,2015,79000,diesel,automatic,3.0,19950
+audi,sq5,2017,20000,petrol,automatic,3.0,37700
+audi,sq7,2017,20761,diesel,automatic,4.0,44444
+audi,sq7,2017,28000,diesel,automatic,4.0,46950
+audi,sq7,2017,12000,diesel,automatic,4.0,52888
+audi,sq7,2017,30000,diesel,automatic,4.0,51990
+audi,sq7,2017,23000,diesel,semi-auto,4.0,59950
+audi,sq7,2017,42000,diesel,automatic,4.0,47990
+audi,sq7,2017,40000,diesel,automatic,4.0,43950
+audi,sq7,2016,25514,diesel,automatic,4.0,45990
+audi,tt,2017,25842,diesel,manual,2.0,18300
+audi,tt,2019,5000,petrol,automatic,2.0,27990
+audi,tt,2004,129000,petrol,manual,1.8,2895
+audi,tt,2014,44000,petrol,automatic,2.0,17250
+audi,tt,2017,27607,petrol,automatic,0.0,27000
+audi,tt,2019,12320,petrol,semi-auto,2.0,24995
+audi,tt,2015,50500,petrol,manual,2.0,16490
+audi,tt,2019,3000,petrol,automatic,2.0,39990
+audi,tt,2014,42000,petrol,semi-auto,1.8,12995
+audi,tt,2015,44935,petrol,semi-auto,2.0,17544
+audi,tt,2019,6000,petrol,automatic,2.0,28490
+audi,tt,2016,24750,petrol,semi-auto,2.0,21500
+audi,tt,2016,34000,petrol,manual,2.0,16995
+audi,tt,2015,12123,petrol,semi-auto,2.0,16406
+audi,tt,2015,39700,diesel,manual,2.0,16000
+audi,tt,2019,2000,petrol,semi-auto,2.5,48990
+audi,tt,2003,43000,petrol,automatic,3.2,6490
+audi,tt,2017,52610,petrol,manual,2.0,18000
+audi,tt,2020,5515,petrol,semi-auto,2.0,29970
+audi,tt,2019,6200,petrol,manual,2.0,27500
+bmw,1 series,2019,5121,petrol,manual,1.5,23000
+bmw,1 series,2019,5553,petrol,automatic,1.5,15989
+bmw,1 series,2019,8501,petrol,automatic,2.0,30000
+bmw,1 series,2016,17787,petrol,manual,1.5,13553
+bmw,1 series,2019,965,petrol,semi-auto,1.5,20732
+bmw,1 series,2015,15200,diesel,semi-auto,1.5,13442
+bmw,1 series,2016,13857,petrol,manual,3.0,18998
+bmw,1 series,2018,9086,petrol,automatic,1.5,14400
+bmw,1 series,2017,47747,diesel,manual,2.0,11000
+bmw,1 series,2015,61140,diesel,manual,2.0,9795
+bmw,1 series,2019,14822,diesel,semi-auto,2.0,22700
+bmw,1 series,2019,4100,petrol,manual,1.5,21898
+bmw,1 series,2015,25651,petrol,manual,1.5,12399
+bmw,1 series,2015,38178,petrol,semi-auto,3.0,16950
+bmw,1 series,2016,33243,diesel,manual,1.5,10939
+bmw,1 series,2019,10302,diesel,manual,1.5,18480
+bmw,1 series,2018,11131,petrol,semi-auto,3.0,23498
+bmw,1 series,2017,24029,petrol,automatic,3.0,20500
+bmw,1 series,2019,2195,petrol,semi-auto,2.0,38555
+bmw,1 series,2015,48534,diesel,manual,1.5,9750
+bmw,2 series,2018,18970,petrol,semi-auto,1.5,17498
+bmw,2 series,2019,3300,diesel,semi-auto,2.0,24590
+bmw,2 series,2020,18,diesel,semi-auto,2.0,23990
+bmw,2 series,2015,19361,diesel,manual,2.0,15995
+bmw,2 series,2016,17994,petrol,manual,1.5,12357
+bmw,2 series,2015,23742,petrol,semi-auto,1.5,15882
+bmw,2 series,2017,10000,petrol,automatic,1.5,14750
+bmw,2 series,2018,13174,diesel,semi-auto,2.0,18000
+bmw,2 series,2019,4418,diesel,semi-auto,2.0,25780
+bmw,2 series,2019,123,petrol,manual,1.5,22646
+bmw,2 series,2019,6050,petrol,semi-auto,1.5,20840
+bmw,2 series,2014,61819,diesel,manual,2.0,10999
+bmw,2 series,2019,3266,petrol,manual,1.5,22000
+bmw,2 series,2017,17146,petrol,manual,1.5,15952
+bmw,2 series,2017,22445,petrol,manual,1.5,14300
+bmw,2 series,2016,34608,petrol,manual,2.0,15149
+bmw,2 series,2017,31208,diesel,semi-auto,2.0,18990
+bmw,2 series,2018,25029,petrol,semi-auto,3.0,23702
+bmw,2 series,2020,10,petrol,semi-auto,1.5,23990
+bmw,2 series,2015,52656,diesel,manual,2.0,11991
+bmw,3 series,2015,45191,diesel,semi-auto,2.0,12999
+bmw,3 series,2016,25145,diesel,semi-auto,3.0,20878
+bmw,3 series,2017,10305,diesel,semi-auto,3.0,21898
+bmw,3 series,2019,4050,petrol,semi-auto,2.0,23295
+bmw,3 series,2017,28943,hybrid,semi-auto,2.0,18900
+bmw,3 series,2019,3751,diesel,semi-auto,2.0,27995
+bmw,3 series,2014,62121,diesel,semi-auto,2.0,9698
+bmw,3 series,2019,4429,diesel,semi-auto,2.0,30422
+bmw,3 series,2017,53055,other,automatic,2.0,16000
+bmw,3 series,2013,95000,diesel,automatic,2.0,10490
+bmw,3 series,2020,14,diesel,semi-auto,2.0,26490
+bmw,3 series,2016,53331,diesel,semi-auto,2.0,15991
+bmw,3 series,2016,51379,diesel,manual,2.0,12480
+bmw,3 series,2016,28897,diesel,semi-auto,3.0,17498
+bmw,3 series,2019,22500,petrol,automatic,1.5,18950
+bmw,3 series,2019,4600,diesel,semi-auto,2.0,34900
+bmw,3 series,2015,27649,petrol,automatic,3.0,18907
+bmw,3 series,2019,12897,diesel,semi-auto,2.0,27495
+bmw,3 series,2010,67000,diesel,manual,2.0,8300
+bmw,3 series,2017,34552,diesel,manual,2.0,14590
+bmw,4 series,2016,10,petrol,manual,2.0,24980
+bmw,4 series,2016,10267,petrol,manual,2.0,19000
+bmw,4 series,2019,10324,diesel,automatic,2.0,23250
+bmw,4 series,2018,3500,diesel,automatic,3.0,20995
+bmw,4 series,2019,1938,petrol,automatic,3.0,29626
+bmw,4 series,2020,1705,diesel,semi-auto,2.0,25993
+bmw,4 series,2015,19887,diesel,automatic,2.0,14999
+bmw,4 series,2019,1000,diesel,semi-auto,2.0,25450
+bmw,4 series,2014,81978,diesel,manual,2.0,10991
+bmw,4 series,2020,2755,diesel,semi-auto,2.0,26950
+bmw,4 series,2016,34236,petrol,manual,2.0,15650
+bmw,4 series,2019,14137,diesel,semi-auto,3.0,29540
+bmw,4 series,2015,57920,diesel,automatic,3.0,16300
+bmw,4 series,2016,85520,diesel,manual,2.0,10695
+bmw,4 series,2019,1501,diesel,semi-auto,2.0,28995
+bmw,4 series,2018,32785,petrol,semi-auto,3.0,24980
+bmw,4 series,2015,47822,diesel,automatic,2.0,15995
+bmw,4 series,2016,39891,diesel,automatic,3.0,18100
+bmw,4 series,2016,67429,petrol,automatic,2.0,15500
+bmw,4 series,2016,52070,diesel,automatic,2.0,16299
+bmw,5 series,2019,6311,petrol,semi-auto,2.0,37921
+bmw,5 series,2018,24501,diesel,automatic,2.0,24999
+bmw,5 series,2019,3555,diesel,semi-auto,3.0,42500
+bmw,5 series,2018,19203,diesel,semi-auto,2.0,23980
+bmw,5 series,2017,43316,diesel,automatic,2.0,16610
+bmw,5 series,2020,12,diesel,semi-auto,3.0,36985
+bmw,5 series,2020,9,petrol,semi-auto,2.0,29000
+bmw,5 series,2018,10500,diesel,automatic,2.0,24862
+bmw,5 series,2019,7450,hybrid,semi-auto,2.0,34995
+bmw,5 series,2017,33000,diesel,automatic,2.0,20490
+bmw,5 series,2018,16455,petrol,automatic,2.0,26450
+bmw,5 series,2014,60389,diesel,automatic,2.0,14717
+bmw,5 series,2014,53000,diesel,automatic,2.0,12950
+bmw,5 series,2018,23650,diesel,semi-auto,3.0,23500
+bmw,5 series,2019,4694,diesel,semi-auto,2.0,26350
+bmw,5 series,2019,13000,petrol,automatic,2.0,28999
+bmw,5 series,2019,9440,diesel,semi-auto,2.0,26650
+bmw,5 series,2019,99,hybrid,automatic,2.0,34500
+bmw,5 series,2015,40750,diesel,semi-auto,3.0,17000
+bmw,5 series,2019,5360,diesel,semi-auto,2.0,28800
+bmw,6 series,2012,50319,diesel,automatic,3.0,12970
+bmw,6 series,2016,21050,diesel,semi-auto,3.0,25243
+bmw,6 series,2017,17942,petrol,automatic,4.4,27000
+bmw,6 series,2005,84000,petrol,automatic,4.4,4995
+bmw,6 series,2013,52635,diesel,automatic,3.0,17339
+bmw,6 series,2020,11,petrol,semi-auto,2.0,33999
+bmw,6 series,2016,62156,diesel,automatic,3.0,17490
+bmw,6 series,2017,31328,diesel,automatic,3.0,26500
+bmw,6 series,2017,26000,diesel,automatic,3.0,24622
+bmw,6 series,2019,6081,diesel,semi-auto,2.0,32785
+bmw,6 series,2016,45360,diesel,automatic,3.0,20999
+bmw,6 series,2020,5,petrol,semi-auto,2.0,34490
+bmw,6 series,2017,20643,diesel,semi-auto,3.0,27825
+bmw,6 series,2016,37868,diesel,automatic,3.0,18737
+bmw,6 series,2010,92642,diesel,automatic,3.0,8995
+bmw,6 series,2018,14827,petrol,automatic,2.0,27000
+bmw,6 series,2020,101,petrol,automatic,2.0,36550
+bmw,6 series,2014,59295,diesel,automatic,3.0,16500
+bmw,6 series,2017,11541,petrol,automatic,4.4,35000
+bmw,6 series,2006,126054,petrol,automatic,3.0,4999
+bmw,7 series,2012,76000,diesel,automatic,3.0,10990
+bmw,7 series,2014,51932,hybrid,automatic,3.0,19995
+bmw,7 series,2006,81000,diesel,automatic,3.0,4995
+bmw,7 series,2016,23600,petrol,semi-auto,3.0,23995
+bmw,7 series,2019,561,diesel,semi-auto,3.0,51500
+bmw,7 series,2019,7689,diesel,automatic,3.0,45640
+bmw,7 series,2019,17501,diesel,semi-auto,3.0,48898
+bmw,7 series,2019,3200,diesel,semi-auto,3.0,52490
+bmw,7 series,2019,8546,diesel,automatic,3.0,55000
+bmw,7 series,2019,7315,diesel,semi-auto,3.0,48995
+bmw,7 series,2017,27791,diesel,automatic,3.0,31250
+bmw,7 series,2017,34017,diesel,semi-auto,3.0,26998
+bmw,7 series,2016,8814,petrol,automatic,4.4,35480
+bmw,7 series,2019,7515,diesel,semi-auto,3.0,46990
+bmw,7 series,2017,22879,petrol,semi-auto,3.0,30998
+bmw,7 series,2019,11126,diesel,semi-auto,3.0,38980
+bmw,7 series,2019,4279,diesel,semi-auto,3.0,51990
+bmw,7 series,2020,3301,diesel,semi-auto,3.0,57980
+bmw,7 series,2012,134000,diesel,automatic,3.0,8750
+bmw,7 series,2019,4884,diesel,semi-auto,3.0,52990
+bmw,8 series,2020,6374,diesel,semi-auto,3.0,61485
+bmw,8 series,2019,5529,diesel,semi-auto,3.0,51980
+bmw,8 series,2020,3242,petrol,semi-auto,3.0,56990
+bmw,8 series,2020,123,petrol,semi-auto,3.0,66991
+bmw,8 series,2020,11,petrol,semi-auto,3.0,62995
+bmw,8 series,2020,5490,petrol,semi-auto,3.0,59990
+bmw,8 series,2020,1501,petrol,semi-auto,3.0,59995
+bmw,8 series,2020,419,petrol,semi-auto,3.0,69991
+bmw,8 series,2019,10000,diesel,automatic,3.0,55980
+bmw,8 series,2019,953,petrol,automatic,4.4,73900
+bmw,8 series,2019,2650,diesel,semi-auto,3.0,61898
+bmw,8 series,2018,3891,petrol,semi-auto,4.4,63980
+bmw,8 series,2020,700,petrol,semi-auto,3.0,59995
+bmw,8 series,2019,88,petrol,semi-auto,4.4,88980
+bmw,8 series,2019,3948,petrol,automatic,3.0,58990
+bmw,8 series,2019,8966,petrol,semi-auto,3.0,54991
+bmw,8 series,2019,3369,petrol,semi-auto,4.4,73890
+bmw,8 series,2019,9731,diesel,semi-auto,3.0,56950
+bmw,8 series,2019,1600,petrol,semi-auto,3.0,59790
+bmw,8 series,2019,1135,diesel,semi-auto,3.0,58940
+bmw,i3,2016,20013,hybrid,automatic,0.0,19875
+bmw,i3,2017,50867,other,automatic,0.6,17600
+bmw,i3,2014,34539,hybrid,automatic,0.0,14495
+bmw,i3,2015,59000,other,automatic,0.6,14940
+bmw,i3,2017,29851,hybrid,automatic,0.0,19895
+bmw,i3,2015,9886,hybrid,automatic,0.0,17481
+bmw,i3,2016,8421,hybrid,automatic,0.0,19490
+bmw,i3,2014,37161,hybrid,automatic,0.0,14182
+bmw,i3,2017,19178,other,automatic,0.6,20000
+bmw,i3,2017,3976,hybrid,automatic,0.0,22999
+bmw,i3,2015,29465,electric,automatic,1.0,17400
+bmw,i3,2017,33021,hybrid,automatic,0.0,18995
+bmw,i3,2017,20321,electric,automatic,0.0,18999
+bmw,i3,2017,17338,hybrid,automatic,0.0,19495
+bmw,i3,2015,65800,hybrid,automatic,0.0,14285
+bmw,i3,2017,20082,hybrid,automatic,0.0,20495
+bmw,i3,2016,43695,hybrid,automatic,0.0,16482
+bmw,i3,2017,26965,hybrid,automatic,0.0,19980
+bmw,i3,2016,25269,other,automatic,0.6,17100
+bmw,i3,2017,41949,hybrid,automatic,0.0,19998
+bmw,i8,2018,4477,hybrid,automatic,1.5,64980
+bmw,i8,2019,176,hybrid,automatic,1.5,72000
+bmw,i8,2019,2799,hybrid,automatic,1.5,64750
+bmw,i8,2018,13909,hybrid,automatic,1.5,55485
+bmw,i8,2017,9992,hybrid,automatic,1.5,59950
+bmw,i8,2019,6000,hybrid,automatic,1.5,67500
+bmw,i8,2015,48800,other,automatic,1.5,37995
+bmw,i8,2015,43102,hybrid,automatic,1.5,42890
+bmw,i8,2018,11278,hybrid,automatic,1.5,57870
+bmw,i8,2015,43323,hybrid,automatic,1.5,44990
+bmw,i8,2017,17580,hybrid,automatic,1.5,52495
+bmw,i8,2014,41237,hybrid,automatic,1.5,43497
+bmw,i8,2019,2277,hybrid,automatic,1.5,64750
+bmw,i8,2019,10,hybrid,automatic,1.5,74226
+bmw,i8,2017,36127,hybrid,automatic,1.5,48898
+bmw,i8,2016,10087,hybrid,automatic,1.5,48998
+bmw,i8,2019,1110,hybrid,automatic,1.5,67940
+bmw,m2,2019,999,petrol,automatic,3.0,46995
+bmw,m2,2019,2689,petrol,automatic,3.0,43480
+bmw,m2,2019,1287,petrol,semi-auto,3.0,45980
+bmw,m2,2019,5644,petrol,automatic,3.0,42110
+bmw,m2,2019,4534,petrol,manual,3.0,46000
+bmw,m2,2019,25,petrol,semi-auto,3.0,48898
+bmw,m2,2019,1797,petrol,semi-auto,3.0,42351
+bmw,m2,2019,100,petrol,semi-auto,3.0,47980
+bmw,m2,2019,4929,petrol,semi-auto,3.0,44500
+bmw,m2,2018,17000,petrol,automatic,3.0,23495
+bmw,m2,2019,1500,petrol,automatic,3.0,48200
+bmw,m2,2020,1501,petrol,semi-auto,3.0,46000
+bmw,m2,2019,2935,petrol,automatic,3.0,49999
+bmw,m2,2019,3500,petrol,semi-auto,3.0,40995
+bmw,m2,2020,101,petrol,semi-auto,3.0,44995
+bmw,m2,2018,6120,petrol,semi-auto,3.0,39995
+bmw,m2,2019,4358,petrol,semi-auto,3.0,44990
+bmw,m2,2019,19548,petrol,semi-auto,3.0,37990
+bmw,m2,2020,4500,petrol,automatic,3.0,46995
+bmw,m2,2020,15,petrol,semi-auto,3.0,42999
+bmw,m3,2018,12879,petrol,semi-auto,3.0,43990
+bmw,m3,2009,65000,petrol,manual,4.0,16950
+bmw,m3,2010,79000,petrol,manual,4.0,17750
+bmw,m3,2016,33000,petrol,semi-auto,3.0,33750
+bmw,m3,2017,3824,petrol,automatic,3.0,53995
+bmw,m3,2019,5957,petrol,semi-auto,3.0,62995
+bmw,m3,2013,58125,petrol,automatic,4.0,19699
+bmw,m3,2004,46000,petrol,manual,3.2,19500
+bmw,m3,2010,81000,petrol,manual,4.0,17650
+bmw,m3,2009,65000,petrol,manual,4.0,16950
+bmw,m3,2004,60000,petrol,manual,3.2,17850
+bmw,m3,2013,30500,petrol,semi-auto,4.0,25945
+bmw,m3,2004,80000,petrol,manual,3.2,16950
+bmw,m3,2017,30573,petrol,semi-auto,3.0,37572
+bmw,m3,2018,28347,petrol,semi-auto,3.0,36995
+bmw,m3,2015,41500,petrol,semi-auto,3.0,29991
+bmw,m3,2018,18311,petrol,manual,3.0,37991
+bmw,m3,2015,13537,petrol,semi-auto,3.0,32950
+bmw,m3,2015,42000,petrol,automatic,3.0,29750
+bmw,m3,2004,55000,petrol,automatic,3.2,14950
+bmw,m4,2016,27817,petrol,semi-auto,3.0,31491
+bmw,m4,2019,4931,petrol,semi-auto,3.0,44950
+bmw,m4,2018,7732,petrol,semi-auto,3.0,36498
+bmw,m4,2018,8869,petrol,manual,3.0,38776
+bmw,m4,2020,2024,petrol,semi-auto,3.0,49623
+bmw,m4,2016,21533,petrol,semi-auto,3.0,31870
+bmw,m4,2019,152,petrol,semi-auto,3.0,43480
+bmw,m4,2015,41120,petrol,semi-auto,3.0,30662
+bmw,m4,2020,1500,petrol,semi-auto,3.0,45995
+bmw,m4,2020,17,petrol,semi-auto,3.0,48950
+bmw,m4,2016,26363,petrol,semi-auto,3.0,29998
+bmw,m4,2016,23212,petrol,semi-auto,3.0,32998
+bmw,m4,2016,30241,petrol,semi-auto,3.0,29990
+bmw,m4,2019,13,petrol,semi-auto,3.0,48940
+bmw,m4,2019,101,petrol,semi-auto,3.0,41980
+bmw,m4,2020,30,petrol,semi-auto,3.0,48000
+bmw,m4,2020,101,petrol,semi-auto,3.0,51402
+bmw,m4,2015,40000,petrol,semi-auto,3.0,28500
+bmw,m4,2020,10,petrol,automatic,3.0,47488
+bmw,m4,2016,32866,petrol,semi-auto,3.0,30485
+bmw,m5,2019,1501,petrol,automatic,4.4,73990
+bmw,m5,2015,28500,petrol,automatic,4.4,29795
+bmw,m5,2019,3545,petrol,semi-auto,4.4,72000
+bmw,m5,2016,39200,petrol,automatic,4.4,35995
+bmw,m5,2019,3700,petrol,automatic,4.4,69995
+bmw,m5,2016,49689,petrol,semi-auto,4.4,25999
+bmw,m5,2019,3153,petrol,semi-auto,4.4,70686
+bmw,m5,2018,13500,petrol,automatic,4.4,65948
+bmw,m5,2019,551,petrol,semi-auto,4.4,81140
+bmw,m5,2019,2269,petrol,semi-auto,4.4,89900
+bmw,m5,2012,51000,petrol,automatic,4.4,23995
+bmw,m5,2019,6568,petrol,automatic,4.4,70000
+bmw,m5,2019,4800,petrol,semi-auto,4.4,65000
+bmw,m5,2019,13000,petrol,automatic,4.4,69948
+bmw,m5,2019,4419,petrol,semi-auto,4.4,61797
+bmw,m5,2019,16529,petrol,semi-auto,4.4,58991
+bmw,m5,2019,3256,petrol,semi-auto,4.4,62980
+bmw,m5,2019,23,petrol,semi-auto,4.4,70995
+bmw,m5,2019,2684,petrol,automatic,4.4,74988
+bmw,m5,2014,55241,petrol,automatic,4.4,23490
+bmw,m6,2006,89000,petrol,semi-auto,5.0,12495
+bmw,m6,2014,34000,petrol,automatic,4.4,29000
+bmw,m6,2014,53249,petrol,automatic,4.4,28490
+bmw,m6,2018,8207,petrol,semi-auto,4.4,46995
+bmw,m6,2016,19000,petrol,semi-auto,4.4,36995
+bmw,m6,2015,28314,petrol,automatic,4.4,33500
+bmw,m6,2016,26642,petrol,semi-auto,4.4,35898
+bmw,m6,2015,34017,petrol,semi-auto,4.4,34147
+bmw,x1,2016,55000,diesel,manual,2.0,15270
+bmw,x1,2018,11124,diesel,automatic,2.0,22499
+bmw,x1,2016,30590,diesel,manual,2.0,16700
+bmw,x1,2012,82570,diesel,automatic,2.0,7985
+bmw,x1,2016,25300,diesel,semi-auto,2.0,19300
+bmw,x1,2018,11570,petrol,semi-auto,2.0,23295
+bmw,x1,2018,12208,diesel,automatic,2.0,21800
+bmw,x1,2019,5742,petrol,semi-auto,2.0,27490
+bmw,x1,2017,60792,diesel,automatic,2.0,16514
+bmw,x1,2019,2897,petrol,semi-auto,2.0,27672
+bmw,x1,2016,13090,petrol,automatic,2.0,19158
+bmw,x1,2016,29018,diesel,manual,2.0,17698
+bmw,x1,2019,5559,petrol,semi-auto,2.0,28790
+bmw,x1,2020,1501,diesel,semi-auto,2.0,30995
+bmw,x1,2017,31834,petrol,semi-auto,2.0,20950
+bmw,x1,2019,6786,petrol,manual,1.5,24775
+bmw,x1,2019,6141,petrol,automatic,1.5,21850
+bmw,x1,2019,110,diesel,manual,2.0,25000
+bmw,x1,2016,24952,diesel,semi-auto,2.0,18498
+bmw,x1,2017,18404,diesel,automatic,2.0,18700
+bmw,x2,2019,9467,diesel,semi-auto,2.0,25450
+bmw,x2,2019,2714,petrol,semi-auto,2.0,28990
+bmw,x2,2020,99,petrol,semi-auto,2.0,32540
+bmw,x2,2020,103,petrol,semi-auto,2.0,34990
+bmw,x2,2019,123,petrol,automatic,2.0,26972
+bmw,x2,2019,5884,diesel,manual,2.0,24403
+bmw,x2,2018,7100,diesel,semi-auto,2.0,24490
+bmw,x2,2019,4773,diesel,automatic,2.0,28000
+bmw,x2,2019,123,diesel,automatic,2.0,29975
+bmw,x2,2020,1501,petrol,semi-auto,2.0,29995
+bmw,x2,2020,10,petrol,semi-auto,1.5,22980
+bmw,x2,2019,999,petrol,automatic,2.0,23976
+bmw,x2,2019,103,diesel,manual,2.0,26980
+bmw,x2,2018,21150,petrol,semi-auto,2.0,22898
+bmw,x2,2020,10,diesel,semi-auto,2.0,24990
+bmw,x2,2020,15,diesel,manual,2.0,23450
+bmw,x2,2019,5687,petrol,manual,1.5,21998
+bmw,x2,2019,8859,diesel,semi-auto,2.0,29325
+bmw,x2,2019,14352,petrol,semi-auto,2.0,30700
+bmw,x2,2019,123,diesel,automatic,2.0,29374
+bmw,x3,2019,2682,petrol,automatic,2.0,30900
+bmw,x3,2020,4773,diesel,semi-auto,3.0,39990
+bmw,x3,2019,7721,diesel,semi-auto,2.0,31950
+bmw,x3,2015,42400,diesel,automatic,2.0,18999
+bmw,x3,2019,14,diesel,semi-auto,2.0,34950
+bmw,x3,2016,41277,diesel,automatic,2.0,21995
+bmw,x3,2018,23206,diesel,semi-auto,3.0,29498
+bmw,x3,2015,51111,diesel,semi-auto,3.0,20491
+bmw,x3,2019,5000,diesel,automatic,2.0,33750
+bmw,x3,2020,6565,diesel,semi-auto,2.0,32490
+bmw,x3,2013,47111,diesel,semi-auto,2.0,14000
+bmw,x3,2019,7465,diesel,automatic,2.0,34000
+bmw,x3,2019,8200,petrol,automatic,3.0,43875
+bmw,x3,2015,74000,diesel,automatic,2.0,15490
+bmw,x3,2019,4238,petrol,semi-auto,2.0,31940
+bmw,x3,2019,2973,petrol,semi-auto,2.0,34222
+bmw,x3,2020,2789,diesel,automatic,2.0,37999
+bmw,x3,2017,17205,diesel,semi-auto,2.0,23991
+bmw,x3,2019,6847,diesel,automatic,2.0,35000
+bmw,x3,2019,5651,diesel,semi-auto,3.0,41450
+bmw,x4,2015,39824,diesel,manual,2.0,19500
+bmw,x4,2020,857,diesel,semi-auto,3.0,43000
+bmw,x4,2019,5763,diesel,semi-auto,2.0,34950
+bmw,x4,2019,9793,diesel,automatic,2.0,38750
+bmw,x4,2020,4000,diesel,semi-auto,3.0,46999
+bmw,x4,2015,32101,diesel,automatic,3.0,22800
+bmw,x4,2019,8023,petrol,semi-auto,3.0,40999
+bmw,x4,2018,935,diesel,semi-auto,2.0,34000
+bmw,x4,2019,10,diesel,semi-auto,3.0,38997
+bmw,x4,2017,23604,diesel,automatic,2.0,23900
+bmw,x4,2020,100,petrol,semi-auto,3.0,44950
+bmw,x4,2019,7272,diesel,semi-auto,2.0,33998
+bmw,x4,2019,8515,petrol,semi-auto,3.0,42550
+bmw,x4,2019,7555,diesel,automatic,3.0,47541
+bmw,x4,2019,6648,petrol,automatic,3.0,40016
+bmw,x4,2019,7356,diesel,semi-auto,3.0,38495
+bmw,x4,2019,9829,diesel,semi-auto,2.0,34999
+bmw,x4,2015,26722,diesel,automatic,3.0,21800
+bmw,x4,2019,5980,diesel,automatic,3.0,42995
+bmw,x4,2016,28480,diesel,semi-auto,3.0,25041
+bmw,x5,2016,46085,diesel,automatic,3.0,28995
+bmw,x5,2017,19094,diesel,automatic,3.0,38990
+bmw,x5,2016,47026,hybrid,automatic,2.0,26000
+bmw,x5,2019,6251,diesel,semi-auto,3.0,48995
+bmw,x5,2019,10,diesel,semi-auto,3.0,52875
+bmw,x5,2019,3080,diesel,automatic,3.0,49980
+bmw,x5,2019,9740,diesel,automatic,3.0,44850
+bmw,x5,2016,41464,hybrid,automatic,2.0,29250
+bmw,x5,2019,6883,diesel,automatic,3.0,43946
+bmw,x5,2015,27947,diesel,automatic,3.0,35400
+bmw,x5,2019,5,hybrid,automatic,3.0,73000
+bmw,x5,2014,89000,diesel,automatic,3.0,20450
+bmw,x5,2019,12082,diesel,automatic,3.0,44888
+bmw,x5,2016,59154,diesel,automatic,3.0,23499
+bmw,x5,2018,31016,diesel,automatic,3.0,30999
+bmw,x5,2019,5345,diesel,semi-auto,3.0,45463
+bmw,x5,2019,4076,diesel,automatic,3.0,49980
+bmw,x5,2019,8778,diesel,semi-auto,3.0,46991
+bmw,x5,2016,20000,petrol,automatic,4.4,40950
+bmw,x5,2016,49092,diesel,automatic,3.0,27785
+bmw,x6,2017,3550,diesel,semi-auto,3.0,35990
+bmw,x6,2018,16334,diesel,semi-auto,3.0,37790
+bmw,x6,2019,10231,diesel,automatic,3.0,42888
+bmw,x6,2015,51447,diesel,semi-auto,3.0,26980
+bmw,x6,2017,42000,diesel,automatic,3.0,31990
+bmw,x6,2020,7486,diesel,automatic,3.0,56000
+bmw,x6,2019,2500,petrol,semi-auto,3.0,59990
+bmw,x6,2016,21088,diesel,semi-auto,3.0,30891
+bmw,x6,2019,1500,diesel,semi-auto,3.0,55995
+bmw,x6,2015,55912,diesel,semi-auto,3.0,23162
+bmw,x6,2019,2055,diesel,semi-auto,3.0,56995
+bmw,x6,2018,7427,diesel,semi-auto,3.0,39990
+bmw,x6,2019,13000,diesel,semi-auto,3.0,41780
+bmw,x6,2019,4155,diesel,automatic,3.0,40980
+bmw,x6,2020,5656,diesel,semi-auto,3.0,67990
+bmw,x6,2016,29211,diesel,semi-auto,3.0,20950
+bmw,x6,2020,3955,diesel,semi-auto,3.0,57990
+bmw,x6,2016,44914,diesel,semi-auto,3.0,32950
+bmw,x6,2011,96000,diesel,automatic,3.0,13440
+bmw,x6,2020,3340,diesel,semi-auto,3.0,55890
+bmw,x7,2019,3300,diesel,semi-auto,3.0,74140
+bmw,x7,2020,4919,diesel,semi-auto,3.0,78490
+bmw,x7,2020,4000,diesel,semi-auto,3.0,64999
+bmw,x7,2019,17561,petrol,semi-auto,3.0,67989
+bmw,x7,2019,15000,diesel,automatic,3.0,67950
+bmw,x7,2019,5929,diesel,automatic,3.0,72500
+bmw,x7,2020,5000,diesel,semi-auto,3.0,78000
+bmw,x7,2019,9121,diesel,semi-auto,3.0,73950
+bmw,x7,2019,2137,diesel,semi-auto,3.0,62990
+bmw,x7,2019,3218,diesel,semi-auto,3.0,66540
+bmw,x7,2019,6506,diesel,semi-auto,3.0,77880
+bmw,x7,2020,3452,diesel,semi-auto,3.0,64995
+bmw,x7,2019,8574,diesel,automatic,3.0,65520
+bmw,x7,2019,9811,diesel,automatic,3.0,62850
+bmw,x7,2020,5000,diesel,automatic,3.0,66988
+bmw,x7,2020,1501,diesel,semi-auto,3.0,69995
+bmw,x7,2019,5000,diesel,semi-auto,3.0,68720
+bmw,x7,2019,4997,diesel,semi-auto,3.0,69995
+bmw,x7,2019,5600,diesel,semi-auto,3.0,67400
+bmw,x7,2020,1000,petrol,semi-auto,3.0,79566
+bmw,z3,1999,51949,petrol,manual,1.9,3995
+bmw,z3,1999,74282,petrol,manual,1.9,3995
+bmw,z3,2001,60000,petrol,manual,2.2,5950
+bmw,z3,1998,56500,petrol,manual,1.9,3950
+bmw,z3,1997,49000,petrol,manual,1.9,3950
+bmw,z3,1999,58000,petrol,manual,1.9,3950
+bmw,z3,2002,16500,petrol,automatic,2.2,14995
+bmw,z4,2019,6000,petrol,semi-auto,2.0,32989
+bmw,z4,2016,16761,petrol,semi-auto,2.0,17732
+bmw,z4,2020,100,petrol,semi-auto,3.0,38950
+bmw,z4,2019,2200,petrol,automatic,2.0,31600
+bmw,z4,2020,1784,petrol,automatic,3.0,39990
+bmw,z4,2019,8626,petrol,semi-auto,2.0,31450
+bmw,z4,2019,2485,petrol,semi-auto,2.0,32449
+bmw,z4,2019,1682,petrol,automatic,2.0,31500
+bmw,z4,2016,29850,petrol,semi-auto,2.0,16500
+bmw,z4,2019,8998,petrol,semi-auto,2.0,27950
+bmw,z4,2019,1561,petrol,semi-auto,3.0,38850
+bmw,z4,2013,26356,petrol,semi-auto,2.0,13640
+bmw,z4,2020,103,petrol,semi-auto,2.0,33850
+bmw,z4,2019,156,petrol,semi-auto,2.0,34890
+bmw,z4,2010,68090,petrol,manual,2.5,9440
+bmw,z4,2020,10,petrol,semi-auto,2.0,32490
+bmw,z4,2019,1501,petrol,semi-auto,2.0,35995
+bmw,z4,2019,8316,petrol,automatic,2.0,28950
+bmw,z4,2012,47800,petrol,manual,2.0,10595
+bmw,z4,2019,2756,petrol,automatic,3.0,40000
+ford,b-max,2017,13890,petrol,manual,1.0,10990
+ford,b-max,2016,25852,diesel,manual,1.5,7220
+ford,b-max,2016,22903,petrol,semi-auto,1.6,8890
+ford,b-max,2017,13988,petrol,semi-auto,1.6,10500
+ford,b-max,2017,12293,petrol,manual,1.0,9998
+ford,b-max,2017,17000,petrol,automatic,1.6,9450
+ford,b-max,2017,15999,diesel,manual,1.5,8990
+ford,b-max,2015,57836,petrol,semi-auto,1.6,7349
+ford,b-max,2017,28820,diesel,manual,1.5,8600
+ford,b-max,2013,31910,diesel,manual,1.6,6899
+ford,b-max,2016,36091,petrol,manual,1.0,6691
+ford,b-max,2014,19612,petrol,semi-auto,1.6,6791
+ford,b-max,2014,6271,petrol,semi-auto,1.6,7895
+ford,b-max,2017,11708,petrol,manual,1.0,9500
+ford,b-max,2013,16736,petrol,semi-auto,1.6,6998
+ford,b-max,2017,24096,diesel,manual,1.5,8998
+ford,b-max,2015,9708,diesel,manual,1.6,7698
+ford,b-max,2016,21471,diesel,manual,1.5,7636
+ford,b-max,2016,34924,petrol,semi-auto,1.6,7991
+ford,b-max,2013,51882,petrol,manual,1.4,5489
+ford,c-max,2017,12812,diesel,manual,1.5,10291
+ford,c-max,2013,39632,petrol,manual,1.0,8298
+ford,c-max,2016,22910,diesel,automatic,1.5,9077
+ford,c-max,2017,31743,diesel,manual,1.5,10698
+ford,c-max,2016,17442,diesel,manual,1.5,9999
+ford,c-max,2016,40507,diesel,manual,1.5,9300
+ford,c-max,2017,12626,petrol,manual,1.0,10898
+ford,c-max,2014,41261,diesel,manual,2.0,9000
+ford,c-max,2016,33000,diesel,automatic,2.0,11995
+ford,c-max,2017,9797,diesel,automatic,1.5,10689
+ford,c-max,2016,30697,diesel,manual,1.5,10000
+ford,c-max,2016,28889,petrol,manual,1.0,9899
+ford,c-max,2016,42991,diesel,manual,1.5,9161
+ford,c-max,2017,10194,diesel,semi-auto,1.5,11698
+ford,c-max,2017,2248,diesel,semi-auto,1.5,12800
+ford,c-max,2016,13507,diesel,manual,1.5,10499
+ford,c-max,2015,29110,diesel,manual,1.5,8750
+ford,c-max,2017,25878,petrol,manual,1.6,9991
+ford,c-max,2013,29349,petrol,manual,1.6,6526
+ford,c-max,2014,51168,petrol,manual,1.0,7290
+ford,ecosport,2018,8480,petrol,manual,1.0,14950
+ford,ecosport,2018,22793,petrol,manual,1.0,13470
+ford,ecosport,2019,8537,petrol,manual,1.0,15800
+ford,ecosport,2018,14067,petrol,manual,1.0,15290
+ford,ecosport,2018,9247,petrol,manual,1.0,15200
+ford,ecosport,2019,13194,petrol,manual,1.0,13998
+ford,ecosport,2019,5847,petrol,manual,1.0,16000
+ford,ecosport,2017,14554,petrol,manual,1.0,10250
+ford,ecosport,2015,46123,petrol,manual,1.0,7650
+ford,ecosport,2019,4243,petrol,semi-auto,1.0,16000
+ford,ecosport,2016,40850,petrol,manual,1.0,9675
+ford,ecosport,2016,7600,petrol,automatic,1.5,10995
+ford,ecosport,2018,8206,petrol,manual,1.0,12295
+ford,ecosport,2015,29691,petrol,manual,1.0,8499
+ford,ecosport,2017,23823,petrol,manual,1.0,9900
+ford,ecosport,2018,4989,petrol,manual,1.0,14000
+ford,ecosport,2017,10960,petrol,manual,1.0,10899
+ford,ecosport,2019,2014,petrol,automatic,1.0,17600
+ford,ecosport,2018,16092,petrol,manual,1.0,14000
+ford,ecosport,2019,8601,petrol,manual,1.0,15240
+ford,edge,2016,24641,diesel,automatic,2.0,19999
+ford,edge,2017,22168,diesel,manual,2.0,19050
+ford,edge,2018,5000,diesel,semi-auto,2.0,27500
+ford,edge,2018,15413,diesel,manual,2.0,22000
+ford,edge,2019,16192,diesel,semi-auto,2.0,29999
+ford,edge,2016,11655,diesel,manual,2.0,19400
+ford,edge,2019,10,diesel,automatic,2.0,33500
+ford,edge,2016,44947,diesel,manual,2.0,16499
+ford,edge,2017,29000,diesel,semi-auto,2.0,22450
+ford,edge,2019,10,diesel,automatic,2.0,30990
+ford,edge,2019,10,diesel,automatic,2.0,33000
+ford,edge,2017,23620,diesel,semi-auto,2.0,19995
+ford,edge,2016,24105,diesel,manual,2.0,18640
+ford,edge,2019,3000,diesel,automatic,2.0,23995
+ford,edge,2017,42100,diesel,semi-auto,2.0,19695
+ford,edge,2016,36142,diesel,automatic,2.0,19199
+ford,edge,2017,36763,diesel,semi-auto,2.0,20800
+ford,edge,2018,9600,diesel,semi-auto,2.0,25990
+ford,edge,2018,18339,diesel,automatic,2.0,23995
+ford,edge,2017,7721,diesel,manual,2.0,22250
+ford,escort,1996,50000,petrol,manual,1.8,3000
+ford,fiesta,2018,44190,petrol,manual,1.0,9890
+ford,fiesta,2016,45000,petrol,manual,1.0,7750
+ford,fiesta,2017,11224,petrol,manual,1.2,10000
+ford,fiesta,2018,33913,petrol,manual,1.0,11700
+ford,fiesta,2019,24022,diesel,manual,1.5,13995
+ford,fiesta,2017,30600,petrol,manual,1.0,7480
+ford,fiesta,2017,68127,petrol,automatic,1.0,8489
+ford,fiesta,2018,24841,petrol,manual,1.0,10870
+ford,fiesta,2017,6229,petrol,manual,1.0,9850
+ford,fiesta,2016,25915,petrol,manual,1.0,9000
+ford,fiesta,2018,7980,petrol,automatic,1.0,12999
+ford,fiesta,2018,34486,petrol,manual,1.0,10234
+ford,fiesta,2018,5887,petrol,manual,1.0,12250
+ford,fiesta,2016,7973,petrol,manual,1.0,8699
+ford,fiesta,2019,2957,petrol,manual,1.0,13491
+ford,fiesta,2019,4000,petrol,manual,1.0,15995
+ford,fiesta,2018,39478,petrol,manual,1.0,10360
+ford,fiesta,2019,9231,petrol,manual,1.0,15300
+ford,fiesta,2017,25320,petrol,manual,1.1,8081
+ford,fiesta,2012,64000,petrol,manual,1.6,5650
+ford,focus,2018,12528,petrol,manual,1.0,10999
+ford,focus,2017,24277,diesel,manual,2.0,14900
+ford,focus,2017,31913,diesel,manual,1.5,10345
+ford,focus,2015,30000,petrol,semi-auto,1.6,7795
+ford,focus,2019,13746,petrol,automatic,1.0,15298
+ford,focus,2018,21800,petrol,manual,2.0,18295
+ford,focus,2015,56329,diesel,manual,1.5,7495
+ford,focus,2018,11910,petrol,manual,1.0,17000
+ford,focus,2019,1625,petrol,manual,1.0,14300
+ford,focus,2018,10441,diesel,manual,1.5,13999
+ford,focus,2016,90378,diesel,manual,1.5,6299
+ford,focus,2016,40580,diesel,manual,1.5,8700
+ford,focus,2017,12118,petrol,semi-auto,1.0,12500
+ford,focus,2018,15452,diesel,automatic,1.5,14749
+ford,focus,2017,29396,diesel,manual,1.5,10499
+ford,focus,2018,10561,petrol,manual,1.0,15495
+ford,focus,2019,6760,petrol,manual,2.3,24989
+ford,focus,2016,45000,petrol,manual,1.0,6990
+ford,focus,2014,52544,diesel,manual,1.6,7298
+ford,focus,2018,13218,diesel,manual,1.5,14498
+ford,fusion,2009,44000,petrol,automatic,1.6,2890
+ford,fusion,2010,83000,petrol,manual,1.4,1795
+ford,fusion,2007,62233,petrol,manual,1.6,2299
+ford,fusion,2005,31000,petrol,manual,1.4,2095
+ford,fusion,2010,96000,diesel,manual,1.4,2495
+ford,fusion,2010,26588,petrol,automatic,1.6,4750
+ford,fusion,2005,64000,diesel,manual,1.4,2395
+ford,fusion,2009,86022,petrol,manual,1.4,2491
+ford,fusion,2009,94028,petrol,manual,1.4,1450
+ford,fusion,2008,55789,petrol,manual,1.6,3199
+ford,fusion,2010,77000,diesel,manual,1.4,2395
+ford,fusion,2011,35006,petrol,manual,1.6,3999
+ford,fusion,2006,69255,petrol,manual,1.4,2495
+ford,fusion,2008,105000,petrol,manual,1.6,1895
+ford,fusion,2008,66000,petrol,automatic,1.6,2750
+ford,fusion,2004,59300,petrol,automatic,1.4,1500
+ford,galaxy,2018,37411,diesel,manual,2.0,17900
+ford,galaxy,2016,10265,diesel,manual,2.0,19500
+ford,galaxy,2017,12000,diesel,manual,2.0,16489
+ford,galaxy,2016,39886,diesel,manual,2.0,15899
+ford,galaxy,2017,34036,diesel,manual,2.0,17999
+ford,galaxy,2013,52100,diesel,automatic,2.0,9795
+ford,galaxy,2016,20486,diesel,semi-auto,2.0,20995
+ford,galaxy,2016,21744,diesel,manual,2.0,18498
+ford,galaxy,2016,35029,diesel,manual,2.0,16299
+ford,galaxy,2019,4960,diesel,semi-auto,2.0,22990
+ford,galaxy,2017,40848,diesel,manual,2.0,18399
+ford,galaxy,2017,34206,diesel,manual,2.0,18490
+ford,galaxy,2016,145,diesel,manual,2.0,20500
+ford,galaxy,2017,35369,diesel,manual,2.0,17999
+ford,galaxy,2017,50446,diesel,manual,2.0,16990
+ford,galaxy,2007,89000,diesel,manual,1.8,4195
+ford,galaxy,2018,31766,diesel,manual,2.0,16990
+ford,galaxy,2017,46761,diesel,semi-auto,2.0,18200
+ford,galaxy,2019,3158,diesel,manual,2.0,29499
+ford,galaxy,2014,55632,diesel,automatic,2.0,8000
+ford,grand c-max,2017,10594,petrol,manual,1.0,11990
+ford,grand c-max,2016,26611,petrol,manual,1.0,9991
+ford,grand c-max,2016,24087,diesel,automatic,1.5,10249
+ford,grand c-max,2011,28000,diesel,automatic,2.0,7995
+ford,grand c-max,2014,35013,diesel,manual,1.6,8498
+ford,grand c-max,2016,8656,diesel,automatic,1.5,11999
+ford,grand c-max,2013,58873,diesel,manual,1.6,6799
+ford,grand c-max,2019,18065,petrol,manual,1.0,12899
+ford,grand c-max,2017,12124,diesel,manual,1.5,11698
+ford,grand c-max,2018,10092,petrol,manual,1.0,12800
+ford,grand c-max,2017,30788,diesel,manual,1.5,9990
+ford,grand c-max,2016,44956,diesel,automatic,1.5,8480
+ford,grand c-max,2016,16541,diesel,semi-auto,1.5,10798
+ford,grand c-max,2016,30691,petrol,manual,1.0,9660
+ford,grand c-max,2017,28958,diesel,manual,1.5,10500
+ford,grand c-max,2016,13642,diesel,automatic,1.5,10500
+ford,grand c-max,2017,25243,diesel,manual,1.5,12498
+ford,grand c-max,2013,59122,diesel,manual,1.6,6699
+ford,grand c-max,2016,13325,diesel,automatic,1.5,11690
+ford,grand c-max,2018,12135,petrol,manual,1.0,13999
+ford,grand tourneo connect,2019,3500,diesel,manual,1.5,19999
+ford,grand tourneo connect,2017,19483,diesel,manual,1.5,13500
+ford,grand tourneo connect,2015,94000,diesel,manual,1.6,8995
+ford,grand tourneo connect,2017,14825,diesel,manual,1.5,12750
+ford,grand tourneo connect,2017,39494,diesel,manual,1.5,13200
+ford,grand tourneo connect,2019,4284,diesel,manual,1.5,19000
+ford,grand tourneo connect,2019,3500,diesel,manual,1.5,19999
+ford,grand tourneo connect,2018,25546,diesel,manual,1.5,12298
+ford,grand tourneo connect,2016,45670,diesel,automatic,1.5,12260
+ford,grand tourneo connect,2016,18460,diesel,automatic,1.5,14500
+ford,grand tourneo connect,2016,44785,diesel,automatic,1.5,13500
+ford,grand tourneo connect,2018,8354,diesel,automatic,1.5,17298
+ford,grand tourneo connect,2015,14079,diesel,automatic,1.5,13200
+ford,grand tourneo connect,2016,21862,diesel,manual,1.5,13482
+ford,grand tourneo connect,2015,115613,diesel,manual,1.6,6499
+ford,grand tourneo connect,2016,29416,diesel,manual,1.5,11790
+ford,grand tourneo connect,2016,30000,diesel,manual,1.5,13995
+ford,grand tourneo connect,2018,18232,diesel,manual,1.5,14900
+ford,grand tourneo connect,2019,1144,diesel,manual,1.5,17998
+ford,grand tourneo connect,2017,14801,diesel,manual,1.5,14698
+ford,ka,2015,35130,petrol,manual,1.2,5000
+ford,ka,2009,68441,petrol,manual,1.2,3295
+ford,ka,2014,31599,petrol,manual,1.2,4499
+ford,ka,2014,14512,petrol,manual,1.2,4890
+ford,ka,2015,23593,petrol,manual,1.2,5560
+ford,ka,2014,51534,petrol,manual,1.2,4689
+ford,ka,2010,90000,diesel,manual,1.2,2995
+ford,ka,2013,60000,petrol,manual,1.2,3999
+ford,ka,2012,57000,petrol,manual,1.2,5495
+ford,ka,2015,30938,petrol,manual,1.2,4800
+ford,ka,2013,40000,petrol,manual,1.2,4750
+ford,ka,2012,45500,petrol,manual,1.2,3295
+ford,ka,2013,45880,petrol,manual,1.2,4198
+ford,ka,2014,25766,petrol,manual,1.2,5500
+ford,ka,2015,55346,petrol,manual,1.2,4498
+ford,ka,2016,22280,petrol,manual,1.2,5495
+ford,ka,2014,35824,petrol,manual,1.2,4560
+ford,ka,2017,27458,petrol,manual,1.2,7800
+ford,ka,2014,34000,petrol,manual,1.2,4650
+ford,ka,2008,77000,petrol,manual,1.3,1550
+ford,ka+,2017,3172,petrol,manual,1.2,7000
+ford,ka+,2019,3462,petrol,manual,1.2,9850
+ford,ka+,2017,11256,petrol,manual,1.2,8400
+ford,ka+,2018,17578,petrol,manual,1.2,7400
+ford,ka+,2018,27000,petrol,manual,1.2,7410
+ford,ka+,2019,1120,petrol,manual,1.2,12780
+ford,ka+,2017,7710,petrol,manual,1.2,7995
+ford,ka+,2016,17898,petrol,manual,1.2,7290
+ford,ka+,2018,14143,petrol,manual,1.2,8000
+ford,ka+,2018,2936,petrol,manual,1.2,10500
+ford,ka+,2018,13709,petrol,manual,1.2,8220
+ford,ka+,2019,3850,petrol,manual,1.2,9675
+ford,ka+,2018,3136,petrol,manual,1.2,9495
+ford,ka+,2018,12336,petrol,manual,1.2,8800
+ford,ka+,2019,1953,petrol,manual,1.2,9990
+ford,ka+,2018,20245,petrol,manual,1.2,7300
+ford,ka+,2019,3000,petrol,manual,1.2,9999
+ford,ka+,2019,206,petrol,manual,1.2,11890
+ford,ka+,2018,13561,petrol,manual,1.2,8495
+ford,ka+,2019,1798,petrol,manual,1.2,10700
+ford,kuga,2018,15408,diesel,manual,2.0,16200
+ford,kuga,2016,41607,diesel,semi-auto,2.0,13870
+ford,kuga,2019,4181,diesel,semi-auto,2.0,25000
+ford,kuga,2017,17921,petrol,manual,1.5,16399
+ford,kuga,2017,8511,diesel,manual,2.0,16800
+ford,kuga,2019,3651,diesel,manual,2.0,20080
+ford,kuga,2019,2554,diesel,manual,2.0,20499
+ford,kuga,2017,19900,petrol,manual,1.5,17000
+ford,kuga,2017,10580,diesel,manual,1.5,13989
+ford,kuga,2017,36710,diesel,manual,1.5,12699
+ford,kuga,2019,8123,diesel,semi-auto,2.0,23890
+ford,kuga,2013,56742,diesel,semi-auto,2.0,10000
+ford,kuga,2018,14089,petrol,automatic,1.5,19999
+ford,kuga,2018,16371,diesel,manual,2.0,15999
+ford,kuga,2018,30875,diesel,manual,2.0,17990
+ford,kuga,2016,22437,diesel,manual,2.0,12591
+ford,kuga,2017,23314,petrol,manual,1.5,14450
+ford,kuga,2018,16200,diesel,semi-auto,2.0,23499
+ford,kuga,2009,117000,diesel,manual,2.0,4995
+ford,kuga,2017,8800,diesel,manual,2.0,17498
+ford,mondeo,2016,112000,diesel,manual,2.0,6993
+ford,mondeo,2014,94000,diesel,manual,1.6,5290
+ford,mondeo,2015,33455,diesel,manual,2.0,11000
+ford,mondeo,2017,90190,diesel,manual,1.5,8295
+ford,mondeo,2015,73991,diesel,manual,2.0,8470
+ford,mondeo,2011,75905,petrol,manual,2.0,4895
+ford,mondeo,2015,35226,diesel,manual,2.0,10547
+ford,mondeo,2017,14790,petrol,automatic,1.5,14498
+ford,mondeo,2009,15000,petrol,manual,2.0,4250
+ford,mondeo,2015,142000,diesel,manual,2.0,6391
+ford,mondeo,2017,77368,diesel,manual,2.0,9490
+ford,mondeo,2014,71869,diesel,manual,2.0,8995
+ford,mondeo,2018,23733,diesel,manual,2.0,12999
+ford,mondeo,2017,31959,petrol,manual,1.5,12790
+ford,mondeo,2018,23872,petrol,automatic,1.5,15998
+ford,mondeo,2018,31345,diesel,automatic,2.0,13999
+ford,mondeo,2016,75309,diesel,manual,2.0,9599
+ford,mondeo,2016,37154,diesel,semi-auto,2.0,11998
+ford,mondeo,2017,48664,diesel,manual,2.0,12450
+ford,mondeo,2019,11500,diesel,automatic,2.0,32000
+ford,mustang,2016,26104,petrol,semi-auto,5.0,27999
+ford,mustang,2019,2500,petrol,automatic,5.0,45250
+ford,mustang,2018,5000,petrol,automatic,5.0,32000
+ford,mustang,2019,1780,petrol,semi-auto,5.0,38000
+ford,mustang,2017,17030,petrol,manual,5.0,27990
+ford,mustang,2019,5000,petrol,automatic,5.0,39998
+ford,mustang,2020,50,petrol,manual,5.0,48000
+ford,mustang,2017,20700,petrol,manual,5.0,27500
+ford,mustang,2019,10810,petrol,semi-auto,5.0,36799
+ford,mustang,2018,28915,petrol,semi-auto,5.0,31991
+ford,mustang,2020,151,petrol,semi-auto,5.0,37990
+ford,mustang,2019,226,petrol,automatic,5.0,42500
+ford,mustang,2019,2000,petrol,automatic,5.0,40495
+ford,mustang,2018,21632,petrol,manual,2.3,25000
+ford,mustang,2018,3000,petrol,automatic,2.3,29998
+ford,mustang,2019,800,petrol,automatic,5.0,39995
+ford,mustang,2016,42086,petrol,semi-auto,5.0,24999
+ford,mustang,2016,12000,petrol,manual,5.0,26475
+ford,mustang,2019,1055,petrol,automatic,5.0,37991
+ford,mustang,2018,5064,petrol,semi-auto,5.0,33000
+ford,puma,2020,2548,petrol,manual,1.0,20890
+ford,puma,2019,2233,petrol,manual,1.0,18990
+ford,puma,2020,1255,petrol,manual,1.0,21990
+ford,puma,2019,3021,petrol,manual,1.0,25695
+ford,puma,2019,150,petrol,manual,1.0,21000
+ford,puma,2020,2477,petrol,manual,1.0,19990
+ford,puma,2019,68,petrol,manual,1.0,21500
+ford,puma,2020,5750,petrol,manual,1.0,20991
+ford,puma,2020,891,petrol,manual,1.0,20991
+ford,puma,2020,3000,petrol,manual,1.0,22975
+ford,puma,2019,127,petrol,manual,1.0,21700
+ford,puma,2020,60,petrol,manual,1.0,19900
+ford,puma,2020,1137,petrol,manual,1.0,23999
+ford,puma,2019,1225,petrol,manual,1.0,23999
+ford,puma,2020,1000,petrol,manual,1.0,21000
+ford,puma,2020,680,petrol,manual,1.0,21795
+ford,puma,2019,207,petrol,manual,1.0,20800
+ford,puma,2019,470,petrol,manual,1.0,20000
+ford,puma,2020,3073,petrol,manual,1.0,20891
+ford,puma,2019,10,petrol,manual,1.0,21200
+ford,ranger,2013,88000,diesel,manual,3.2,14495
+ford,s-max,2017,12299,diesel,semi-auto,2.0,20999
+ford,s-max,2018,13969,diesel,manual,2.0,19995
+ford,s-max,2016,56347,diesel,semi-auto,2.0,14995
+ford,s-max,2019,4850,diesel,automatic,2.0,27000
+ford,s-max,2017,16840,petrol,automatic,2.0,20500
+ford,s-max,2006,120000,diesel,manual,2.0,3875
+ford,s-max,2017,40443,diesel,manual,2.0,17999
+ford,s-max,2017,37500,diesel,manual,2.0,15800
+ford,s-max,2017,35680,diesel,semi-auto,2.0,14989
+ford,s-max,2016,26889,diesel,semi-auto,2.0,16699
+ford,s-max,2016,17081,diesel,manual,2.0,17489
+ford,s-max,2019,4000,diesel,manual,2.0,22489
+ford,s-max,2016,25648,petrol,automatic,2.0,17899
+ford,s-max,2015,24622,petrol,automatic,2.0,18499
+ford,s-max,2015,18000,diesel,automatic,2.0,13990
+ford,s-max,2017,46362,diesel,manual,2.0,14998
+ford,s-max,2015,24421,petrol,manual,1.5,14950
+ford,s-max,2017,52835,diesel,automatic,2.0,17986
+ford,s-max,2017,18748,diesel,manual,2.0,16990
+ford,s-max,2017,26372,diesel,manual,2.0,18699
+ford,streetka,2006,74055,petrol,manual,1.6,1850
+ford,streetka,2005,63000,petrol,manual,1.6,1999
+ford,tourneo connect,2019,2762,diesel,manual,1.5,18750
+ford,tourneo connect,2016,21026,diesel,manual,1.5,11995
+ford,tourneo connect,2017,5094,diesel,manual,1.5,12998
+ford,tourneo connect,2017,6051,diesel,automatic,1.5,15998
+ford,tourneo connect,2019,1956,diesel,manual,1.5,17950
+ford,tourneo connect,2018,30000,diesel,manual,1.5,14999
+ford,tourneo connect,2015,28309,diesel,manual,1.6,10298
+ford,tourneo connect,2016,16740,diesel,manual,1.5,13990
+ford,tourneo connect,2015,15518,petrol,automatic,1.6,11495
+ford,tourneo connect,2016,21026,diesel,manual,1.5,11995
+ford,tourneo connect,2016,56892,diesel,automatic,1.5,10873
+ford,tourneo connect,2017,15852,diesel,automatic,1.5,13950
+ford,tourneo connect,2016,24939,diesel,manual,1.5,11298
+ford,tourneo connect,2019,12815,diesel,manual,1.5,17000
+ford,tourneo connect,2015,47904,diesel,manual,1.6,9295
+ford,tourneo connect,2016,11297,diesel,automatic,1.5,13000
+ford,tourneo connect,2016,72777,diesel,manual,1.5,9000
+ford,tourneo connect,2017,21491,diesel,manual,1.5,14000
+ford,tourneo connect,2016,6000,diesel,automatic,1.5,14995
+ford,tourneo connect,2017,21310,diesel,manual,1.5,12991
+ford,tourneo custom,2016,62505,diesel,manual,2.0,15298
+ford,tourneo custom,2018,26483,diesel,manual,2.0,21980
+ford,tourneo custom,2016,26807,diesel,manual,2.0,16798
+ford,tourneo custom,2016,11960,diesel,manual,2.0,19698
+ford,tourneo custom,2017,36000,diesel,manual,2.0,20000
+ford,tourneo custom,2019,29973,diesel,manual,2.0,19997
+ford,tourneo custom,2019,10450,diesel,manual,2.0,29500
+ford,tourneo custom,2016,25108,diesel,manual,2.0,16998
+ford,tourneo custom,2019,4452,diesel,automatic,2.0,28995
+ford,tourneo custom,2015,30324,diesel,manual,2.2,15998
+ford,tourneo custom,2019,5000,diesel,automatic,2.0,25995
+ford,tourneo custom,2017,37950,diesel,manual,2.0,19989
+ford,tourneo custom,2016,31250,diesel,manual,2.0,22495
+ford,tourneo custom,2019,6020,diesel,automatic,2.0,23995
+ford,tourneo custom,2017,33650,diesel,manual,2.0,17995
+ford,tourneo custom,2019,2000,diesel,automatic,2.0,26500
+ford,tourneo custom,2018,26909,diesel,automatic,2.0,21948
+ford,tourneo custom,2018,6959,diesel,manual,2.0,21980
+ford,tourneo custom,2018,30732,diesel,manual,2.0,17495
+ford,tourneo custom,2019,7000,diesel,manual,2.0,29495
+ford,transit tourneo,2014,19496,diesel,manual,2.2,12450
+hyundai,accent,2000,47000,petrol,automatic,1.3,1295
+hyundai,amica,2007,53000,petrol,automatic,1.1,1750
+hyundai,getz,2007,57000,petrol,manual,1.1,1995
+hyundai,getz,2003,51000,petrol,automatic,1.6,1990
+hyundai,getz,2008,67000,petrol,manual,1.1,1695
+hyundai,getz,2007,81400,petrol,manual,1.1,2195
+hyundai,getz,2007,90800,petrol,manual,1.1,1295
+hyundai,getz,2003,59000,petrol,automatic,1.3,2395
+hyundai,i10,2018,13303,petrol,manual,1.0,7490
+hyundai,i10,2016,29200,petrol,manual,1.2,6689
+hyundai,i10,2019,3500,petrol,manual,1.0,9491
+hyundai,i10,2017,40261,petrol,manual,1.2,6498
+hyundai,i10,2017,31686,petrol,manual,1.2,6491
+hyundai,i10,2014,40650,petrol,manual,1.2,6000
+hyundai,i10,2015,3006,petrol,semi-auto,1.2,8995
+hyundai,i10,2018,13457,petrol,manual,1.0,7500
+hyundai,i10,2012,58205,petrol,manual,1.2,3695
+hyundai,i10,2017,26570,petrol,manual,1.0,5790
+hyundai,i10,2017,17120,petrol,semi-auto,1.2,9500
+hyundai,i10,2017,44013,petrol,manual,1.0,5995
+hyundai,i10,2016,43778,petrol,manual,1.0,5500
+hyundai,i10,2018,10918,petrol,manual,1.0,8349
+hyundai,i10,2016,12965,petrol,manual,1.0,7490
+hyundai,i10,2016,17272,petrol,manual,0.0,6300
+hyundai,i10,2016,46000,petrol,manual,1.0,5500
+hyundai,i10,2016,16309,petrol,manual,1.2,6500
+hyundai,i10,2019,2000,petrol,manual,1.0,9295
+hyundai,i10,2018,4000,petrol,manual,1.0,8520
+hyundai,i20,2018,20796,petrol,automatic,1.4,9985
+hyundai,i20,2016,34826,petrol,manual,1.2,7300
+hyundai,i20,2015,25730,diesel,manual,1.4,7361
+hyundai,i20,2019,12545,petrol,manual,1.2,9890
+hyundai,i20,2017,19366,petrol,manual,1.2,8500
+hyundai,i20,2013,26550,petrol,automatic,1.4,6998
+hyundai,i20,2015,27823,petrol,manual,1.4,8290
+hyundai,i20,2019,4491,petrol,manual,1.0,10970
+hyundai,i20,2015,28123,petrol,manual,0.0,7500
+hyundai,i20,2017,10402,petrol,manual,1.2,8480
+hyundai,i20,2018,4222,petrol,manual,1.2,9490
+hyundai,i20,2018,16899,petrol,manual,1.2,9285
+hyundai,i20,2019,7372,petrol,manual,1.2,9000
+hyundai,i20,2018,18575,petrol,manual,1.2,8500
+hyundai,i20,2015,44226,petrol,manual,1.2,7650
+hyundai,i20,2017,32562,petrol,manual,1.2,7599
+hyundai,i20,2018,19997,petrol,manual,1.2,10249
+hyundai,i20,2019,3111,petrol,manual,1.0,12480
+hyundai,i20,2018,4256,petrol,manual,1.2,11000
+hyundai,i20,2016,29981,petrol,manual,1.2,7900
+hyundai,i30,2019,150,petrol,manual,1.4,18500
+hyundai,i30,2016,23261,diesel,manual,1.6,8695
+hyundai,i30,2019,6879,petrol,manual,1.4,14998
+hyundai,i30,2010,99000,diesel,manual,1.6,2495
+hyundai,i30,2017,19273,diesel,manual,1.6,10785
+hyundai,i30,2018,9664,petrol,manual,1.0,10995
+hyundai,i30,2019,222,petrol,manual,1.4,18990
+hyundai,i30,2015,48949,diesel,manual,1.6,7198
+hyundai,i30,2015,46761,diesel,manual,1.6,8975
+hyundai,i30,2017,22521,petrol,manual,1.0,9995
+hyundai,i30,2018,30709,petrol,semi-auto,1.4,12190
+hyundai,i30,2019,5636,diesel,manual,1.6,15995
+hyundai,i30,2013,61735,diesel,manual,1.6,4998
+hyundai,i30,2015,64365,diesel,manual,1.6,6698
+hyundai,i30,2018,11462,petrol,manual,1.0,9498
+hyundai,i30,2018,24512,petrol,manual,1.0,10450
+hyundai,i30,2017,19367,petrol,automatic,1.4,12250
+hyundai,i30,2018,17070,petrol,manual,1.0,10498
+hyundai,i30,2015,59000,diesel,manual,1.6,6885
+hyundai,i30,2019,3000,diesel,manual,1.6,15490
+hyundai,i40,2015,41000,diesel,manual,1.7,8999
+hyundai,i40,2014,66600,diesel,manual,1.7,7880
+hyundai,i40,2016,40741,diesel,manual,1.7,9798
+hyundai,i40,2016,34504,diesel,manual,1.7,11695
+hyundai,i40,2015,20660,diesel,manual,1.7,10690
+hyundai,i40,2016,39703,diesel,manual,1.7,8270
+hyundai,i40,2016,25881,diesel,semi-auto,1.7,11151
+hyundai,i40,2012,74768,petrol,manual,1.6,5495
+hyundai,i40,2015,50500,diesel,manual,1.7,8499
+hyundai,i40,2019,30,diesel,manual,1.6,16000
+hyundai,i40,2016,32309,diesel,manual,1.7,9995
+hyundai,i40,2017,14799,diesel,manual,1.7,11470
+hyundai,i40,2016,45518,diesel,semi-auto,1.7,10995
+hyundai,i40,2019,10,diesel,manual,1.6,16500
+hyundai,i40,2015,39779,diesel,manual,1.7,9995
+hyundai,i40,2017,39317,diesel,manual,1.7,10000
+hyundai,i40,2017,33763,diesel,manual,1.7,10498
+hyundai,i40,2015,61599,diesel,manual,1.7,7640
+hyundai,i40,2013,58232,diesel,manual,1.7,7191
+hyundai,i40,2015,58915,diesel,manual,1.7,8000
+hyundai,i800,2019,15492,diesel,manual,2.5,18990
+hyundai,i800,2018,32420,diesel,automatic,2.5,15749
+hyundai,i800,2018,36815,diesel,manual,2.5,15998
+hyundai,i800,2019,4266,diesel,manual,2.5,18985
+hyundai,i800,2018,32730,diesel,automatic,2.5,16990
+hyundai,i800,2019,12450,diesel,automatic,2.5,19965
+hyundai,i800,2019,14329,diesel,manual,2.5,18490
+hyundai,i800,2018,33389,diesel,manual,2.5,15838
+hyundai,i800,2018,35607,diesel,automatic,2.5,15990
+hyundai,i800,2018,35757,diesel,automatic,2.5,16990
+hyundai,i800,2019,17972,diesel,manual,2.5,17998
+hyundai,i800,2018,33610,diesel,manual,2.5,16459
+hyundai,i800,2018,34605,diesel,automatic,2.5,15990
+hyundai,i800,2019,2544,diesel,manual,2.5,19998
+hyundai,i800,2018,38330,diesel,manual,2.5,15480
+hyundai,i800,2018,35845,diesel,automatic,2.5,14500
+hyundai,i800,2017,35154,diesel,automatic,2.5,15985
+hyundai,i800,2019,100,diesel,manual,2.5,24995
+hyundai,i800,2016,27802,diesel,automatic,2.5,13710
+hyundai,i800,2018,36164,diesel,manual,2.5,15498
+hyundai,ioniq,2018,27318,hybrid,automatic,1.6,14811
+hyundai,ioniq,2019,6040,hybrid,automatic,1.6,18495
+hyundai,ioniq,2019,10391,hybrid,semi-auto,1.6,18600
+hyundai,ioniq,2018,11776,hybrid,automatic,1.6,16998
+hyundai,ioniq,2019,14368,hybrid,automatic,1.6,17495
+hyundai,ioniq,2017,11469,hybrid,automatic,1.6,17000
+hyundai,ioniq,2020,5,hybrid,automatic,1.6,22995
+hyundai,ioniq,2017,19096,hybrid,automatic,1.6,16495
+hyundai,ioniq,2019,2810,hybrid,automatic,1.6,20400
+hyundai,ioniq,2018,13286,hybrid,automatic,1.6,15990
+hyundai,ioniq,2020,3358,hybrid,automatic,1.6,22995
+hyundai,ioniq,2019,2801,hybrid,semi-auto,1.6,18491
+hyundai,ioniq,2018,15850,hybrid,automatic,1.6,18000
+hyundai,ioniq,2020,2501,hybrid,automatic,1.6,24995
+hyundai,ioniq,2018,13415,hybrid,automatic,1.6,15995
+hyundai,ioniq,2019,10547,hybrid,automatic,1.6,16750
+hyundai,ioniq,2019,1963,petrol,automatic,1.6,19800
+hyundai,ioniq,2018,7725,hybrid,automatic,1.6,18690
+hyundai,ioniq,2020,1500,hybrid,automatic,1.6,22000
+hyundai,ioniq,2018,14886,hybrid,automatic,1.6,18970
+hyundai,ix20,2016,9574,petrol,automatic,1.6,9495
+hyundai,ix20,2017,7673,petrol,manual,1.4,9998
+hyundai,ix20,2018,2259,petrol,manual,1.6,15495
+hyundai,ix20,2016,15560,petrol,manual,1.4,8250
+hyundai,ix20,2017,19500,petrol,automatic,1.6,9995
+hyundai,ix20,2015,20077,petrol,manual,1.4,7998
+hyundai,ix20,2016,17611,petrol,manual,1.4,8590
+hyundai,ix20,2014,38601,petrol,manual,0.0,6500
+hyundai,ix20,2016,22109,petrol,automatic,1.6,8277
+hyundai,ix20,2017,12417,petrol,manual,1.4,8940
+hyundai,ix20,2016,29099,petrol,manual,1.4,8199
+hyundai,ix20,2016,13302,petrol,automatic,1.6,8991
+hyundai,ix20,2018,13000,petrol,automatic,1.6,12000
+hyundai,ix20,2017,9870,petrol,manual,1.4,8499
+hyundai,ix20,2015,57819,petrol,manual,1.4,6498
+hyundai,ix20,2015,45908,petrol,automatic,1.6,6750
+hyundai,ix20,2016,30565,petrol,manual,1.4,7998
+hyundai,ix20,2015,9767,petrol,automatic,1.6,9495
+hyundai,ix20,2016,3000,petrol,automatic,1.6,9995
+hyundai,ix20,2017,12689,petrol,manual,1.4,9750
+hyundai,ix35,2015,54076,diesel,manual,2.0,9795
+hyundai,ix35,2014,71289,diesel,manual,1.7,7298
+hyundai,ix35,2013,55736,diesel,manual,2.0,7999
+hyundai,ix35,2011,48528,diesel,automatic,2.0,7799
+hyundai,ix35,2015,47456,diesel,manual,2.0,9995
+hyundai,ix35,2013,49180,diesel,automatic,2.0,8471
+hyundai,ix35,2014,50000,diesel,manual,1.7,8275
+hyundai,ix35,2015,29865,diesel,manual,1.7,8595
+hyundai,ix35,2014,41778,diesel,manual,1.7,8500
+hyundai,ix35,2014,43440,diesel,manual,1.7,8595
+hyundai,ix35,2015,54783,diesel,manual,1.7,7995
+hyundai,ix35,2014,44205,diesel,automatic,2.0,9397
+hyundai,ix35,2015,42865,diesel,manual,1.7,9498
+hyundai,ix35,2013,73593,diesel,manual,1.7,7500
+hyundai,ix35,2012,119050,diesel,manual,1.7,5000
+hyundai,ix35,2012,82833,petrol,manual,1.6,5588
+hyundai,ix35,2015,45163,diesel,manual,1.7,8795
+hyundai,ix35,2013,28000,diesel,automatic,2.0,10488
+hyundai,ix35,2015,7000,petrol,manual,1.6,9950
+hyundai,ix35,2014,27410,diesel,manual,2.0,10499
+hyundai,kona,2018,8093,petrol,manual,1.0,14579
+hyundai,kona,2019,5000,petrol,manual,1.0,14399
+hyundai,kona,2018,18080,petrol,semi-auto,1.6,18999
+hyundai,kona,2019,10,petrol,manual,1.0,15498
+hyundai,kona,2018,18911,petrol,manual,1.0,13998
+hyundai,kona,2019,7540,petrol,manual,1.0,18995
+hyundai,kona,2019,5155,hybrid,automatic,1.6,21689
+hyundai,kona,2018,8085,petrol,manual,1.0,13995
+hyundai,kona,2018,13878,petrol,manual,1.0,11985
+hyundai,kona,2019,16261,petrol,manual,1.0,13650
+hyundai,kona,2018,15028,petrol,manual,1.0,14995
+hyundai,kona,2019,15,petrol,manual,1.0,15498
+hyundai,kona,2018,11724,petrol,manual,1.0,13498
+hyundai,kona,2019,2658,petrol,manual,1.0,15995
+hyundai,kona,2019,10,petrol,semi-auto,1.6,19995
+hyundai,kona,2017,21858,petrol,manual,1.0,11990
+hyundai,kona,2019,3752,petrol,manual,1.0,15298
+hyundai,kona,2018,14764,petrol,manual,1.0,14250
+hyundai,kona,2018,5913,petrol,manual,1.0,15498
+hyundai,kona,2019,14880,petrol,manual,1.0,14995
+hyundai,santa fe,2016,30822,diesel,semi-auto,2.2,16995
+hyundai,santa fe,2019,7984,diesel,semi-auto,2.2,29850
+hyundai,santa fe,2019,4000,diesel,automatic,2.2,34864
+hyundai,santa fe,2015,37854,diesel,semi-auto,2.2,17290
+hyundai,santa fe,2018,13018,diesel,semi-auto,2.2,22270
+hyundai,santa fe,2017,32467,diesel,semi-auto,2.2,18991
+hyundai,santa fe,2019,1791,diesel,automatic,2.2,32450
+hyundai,santa fe,2019,4000,diesel,automatic,2.2,31441
+hyundai,santa fe,2014,60500,diesel,semi-auto,2.2,14995
+hyundai,santa fe,2019,10035,diesel,automatic,2.2,30999
+hyundai,santa fe,2019,7119,diesel,semi-auto,2.2,32995
+hyundai,santa fe,2019,2130,diesel,automatic,2.2,32450
+hyundai,santa fe,2016,34284,diesel,manual,2.2,18491
+hyundai,santa fe,2015,41900,diesel,semi-auto,2.2,14495
+hyundai,santa fe,2019,130,diesel,semi-auto,2.2,31995
+hyundai,santa fe,2019,7921,diesel,automatic,2.2,28990
+hyundai,santa fe,2017,28845,diesel,manual,2.2,19995
+hyundai,santa fe,2016,23764,diesel,automatic,2.2,18500
+hyundai,santa fe,2016,11255,diesel,manual,2.2,17390
+hyundai,santa fe,2015,34203,diesel,semi-auto,2.2,17000
+hyundai,terracan,2005,130000,diesel,manual,2.9,2895
+hyundai,terracan,2003,78000,diesel,manual,2.9,3290
+hyundai,tucson,2017,27587,diesel,manual,1.7,13500
+hyundai,tucson,2019,101,petrol,manual,1.6,21490
+hyundai,tucson,2017,33880,diesel,manual,1.7,14250
+hyundai,tucson,2016,39002,diesel,manual,2.0,13690
+hyundai,tucson,2017,33664,diesel,semi-auto,1.7,17750
+hyundai,tucson,2017,26245,diesel,manual,1.7,14495
+hyundai,tucson,2017,20274,diesel,manual,1.7,11995
+hyundai,tucson,2017,13635,petrol,manual,1.6,12698
+hyundai,tucson,2019,14593,petrol,manual,1.6,19000
+hyundai,tucson,2017,27237,diesel,manual,1.7,13995
+hyundai,tucson,2016,26000,diesel,manual,2.0,15000
+hyundai,tucson,2019,9898,petrol,semi-auto,1.6,22395
+hyundai,tucson,2019,6155,hybrid,manual,1.6,22500
+hyundai,tucson,2017,15994,diesel,semi-auto,1.7,13790
+hyundai,tucson,2016,28723,diesel,automatic,2.0,16498
+hyundai,tucson,2017,16814,diesel,manual,1.7,14998
+hyundai,tucson,2019,11750,petrol,manual,1.6,15498
+hyundai,tucson,2017,2916,diesel,manual,1.7,13798
+hyundai,tucson,2018,4755,petrol,manual,1.6,15850
+hyundai,tucson,2016,58791,diesel,manual,1.7,12498
+hyundai,veloster,2013,46436,petrol,manual,1.6,6495
+hyundai,veloster,2012,60200,petrol,manual,1.6,6300
+hyundai,veloster,2014,36324,petrol,manual,1.6,8300
+mercedes,180,2014,39240,diesel,manual,1.5,10799
+mercedes,200,2018,15113,diesel,manual,2.2,19495
+mercedes,220,2018,9814,diesel,automatic,2.0,19995
+mercedes,230,2007,94000,petrol,automatic,0.0,4500
+mercedes,a class,2019,11706,petrol,semi-auto,1.3,21099
+mercedes,a class,2017,19000,petrol,semi-auto,1.6,17500
+mercedes,a class,2017,18138,petrol,semi-auto,1.6,15499
+mercedes,a class,2017,24175,diesel,semi-auto,2.1,17795
+mercedes,a class,2016,27474,diesel,manual,1.5,14500
+mercedes,a class,2019,3000,petrol,semi-auto,1.3,24000
+mercedes,a class,2019,2099,diesel,semi-auto,2.0,25899
+mercedes,a class,2013,43507,diesel,semi-auto,2.1,12490
+mercedes,a class,2016,39119,diesel,manual,1.5,11000
+mercedes,a class,2016,55316,diesel,automatic,2.1,15999
+mercedes,a class,2019,1657,petrol,automatic,1.3,25890
+mercedes,a class,2019,16,petrol,semi-auto,2.0,26980
+mercedes,a class,2013,51896,diesel,manual,1.8,12499
+mercedes,a class,2019,8036,petrol,automatic,1.3,23450
+mercedes,a class,2017,24866,petrol,manual,1.6,15695
+mercedes,a class,2019,2823,diesel,automatic,1.5,22599
+mercedes,a class,2017,85900,diesel,manual,2.1,13000
+mercedes,a class,2020,1000,petrol,semi-auto,1.3,25879
+mercedes,a class,2014,67569,diesel,manual,1.5,9480
+mercedes,a class,2017,13685,petrol,manual,2.0,20000
+mercedes,b class,2016,28156,diesel,automatic,2.1,14599
+mercedes,b class,2019,169,petrol,manual,1.3,22990
+mercedes,b class,2010,66000,diesel,manual,2.0,3995
+mercedes,b class,2019,10651,petrol,automatic,1.3,21290
+mercedes,b class,2019,14846,petrol,automatic,1.3,21190
+mercedes,b class,2019,13744,petrol,semi-auto,1.3,19998
+mercedes,b class,2019,12250,diesel,semi-auto,2.0,22890
+mercedes,b class,2020,3012,diesel,automatic,2.0,23690
+mercedes,b class,2019,11748,petrol,semi-auto,1.3,21980
+mercedes,b class,2019,13338,petrol,automatic,1.3,21890
+mercedes,b class,2019,11676,petrol,semi-auto,1.3,20000
+mercedes,b class,2020,4000,diesel,semi-auto,2.0,26000
+mercedes,b class,2020,2000,diesel,semi-auto,2.0,26500
+mercedes,b class,2015,47000,diesel,automatic,2.1,11240
+mercedes,b class,2017,17403,diesel,manual,1.5,13980
+mercedes,b class,2019,11144,petrol,automatic,1.3,22176
+mercedes,b class,2020,2430,diesel,automatic,2.0,24264
+mercedes,b class,2019,3475,diesel,semi-auto,1.5,23799
+mercedes,b class,2019,5999,petrol,automatic,2.0,28010
+mercedes,b class,2019,10,diesel,automatic,2.0,23480
+mercedes,c class,2020,1000,petrol,automatic,3.0,41900
+mercedes,c class,2015,35464,diesel,semi-auto,2.1,13649
+mercedes,c class,2015,50374,diesel,semi-auto,2.1,12495
+mercedes,c class,2015,32023,diesel,semi-auto,2.1,15998
+mercedes,c class,2017,23665,diesel,automatic,2.1,21900
+mercedes,c class,2020,1000,diesel,semi-auto,2.0,39309
+mercedes,c class,2019,7508,diesel,automatic,2.0,25799
+mercedes,c class,2017,14812,diesel,semi-auto,1.6,18801
+mercedes,c class,2019,6641,petrol,semi-auto,3.0,39950
+mercedes,c class,2017,21212,diesel,semi-auto,2.1,23999
+mercedes,c class,2015,58502,diesel,semi-auto,2.1,14490
+mercedes,c class,2019,3229,diesel,semi-auto,2.0,31480
+mercedes,c class,2019,4025,petrol,semi-auto,2.0,32890
+mercedes,c class,2019,8610,petrol,semi-auto,3.0,36980
+mercedes,c class,2019,41,petrol,automatic,1.5,27498
+mercedes,c class,2019,2791,diesel,automatic,2.0,34987
+mercedes,c class,2015,41000,diesel,automatic,2.1,13699
+mercedes,c class,2019,9053,petrol,semi-auto,2.0,29549
+mercedes,c class,2019,13244,diesel,semi-auto,2.0,25849
+mercedes,c class,2018,10579,diesel,semi-auto,2.0,27698
+mercedes,cl class,2016,52173,diesel,manual,2.1,13799
+mercedes,cl class,2019,3647,petrol,semi-auto,2.0,37999
+mercedes,cl class,2017,27334,diesel,manual,2.1,15970
+mercedes,cl class,2018,27034,petrol,semi-auto,2.0,28220
+mercedes,cl class,2016,43726,diesel,semi-auto,2.1,17999
+mercedes,cl class,2019,3004,petrol,semi-auto,2.0,29299
+mercedes,cl class,2017,11472,petrol,manual,1.6,17698
+mercedes,cl class,2019,16122,petrol,semi-auto,2.0,25399
+mercedes,cl class,2015,28235,diesel,semi-auto,2.1,17998
+mercedes,cl class,2015,83245,petrol,manual,1.6,13991
+mercedes,cl class,2019,4312,petrol,automatic,1.3,25920
+mercedes,cl class,2017,12000,petrol,semi-auto,1.6,19999
+mercedes,cl class,2016,29296,diesel,semi-auto,2.1,19000
+mercedes,cl class,2014,30110,diesel,manual,1.8,15830
+mercedes,cl class,2017,24325,petrol,semi-auto,2.0,31000
+mercedes,cl class,2017,20415,diesel,manual,2.1,16990
+mercedes,cl class,2017,33348,diesel,manual,2.1,18500
+mercedes,cl class,2017,28600,diesel,semi-auto,2.1,19990
+mercedes,cl class,2020,2000,diesel,semi-auto,2.0,32499
+mercedes,cl class,2019,6032,petrol,automatic,1.3,30991
+mercedes,cla class,2017,31875,diesel,manual,2.1,15500
+mercedes,cla class,2016,48292,petrol,manual,1.6,14991
+mercedes,cla class,2016,28863,diesel,automatic,2.1,18000
+mercedes,cla class,2020,3653,diesel,automatic,2.0,31150
+mercedes,cla class,2017,27941,diesel,automatic,2.1,14800
+mercedes,cla class,2020,6000,petrol,automatic,1.3,32995
+mercedes,cla class,2019,11442,diesel,automatic,2.1,25499
+mercedes,cla class,2017,20990,petrol,automatic,2.0,29280
+mercedes,cla class,2020,1000,petrol,automatic,1.3,29498
+mercedes,cla class,2013,23369,diesel,automatic,2.1,15275
+mercedes,cla class,2017,24107,diesel,automatic,2.1,20000
+mercedes,cla class,2020,4308,petrol,automatic,1.3,28900
+mercedes,cla class,2017,53159,diesel,automatic,2.1,17590
+mercedes,cla class,2016,84000,petrol,automatic,2.0,14480
+mercedes,cla class,2016,30106,diesel,automatic,2.1,18500
+mercedes,cla class,2020,6000,petrol,automatic,2.0,28990
+mercedes,cla class,2020,4345,petrol,automatic,1.3,24899
+mercedes,cla class,2015,50510,diesel,automatic,2.1,14295
+mercedes,cla class,2014,41445,petrol,automatic,2.0,24995
+mercedes,cla class,2015,32895,diesel,automatic,2.1,16250
+mercedes,clc class,2010,85000,petrol,automatic,1.6,4695
+mercedes,clc class,2010,40000,petrol,automatic,1.8,5880
+mercedes,clc class,2010,44662,petrol,automatic,1.6,5975
+mercedes,clk,2002,98000,petrol,automatic,5.0,3790
+mercedes,clk,2003,185000,petrol,automatic,4.3,3495
+mercedes,clk,2004,104000,petrol,automatic,1.8,2495
+mercedes,clk,2003,105000,diesel,automatic,2.7,3376
+mercedes,clk,2004,113000,diesel,automatic,2.7,2995
+mercedes,clk,2004,58000,diesel,automatic,2.7,3399
+mercedes,clk,2005,105000,diesel,automatic,2.1,1995
+mercedes,cls class,2015,38792,diesel,semi-auto,2.1,18099
+mercedes,cls class,2019,6785,diesel,semi-auto,2.9,38899
+mercedes,cls class,2016,54195,diesel,automatic,3.0,18900
+mercedes,cls class,2013,43939,diesel,automatic,3.0,14495
+mercedes,cls class,2016,13588,diesel,automatic,3.0,22802
+mercedes,cls class,2017,38736,diesel,semi-auto,2.1,21290
+mercedes,cls class,2016,14466,diesel,semi-auto,3.0,22498
+mercedes,cls class,2016,31684,diesel,semi-auto,3.0,20449
+mercedes,cls class,2019,7289,diesel,automatic,2.9,35850
+mercedes,cls class,2013,69300,diesel,automatic,2.1,11900
+mercedes,cls class,2015,44143,diesel,semi-auto,3.0,19698
+mercedes,cls class,2013,48500,diesel,automatic,2.1,13495
+mercedes,cls class,2014,31815,diesel,semi-auto,2.1,15998
+mercedes,cls class,2018,14130,diesel,semi-auto,2.9,31796
+mercedes,cls class,2016,16107,diesel,automatic,3.0,20399
+mercedes,cls class,2016,30496,diesel,semi-auto,3.0,21998
+mercedes,cls class,2015,44192,diesel,semi-auto,2.1,16590
+mercedes,cls class,2019,3418,diesel,semi-auto,2.9,45699
+mercedes,cls class,2013,64777,diesel,semi-auto,3.0,14972
+mercedes,cls class,2019,8697,petrol,semi-auto,3.0,68000
+mercedes,e class,2019,14098,diesel,semi-auto,2.0,23890
+mercedes,e class,2017,21851,diesel,automatic,2.0,20475
+mercedes,e class,2019,11360,diesel,semi-auto,2.0,24999
+mercedes,e class,2015,74500,diesel,semi-auto,3.0,15499
+mercedes,e class,2017,21166,diesel,semi-auto,3.0,19995
+mercedes,e class,2013,56230,diesel,automatic,2.1,10880
+mercedes,e class,2018,20316,diesel,semi-auto,2.0,26490
+mercedes,e class,2019,2669,diesel,semi-auto,3.0,48998
+mercedes,e class,2019,3999,petrol,semi-auto,3.0,56980
+mercedes,e class,2017,35600,diesel,automatic,2.0,18337
+mercedes,e class,2016,37371,diesel,automatic,2.1,15999
+mercedes,e class,2019,7512,diesel,automatic,2.9,40995
+mercedes,e class,2018,4500,petrol,semi-auto,4.0,51200
+mercedes,e class,2019,9116,diesel,automatic,2.0,26889
+mercedes,e class,2012,67681,diesel,automatic,2.1,9499
+mercedes,e class,2017,14695,diesel,semi-auto,2.0,22999
+mercedes,e class,2017,52329,diesel,automatic,2.0,18500
+mercedes,e class,2017,52232,diesel,semi-auto,2.0,18791
+mercedes,e class,2019,13304,diesel,semi-auto,2.0,26499
+mercedes,e class,2019,6214,hybrid,automatic,2.0,43989
+mercedes,g class,2018,13000,diesel,automatic,3.0,64950
+mercedes,g class,2016,4000,petrol,automatic,4.0,73948
+mercedes,g class,2015,34400,diesel,semi-auto,3.0,52995
+mercedes,g class,2018,19000,petrol,semi-auto,4.0,135771
+mercedes,g class,2017,38247,petrol,automatic,5.5,71995
+mercedes,g class,2020,3000,petrol,automatic,4.0,154998
+mercedes,g class,2018,13046,petrol,semi-auto,4.0,139995
+mercedes,g class,2012,43000,diesel,automatic,3.0,44990
+mercedes,g class,2013,52438,diesel,automatic,3.0,45000
+mercedes,g class,2019,12000,petrol,automatic,4.0,139948
+mercedes,g class,2015,10000,petrol,semi-auto,5.5,99850
+mercedes,g class,2020,1350,petrol,semi-auto,4.0,159999
+mercedes,g class,2018,18234,petrol,semi-auto,4.0,135124
+mercedes,g class,2016,16000,petrol,automatic,4.0,61948
+mercedes,g class,2019,8691,diesel,semi-auto,3.0,102502
+mercedes,gl class,2015,24314,diesel,automatic,2.1,17999
+mercedes,gl class,2017,42830,diesel,manual,2.1,15899
+mercedes,gl class,2016,29810,diesel,semi-auto,3.0,33037
+mercedes,gl class,2018,15202,petrol,manual,1.6,19399
+mercedes,gl class,2017,24000,diesel,automatic,2.1,27990
+mercedes,gl class,2016,37989,diesel,automatic,3.0,31988
+mercedes,gl class,2015,49838,diesel,automatic,2.1,16499
+mercedes,gl class,2017,25462,diesel,automatic,2.1,24999
+mercedes,gl class,2018,12471,petrol,automatic,1.6,19999
+mercedes,gl class,2016,46864,diesel,automatic,2.1,18499
+mercedes,gl class,2016,19859,diesel,automatic,2.1,25999
+mercedes,gl class,2015,51081,diesel,automatic,3.0,28975
+mercedes,gl class,2015,45000,diesel,automatic,2.1,16990
+mercedes,gl class,2016,17000,diesel,semi-auto,3.0,38362
+mercedes,gl class,2016,35333,diesel,automatic,2.1,16499
+mercedes,gl class,2016,46808,diesel,manual,2.1,15395
+mercedes,gl class,2015,27000,diesel,automatic,2.1,16990
+mercedes,gl class,2015,39775,diesel,automatic,2.1,15999
+mercedes,gl class,2017,28000,diesel,automatic,2.1,27990
+mercedes,gl class,2018,2880,diesel,automatic,2.1,20999
+mercedes,gla class,2017,35901,diesel,automatic,2.1,18500
+mercedes,gla class,2017,50000,diesel,semi-auto,2.1,17199
+mercedes,gla class,2015,41042,diesel,manual,2.1,14498
+mercedes,gla class,2018,18777,diesel,semi-auto,2.1,20991
+mercedes,gla class,2016,27660,diesel,automatic,2.1,17500
+mercedes,gla class,2019,11810,diesel,semi-auto,2.1,22949
+mercedes,gla class,2016,23500,diesel,semi-auto,2.1,17799
+mercedes,gla class,2015,44874,diesel,semi-auto,2.1,15895
+mercedes,gla class,2016,47977,diesel,automatic,2.1,17800
+mercedes,gla class,2017,10519,diesel,semi-auto,2.1,21400
+mercedes,gla class,2017,30312,diesel,automatic,2.1,16700
+mercedes,gla class,2019,1523,diesel,semi-auto,2.1,24999
+mercedes,gla class,2019,3012,petrol,semi-auto,1.6,23820
+mercedes,gla class,2017,24928,petrol,automatic,1.6,18470
+mercedes,gla class,2019,6586,petrol,semi-auto,1.6,21750
+mercedes,gla class,2016,36535,diesel,automatic,2.1,17995
+mercedes,gla class,2019,2198,diesel,semi-auto,2.1,24539
+mercedes,gla class,2015,40346,diesel,semi-auto,2.1,18449
+mercedes,gla class,2017,18405,diesel,semi-auto,2.1,21182
+mercedes,gla class,2018,7887,diesel,semi-auto,2.1,25999
+mercedes,glb class,2020,1499,diesel,semi-auto,2.0,35990
+mercedes,glb class,2020,349,diesel,semi-auto,2.0,39980
+mercedes,glb class,2020,637,diesel,semi-auto,2.0,39950
+mercedes,glb class,2020,2000,diesel,semi-auto,2.0,35400
+mercedes,glb class,2020,1508,diesel,semi-auto,2.0,35400
+mercedes,glb class,2020,50,diesel,automatic,2.0,37400
+mercedes,glb class,2020,6000,diesel,automatic,2.0,36995
+mercedes,glb class,2020,20,diesel,automatic,2.0,44298
+mercedes,glb class,2020,3001,diesel,semi-auto,2.0,36880
+mercedes,glb class,2020,29,diesel,semi-auto,2.0,39480
+mercedes,glb class,2020,1500,diesel,semi-auto,2.0,36995
+mercedes,glb class,2020,16,diesel,semi-auto,2.0,38980
+mercedes,glb class,2020,19,diesel,semi-auto,2.0,36980
+mercedes,glb class,2020,50,diesel,semi-auto,2.0,38990
+mercedes,glb class,2020,1000,diesel,semi-auto,2.0,30209
+mercedes,glb class,2020,4500,diesel,semi-auto,2.0,35995
+mercedes,glb class,2020,2000,diesel,semi-auto,2.0,35400
+mercedes,glb class,2020,29,diesel,semi-auto,2.0,40480
+mercedes,glb class,2020,1912,diesel,semi-auto,2.0,39995
+mercedes,glc class,2018,21994,diesel,semi-auto,2.1,29495
+mercedes,glc class,2019,8268,diesel,automatic,2.0,30000
+mercedes,glc class,2020,3999,petrol,semi-auto,3.0,49980
+mercedes,glc class,2019,9487,diesel,semi-auto,2.0,38999
+mercedes,glc class,2019,8370,diesel,semi-auto,2.0,43999
+mercedes,glc class,2018,24881,diesel,automatic,2.1,24750
+mercedes,glc class,2019,13460,diesel,automatic,2.1,29750
+mercedes,glc class,2017,28894,diesel,semi-auto,2.1,24790
+mercedes,glc class,2019,10698,diesel,semi-auto,2.1,32049
+mercedes,glc class,2017,15164,petrol,semi-auto,3.0,42249
+mercedes,glc class,2016,29300,diesel,semi-auto,2.1,23490
+mercedes,glc class,2019,13847,diesel,automatic,2.1,32056
+mercedes,glc class,2019,4967,diesel,semi-auto,2.0,37480
+mercedes,glc class,2017,6500,diesel,semi-auto,2.1,32995
+mercedes,glc class,2018,10007,diesel,automatic,2.1,27890
+mercedes,glc class,2017,52554,diesel,automatic,2.1,25498
+mercedes,glc class,2019,1945,petrol,semi-auto,4.0,62299
+mercedes,glc class,2019,2870,diesel,automatic,2.0,35444
+mercedes,glc class,2016,59442,diesel,semi-auto,2.1,19490
+mercedes,glc class,2017,24205,diesel,semi-auto,2.1,26995
+mercedes,gle class,2018,16500,diesel,automatic,3.0,34750
+mercedes,gle class,2019,2504,diesel,semi-auto,2.9,53199
+mercedes,gle class,2019,8795,diesel,semi-auto,3.0,56000
+mercedes,gle class,2018,12100,diesel,semi-auto,3.0,45071
+mercedes,gle class,2017,34929,diesel,semi-auto,3.0,28980
+mercedes,gle class,2019,5794,diesel,semi-auto,3.0,49990
+mercedes,gle class,2017,17599,diesel,semi-auto,3.0,31990
+mercedes,gle class,2019,6224,diesel,semi-auto,2.0,47890
+mercedes,gle class,2016,32790,diesel,automatic,3.0,24495
+mercedes,gle class,2019,14026,diesel,semi-auto,3.0,43490
+mercedes,gle class,2017,35354,diesel,semi-auto,3.0,27980
+mercedes,gle class,2016,30138,diesel,semi-auto,2.1,29999
+mercedes,gle class,2017,16263,diesel,automatic,3.0,27000
+mercedes,gle class,2016,27804,diesel,automatic,3.0,27999
+mercedes,gle class,2018,33177,diesel,automatic,3.0,30000
+mercedes,gle class,2016,2933,diesel,semi-auto,2.1,31995
+mercedes,gle class,2016,52260,diesel,semi-auto,3.0,27499
+mercedes,gle class,2017,26416,diesel,semi-auto,2.1,28498
+mercedes,gle class,2019,9632,petrol,automatic,3.0,56693
+mercedes,gle class,2017,33053,diesel,semi-auto,2.1,28124
+mercedes,gls class,2019,9977,diesel,semi-auto,3.0,47980
+mercedes,gls class,2019,11607,diesel,automatic,3.0,44990
+mercedes,gls class,2017,22219,diesel,semi-auto,3.0,41962
+mercedes,gls class,2017,45239,petrol,automatic,5.5,53000
+mercedes,gls class,2016,25306,diesel,automatic,3.0,35390
+mercedes,gls class,2018,6285,diesel,automatic,3.0,44444
+mercedes,gls class,2017,25237,diesel,automatic,3.0,38459
+mercedes,gls class,2020,3999,diesel,semi-auto,3.0,76980
+mercedes,gls class,2017,44555,diesel,semi-auto,3.0,37999
+mercedes,gls class,2019,6510,diesel,semi-auto,3.0,48249
+mercedes,gls class,2019,5076,diesel,semi-auto,3.0,65990
+mercedes,gls class,2018,16489,diesel,automatic,3.0,43286
+mercedes,gls class,2019,6224,diesel,automatic,3.0,69990
+mercedes,gls class,2016,32609,diesel,semi-auto,3.0,39799
+mercedes,gls class,2018,5376,diesel,semi-auto,3.0,47980
+mercedes,gls class,2018,41102,petrol,semi-auto,5.5,64999
+mercedes,gls class,2018,18500,diesel,automatic,3.0,43289
+mercedes,gls class,2019,18717,diesel,semi-auto,3.0,54990
+mercedes,gls class,2018,7390,petrol,automatic,5.5,72950
+mercedes,gls class,2017,8823,diesel,automatic,3.0,41750
+mercedes,m class,2011,75000,diesel,automatic,3.0,13150
+mercedes,m class,2015,37484,diesel,semi-auto,3.0,22498
+mercedes,m class,2012,61898,diesel,automatic,3.0,14400
+mercedes,m class,2015,71000,diesel,semi-auto,2.1,18495
+mercedes,m class,2015,32245,diesel,automatic,2.1,19900
+mercedes,m class,2015,49355,diesel,automatic,2.1,19940
+mercedes,m class,2013,84413,diesel,semi-auto,2.1,14250
+mercedes,m class,2014,73181,diesel,automatic,3.0,17050
+mercedes,m class,2014,42218,diesel,semi-auto,2.1,19420
+mercedes,m class,2014,50974,diesel,automatic,3.0,19495
+mercedes,m class,2015,22976,diesel,automatic,3.0,21998
+mercedes,m class,2015,47808,diesel,semi-auto,3.0,19995
+mercedes,m class,2015,21000,diesel,automatic,3.0,23750
+mercedes,m class,2010,106800,diesel,automatic,3.0,9995
+mercedes,m class,2013,27932,diesel,automatic,2.1,18999
+mercedes,m class,2015,43072,diesel,semi-auto,2.1,20498
+mercedes,m class,2015,30198,diesel,semi-auto,3.0,23249
+mercedes,m class,2012,54632,diesel,automatic,2.1,15299
+mercedes,m class,2004,165000,petrol,semi-auto,3.7,1995
+mercedes,m class,2014,71657,diesel,semi-auto,2.1,15998
+mercedes,r class,2007,60000,diesel,automatic,3.0,6950
+mercedes,r class,2011,75857,diesel,automatic,3.0,11999
+mercedes,s class,2005,75148,diesel,automatic,3.2,4990
+mercedes,s class,2019,6468,diesel,automatic,3.0,59949
+mercedes,s class,2019,1400,petrol,semi-auto,4.0,89999
+mercedes,s class,2018,25000,diesel,automatic,2.9,39990
+mercedes,s class,2001,66000,petrol,automatic,3.2,4495
+mercedes,s class,2015,12687,diesel,automatic,3.0,29029
+mercedes,s class,2018,22700,diesel,automatic,2.9,46990
+mercedes,s class,2017,32979,hybrid,semi-auto,3.0,45599
+mercedes,s class,2019,100,petrol,semi-auto,3.0,60998
+mercedes,s class,2011,53521,diesel,automatic,3.0,12990
+mercedes,s class,2019,1000,petrol,semi-auto,4.0,90759
+mercedes,s class,2019,6675,diesel,semi-auto,3.0,60849
+mercedes,s class,2017,12653,diesel,automatic,3.0,37500
+mercedes,s class,2015,11000,petrol,automatic,4.7,38980
+mercedes,s class,2016,25317,petrol,semi-auto,6.0,79950
+mercedes,s class,2018,11994,diesel,automatic,3.0,41366
+mercedes,s class,2017,13112,petrol,semi-auto,3.0,46980
+mercedes,s class,2019,1500,petrol,automatic,4.0,124999
+mercedes,s class,2019,2075,diesel,automatic,2.9,54999
+mercedes,s class,2019,2498,diesel,semi-auto,3.0,54399
+mercedes,sl class,2017,24584,petrol,semi-auto,2.0,20191
+mercedes,sl class,2017,8347,diesel,semi-auto,2.1,20490
+mercedes,sl class,2019,221,petrol,automatic,5.5,80650
+mercedes,sl class,2019,8000,petrol,semi-auto,2.0,29995
+mercedes,sl class,2016,11888,petrol,semi-auto,3.0,36995
+mercedes,sl class,2017,15244,diesel,semi-auto,2.1,20349
+mercedes,sl class,2018,1095,petrol,semi-auto,2.0,27482
+mercedes,sl class,2017,6573,diesel,automatic,2.1,20659
+mercedes,sl class,2017,20055,diesel,semi-auto,2.1,20298
+mercedes,sl class,2018,7501,petrol,semi-auto,2.0,25749
+mercedes,sl class,2017,43074,petrol,semi-auto,1.6,18152
+mercedes,sl class,2017,39076,petrol,manual,2.0,17124
+mercedes,sl class,2017,15407,petrol,manual,2.0,16700
+mercedes,sl class,2016,14211,diesel,semi-auto,2.1,19490
+mercedes,sl class,2016,15964,diesel,semi-auto,2.1,19390
+mercedes,sl class,2017,13484,diesel,semi-auto,2.1,20490
+mercedes,sl class,2015,28000,petrol,automatic,4.7,29950
+mercedes,sl class,2016,29302,diesel,semi-auto,2.1,18998
+mercedes,sl class,2016,35000,petrol,automatic,4.7,33995
+mercedes,sl class,2019,2760,petrol,automatic,3.0,49899
+mercedes,slk,2015,31576,diesel,automatic,2.1,14800
+mercedes,slk,2012,55000,petrol,automatic,1.8,10990
+mercedes,slk,2015,29001,petrol,manual,2.0,16280
+mercedes,slk,2006,75000,petrol,automatic,3.5,4995
+mercedes,slk,2001,56785,petrol,manual,3.2,4990
+mercedes,slk,2014,55404,diesel,automatic,2.0,10950
+mercedes,slk,2003,58500,petrol,automatic,2.3,3650
+mercedes,slk,2015,40625,diesel,semi-auto,2.0,14990
+mercedes,slk,2002,61400,petrol,automatic,2.3,3990
+mercedes,slk,2014,40230,diesel,automatic,3.0,14900
+mercedes,slk,2004,51566,petrol,manual,2.0,4990
+mercedes,slk,2014,69861,diesel,semi-auto,2.0,11100
+mercedes,slk,2013,35116,diesel,automatic,2.1,10699
+mercedes,slk,1998,113557,petrol,automatic,2.3,1990
+mercedes,slk,2002,80586,petrol,automatic,2.0,2990
+mercedes,slk,2013,43739,diesel,automatic,2.1,10499
+mercedes,slk,2006,70952,petrol,manual,3.0,5990
+mercedes,slk,2001,48172,petrol,automatic,2.3,3990
+mercedes,slk,2015,21680,diesel,automatic,2.1,15599
+mercedes,slk,2016,33534,diesel,semi-auto,2.0,15280
+mercedes,v class,2019,10593,diesel,semi-auto,2.2,37995
+mercedes,v class,2018,14777,diesel,automatic,2.1,38995
+mercedes,v class,2019,10,diesel,manual,2.1,20950
+mercedes,v class,2015,56617,diesel,semi-auto,2.2,25990
+mercedes,v class,2018,23075,diesel,manual,2.1,18450
+mercedes,v class,2018,24164,diesel,manual,2.1,19498
+mercedes,v class,2019,9,diesel,automatic,2.0,45395
+mercedes,v class,2018,15640,diesel,semi-auto,2.2,38782
+mercedes,v class,2019,492,diesel,automatic,2.0,44999
+mercedes,v class,2016,20751,diesel,automatic,2.2,32895
+mercedes,v class,2018,21681,diesel,manual,2.1,20498
+mercedes,v class,2017,86000,diesel,automatic,2.1,29990
+mercedes,v class,2019,500,diesel,automatic,2.0,45395
+mercedes,v class,2018,26140,diesel,manual,2.1,19998
+mercedes,v class,2019,4000,diesel,automatic,2.0,44631
+mercedes,v class,2018,22740,diesel,manual,2.1,20998
+mercedes,v class,2019,20981,diesel,manual,2.1,19950
+mercedes,v class,2018,22058,diesel,manual,2.1,19998
+mercedes,v class,2019,500,diesel,automatic,2.1,27000
+mercedes,v class,2019,1096,diesel,semi-auto,2.0,46980
+mercedes,x-class,2019,8000,diesel,automatic,3.0,38990
+mercedes,x-class,2019,7500,diesel,automatic,2.3,31000
+mercedes,x-class,2019,500,diesel,automatic,2.3,28945
+mercedes,x-class,2017,24800,diesel,automatic,2.3,31994
+mercedes,x-class,2019,5981,diesel,automatic,2.3,25491
+mercedes,x-class,2019,40,diesel,automatic,3.0,32500
+mercedes,x-class,2019,600,diesel,automatic,3.0,32995
+mercedes,x-class,2019,9772,diesel,automatic,2.3,22995
+mercedes,x-class,2019,500,diesel,automatic,2.3,28945
+mercedes,x-class,2018,14500,diesel,automatic,2.3,33000
+mercedes,x-class,2019,500,diesel,automatic,2.3,28945
+mercedes,x-class,2019,4000,diesel,automatic,2.3,28990
+mercedes,x-class,2019,500,diesel,automatic,2.3,24945
+mercedes,x-class,2018,7968,diesel,automatic,2.3,27950
+mercedes,x-class,2019,500,diesel,automatic,2.3,24945
+mercedes,x-class,2019,10485,diesel,automatic,2.3,25491
+mercedes,x-class,2019,8000,diesel,automatic,3.0,33990
+mercedes,x-class,2018,21000,diesel,automatic,2.3,27995
+mercedes,x-class,2017,22500,diesel,automatic,2.3,29990
+mercedes,x-class,2019,8100,diesel,automatic,2.3,26000
+skoda,citigo,2017,20200,petrol,manual,1.0,6390
+skoda,citigo,2017,24113,petrol,manual,1.0,6999
+skoda,citigo,2019,2175,petrol,manual,1.0,9995
+skoda,citigo,2016,48117,petrol,manual,1.0,4999
+skoda,citigo,2017,25343,petrol,manual,1.0,5995
+skoda,citigo,2016,18255,petrol,manual,1.0,7000
+skoda,citigo,2017,14812,petrol,manual,1.0,7495
+skoda,citigo,2017,17178,petrol,manual,1.0,7699
+skoda,citigo,2017,8167,petrol,automatic,1.0,8995
+skoda,citigo,2018,22397,petrol,manual,1.0,6000
+skoda,citigo,2016,21747,petrol,manual,1.0,5999
+skoda,citigo,2016,31520,petrol,manual,1.0,5751
+skoda,citigo,2014,58104,petrol,manual,1.0,4991
+skoda,citigo,2014,31390,petrol,manual,1.0,5490
+skoda,citigo,2013,43000,petrol,manual,1.0,4995
+skoda,citigo,2018,9000,petrol,manual,1.0,7990
+skoda,citigo,2012,20205,petrol,automatic,1.0,6245
+skoda,citigo,2019,2154,petrol,manual,1.0,9995
+skoda,citigo,2017,44777,petrol,manual,1.0,5995
+skoda,citigo,2016,15590,petrol,manual,1.0,7995
+skoda,fabia,2017,17963,petrol,manual,1.0,9495
+skoda,fabia,2016,14000,petrol,automatic,1.2,11000
+skoda,fabia,2019,18,petrol,manual,1.0,11995
+skoda,fabia,2017,26226,petrol,manual,1.0,7498
+skoda,fabia,2019,17349,petrol,manual,1.0,11495
+skoda,fabia,2017,22753,petrol,manual,1.2,7495
+skoda,fabia,2015,54539,petrol,semi-auto,1.2,7995
+skoda,fabia,2019,7012,petrol,manual,1.0,10950
+skoda,fabia,2019,2940,petrol,manual,1.0,13195
+skoda,fabia,2019,12986,petrol,manual,1.0,8790
+skoda,fabia,2019,3330,petrol,manual,1.0,13495
+skoda,fabia,2019,5501,petrol,manual,1.0,13850
+skoda,fabia,2018,22315,petrol,manual,1.0,7998
+skoda,fabia,2019,3200,petrol,manual,1.0,11795
+skoda,fabia,2017,5264,petrol,manual,1.0,7485
+skoda,fabia,2019,11159,petrol,automatic,1.0,9996
+skoda,fabia,2017,14818,petrol,manual,1.0,9750
+skoda,fabia,2019,3000,petrol,manual,1.0,10395
+skoda,fabia,2019,12592,petrol,manual,1.0,10995
+skoda,fabia,2018,14912,petrol,manual,1.0,10625
+skoda,kamiq,2020,2000,petrol,manual,1.0,19500
+skoda,kamiq,2020,1000,petrol,manual,1.0,17495
+skoda,kamiq,2020,1421,petrol,manual,1.0,19300
+skoda,kamiq,2019,3985,petrol,automatic,1.5,21995
+skoda,kamiq,2019,200,other,automatic,1.5,18980
+skoda,kamiq,2019,1500,petrol,manual,1.0,18944
+skoda,kamiq,2019,1350,petrol,automatic,1.5,21770
+skoda,kamiq,2019,2000,petrol,manual,1.0,19990
+skoda,kamiq,2019,452,diesel,semi-auto,1.6,20991
+skoda,kamiq,2019,2366,petrol,manual,1.0,19290
+skoda,kamiq,2020,1927,petrol,manual,1.0,17799
+skoda,kamiq,2020,5000,petrol,automatic,1.5,19790
+skoda,kamiq,2019,1234,petrol,manual,1.5,19950
+skoda,kamiq,2019,9743,petrol,automatic,1.5,20990
+skoda,kamiq,2020,2777,petrol,semi-auto,1.5,24904
+skoda,kamiq,2019,3541,diesel,manual,1.6,20866
+skoda,kamiq,2019,45,petrol,automatic,1.5,21995
+skoda,kamiq,2019,1001,petrol,semi-auto,1.5,22950
+skoda,kamiq,2020,1000,petrol,manual,1.0,17495
+skoda,kamiq,2019,2011,petrol,manual,1.0,17220
+skoda,karoq,2019,5020,diesel,automatic,2.0,24695
+skoda,karoq,2019,6990,diesel,manual,1.6,17499
+skoda,karoq,2019,4910,diesel,automatic,2.0,27123
+skoda,karoq,2018,21465,petrol,manual,1.0,14990
+skoda,karoq,2019,5588,petrol,automatic,1.5,20990
+skoda,karoq,2019,4599,diesel,manual,2.0,24396
+skoda,karoq,2018,3598,diesel,manual,1.6,16495
+skoda,karoq,2019,2051,diesel,manual,2.0,25990
+skoda,karoq,2019,9,petrol,manual,1.0,19150
+skoda,karoq,2019,13543,diesel,manual,2.0,22285
+skoda,karoq,2019,10000,petrol,manual,1.0,19195
+skoda,karoq,2018,12008,diesel,manual,1.6,17298
+skoda,karoq,2018,11050,petrol,manual,1.5,18995
+skoda,karoq,2018,18417,petrol,manual,1.0,15995
+skoda,karoq,2018,11097,petrol,automatic,1.0,19495
+skoda,karoq,2017,24314,petrol,automatic,1.5,12995
+skoda,karoq,2019,3075,petrol,automatic,2.0,26240
+skoda,karoq,2019,2329,diesel,manual,2.0,19300
+skoda,karoq,2019,4200,petrol,automatic,2.0,27500
+skoda,karoq,2019,5966,diesel,manual,2.0,26943
+skoda,kodiaq,2020,3539,diesel,automatic,2.0,31499
+skoda,kodiaq,2019,150,petrol,automatic,1.5,23995
+skoda,kodiaq,2017,20198,petrol,automatic,2.0,23990
+skoda,kodiaq,2019,6250,diesel,automatic,2.0,30500
+skoda,kodiaq,2020,3589,diesel,automatic,2.0,32999
+skoda,kodiaq,2019,3749,petrol,automatic,2.0,31995
+skoda,kodiaq,2019,1809,diesel,manual,2.0,28490
+skoda,kodiaq,2019,11,diesel,manual,2.0,30995
+skoda,kodiaq,2018,3364,diesel,automatic,2.0,27450
+skoda,kodiaq,2019,5878,diesel,automatic,2.0,26999
+skoda,kodiaq,2019,11510,petrol,automatic,1.5,24990
+skoda,kodiaq,2019,6069,diesel,automatic,2.0,31001
+skoda,kodiaq,2017,23000,petrol,automatic,1.4,18750
+skoda,kodiaq,2017,40499,petrol,manual,1.4,18995
+skoda,kodiaq,2017,22336,petrol,manual,1.4,16427
+skoda,kodiaq,2019,11548,diesel,automatic,2.0,23499
+skoda,kodiaq,2019,17531,diesel,automatic,2.0,31750
+skoda,kodiaq,2019,1010,petrol,semi-auto,1.5,28295
+skoda,kodiaq,2020,2000,diesel,manual,2.0,30850
+skoda,kodiaq,2017,20293,petrol,manual,1.4,21895
+skoda,octavia,2019,13029,diesel,semi-auto,1.6,14000
+skoda,octavia,2018,14243,diesel,manual,1.6,12698
+skoda,octavia,2019,11754,diesel,semi-auto,1.6,14495
+skoda,octavia,2019,4814,diesel,manual,2.0,14590
+skoda,octavia,2014,52400,diesel,manual,1.6,8995
+skoda,octavia,2019,3461,petrol,automatic,1.5,18738
+skoda,octavia,2018,10715,petrol,manual,2.0,17695
+skoda,octavia,2015,50049,petrol,manual,1.4,8694
+skoda,octavia,2019,13763,petrol,semi-auto,1.0,12798
+skoda,octavia,2019,4532,diesel,semi-auto,2.0,16300
+skoda,octavia,2019,4301,petrol,manual,1.0,16500
+skoda,octavia,2016,48088,diesel,semi-auto,2.0,13882
+skoda,octavia,2015,41501,diesel,manual,2.0,9990
+skoda,octavia,2019,13646,diesel,semi-auto,1.6,14946
+skoda,octavia,2015,11033,petrol,automatic,1.4,10499
+skoda,octavia,2019,7396,petrol,semi-auto,1.0,14495
+skoda,octavia,2018,37130,petrol,manual,1.5,12690
+skoda,octavia,2015,63187,diesel,semi-auto,2.0,12995
+skoda,octavia,2014,43756,diesel,manual,2.0,8752
+skoda,octavia,2019,10610,petrol,manual,1.5,15700
+skoda,rapid,2017,15858,petrol,manual,1.0,10495
+skoda,rapid,2018,19050,petrol,manual,1.0,10990
+skoda,rapid,2016,46346,petrol,manual,1.2,6450
+skoda,rapid,2017,15396,petrol,manual,1.2,8406
+skoda,rapid,2018,21014,petrol,manual,1.0,9495
+skoda,rapid,2013,40268,diesel,manual,1.6,6300
+skoda,rapid,2016,15709,diesel,manual,1.4,9795
+skoda,rapid,2017,20795,petrol,manual,1.2,8450
+skoda,rapid,2017,22199,petrol,manual,1.2,10800
+skoda,rapid,2017,15000,petrol,manual,1.0,10495
+skoda,rapid,2016,36826,diesel,manual,1.4,7200
+skoda,rapid,2017,31600,petrol,manual,1.2,8250
+skoda,rapid,2017,15255,petrol,manual,1.0,9295
+skoda,rapid,2016,36279,petrol,manual,1.2,7495
+skoda,rapid,2016,68406,diesel,manual,1.4,6440
+skoda,rapid,2018,8349,petrol,manual,1.0,11100
+skoda,rapid,2016,39000,diesel,manual,1.6,8495
+skoda,rapid,2014,35798,diesel,manual,1.6,7195
+skoda,rapid,2013,51997,petrol,manual,1.2,5990
+skoda,rapid,2015,26357,petrol,semi-auto,1.4,8500
+skoda,roomster,2013,21462,petrol,manual,1.2,6099
+skoda,roomster,2015,24600,diesel,manual,1.6,7000
+skoda,roomster,2014,53850,petrol,manual,1.2,5350
+skoda,roomster,2015,36198,petrol,manual,1.2,6995
+skoda,roomster,2014,100470,diesel,manual,1.6,3650
+skoda,roomster,2013,28131,petrol,manual,1.2,5495
+skoda,roomster,2015,44850,petrol,manual,1.2,6597
+skoda,roomster,2009,97000,petrol,manual,1.4,2495
+skoda,roomster,2011,56000,petrol,automatic,1.2,4495
+skoda,roomster,2013,56950,diesel,manual,1.6,5000
+skoda,roomster,2014,51956,petrol,manual,1.2,6295
+skoda,roomster,2015,80059,petrol,manual,1.2,4738
+skoda,roomster,2014,41498,diesel,manual,1.6,5950
+skoda,roomster,2007,99700,petrol,automatic,1.6,2995
+skoda,roomster,2013,28131,petrol,manual,1.2,5495
+skoda,roomster,2014,24606,petrol,semi-auto,1.2,7995
+skoda,roomster,2012,54000,petrol,manual,1.2,5290
+skoda,scala,2019,3431,petrol,manual,1.0,14995
+skoda,scala,2019,15,diesel,semi-auto,1.6,18498
+skoda,scala,2019,3500,petrol,other,1.0,15999
+skoda,scala,2020,1000,petrol,semi-auto,1.0,19990
+skoda,scala,2020,2645,diesel,automatic,1.6,22499
+skoda,scala,2020,1309,diesel,manual,1.6,18245
+skoda,scala,2019,499,diesel,automatic,1.6,16995
+skoda,scala,2020,5000,petrol,semi-auto,1.0,19900
+skoda,scala,2019,1500,petrol,automatic,1.0,18995
+skoda,scala,2019,5000,petrol,manual,1.0,14995
+skoda,scala,2019,42,petrol,automatic,1.5,17995
+skoda,scala,2019,4890,petrol,manual,1.0,15995
+skoda,scala,2019,3030,petrol,semi-auto,1.5,19995
+skoda,scala,2019,1149,petrol,manual,1.0,15650
+skoda,scala,2019,430,petrol,semi-auto,1.0,16990
+skoda,scala,2019,3500,petrol,automatic,1.0,16980
+skoda,scala,2019,1037,diesel,manual,1.6,19191
+skoda,scala,2020,1652,petrol,manual,1.5,19952
+skoda,scala,2020,100,petrol,semi-auto,1.5,18545
+skoda,scala,2019,3128,petrol,automatic,1.5,18499
+skoda,superb,2019,5864,diesel,automatic,2.0,24695
+skoda,superb,2018,20962,diesel,semi-auto,2.0,16950
+skoda,superb,2016,59585,diesel,semi-auto,2.0,11998
+skoda,superb,2019,4244,diesel,semi-auto,1.6,22688
+skoda,superb,2019,5000,petrol,automatic,2.0,29695
+skoda,superb,2018,14110,petrol,semi-auto,1.4,17491
+skoda,superb,2017,31813,diesel,automatic,2.0,17300
+skoda,superb,2018,23446,diesel,manual,2.0,14995
+skoda,superb,2016,36000,diesel,semi-auto,2.0,16250
+skoda,superb,2019,9770,petrol,automatic,1.5,20790
+skoda,superb,2017,62684,diesel,semi-auto,2.0,13990
+skoda,superb,2018,21322,diesel,manual,2.0,15995
+skoda,superb,2016,31931,diesel,manual,1.6,13000
+skoda,superb,2019,10,petrol,automatic,2.0,27490
+skoda,superb,2017,36509,diesel,manual,2.0,14800
+skoda,superb,2017,20868,petrol,manual,1.4,15450
+skoda,superb,2016,9271,diesel,semi-auto,2.0,16246
+skoda,superb,2016,49304,diesel,manual,2.0,13298
+skoda,superb,2018,20012,petrol,semi-auto,2.0,21950
+skoda,superb,2019,38800,diesel,automatic,2.0,14680
+skoda,yeti,2016,6181,petrol,semi-auto,1.2,12500
+skoda,yeti,2016,47219,petrol,manual,1.2,8707
+skoda,yeti,2014,14569,petrol,semi-auto,1.2,11440
+skoda,yeti,2016,34770,petrol,manual,1.2,10300
+skoda,yeti,2014,40224,diesel,manual,2.0,8990
+skoda,yeti,2015,50866,diesel,manual,2.0,11499
+skoda,yeti,2014,67020,diesel,manual,2.0,7700
+skoda,yeti,2016,14334,petrol,manual,1.2,12395
+skoda,yeti,2017,29603,petrol,semi-auto,1.2,12296
+skoda,yeti,2014,69815,diesel,manual,1.6,5998
+skoda,yeti,2016,26254,petrol,semi-auto,1.2,11490
+skoda,yeti,2016,5002,petrol,semi-auto,1.2,12370
+skoda,yeti,2016,46367,petrol,semi-auto,1.2,11080
+skoda,yeti,2017,13591,petrol,manual,1.2,15495
+skoda,yeti,2016,20967,petrol,semi-auto,1.2,10747
+skoda,yeti,2014,72500,diesel,manual,2.0,6990
+skoda,yeti,2014,57801,diesel,manual,1.6,6700
+skoda,yeti,2017,10700,petrol,automatic,1.2,14495
+skoda,yeti,2015,21484,petrol,semi-auto,1.2,11495
+skoda,yeti,2013,90700,diesel,manual,2.0,6500
+skoda,yeti outdoor,2017,16665,diesel,manual,2.0,14000
+skoda,yeti outdoor,2016,27392,diesel,manual,2.0,11067
+skoda,yeti outdoor,2017,21843,diesel,manual,2.0,12491
+skoda,yeti outdoor,2017,37363,petrol,manual,1.2,11995
+skoda,yeti outdoor,2016,40137,diesel,manual,2.0,10990
+skoda,yeti outdoor,2016,51672,diesel,manual,2.0,9840
+skoda,yeti outdoor,2016,13502,petrol,manual,1.2,10995
+skoda,yeti outdoor,2014,68469,diesel,semi-auto,2.0,10261
+skoda,yeti outdoor,2016,40654,diesel,manual,2.0,10498
+skoda,yeti outdoor,2017,38652,petrol,semi-auto,1.2,12495
+skoda,yeti outdoor,2016,30682,petrol,manual,1.2,11990
+skoda,yeti outdoor,2017,28541,petrol,semi-auto,1.2,12298
+skoda,yeti outdoor,2017,14790,petrol,semi-auto,1.2,13995
+skoda,yeti outdoor,2017,5145,petrol,semi-auto,1.2,12990
+skoda,yeti outdoor,2014,38040,diesel,manual,2.0,12490
+skoda,yeti outdoor,2016,14898,petrol,semi-auto,1.2,13495
+skoda,yeti outdoor,2017,28445,petrol,manual,1.2,12200
+skoda,yeti outdoor,2017,16374,petrol,semi-auto,1.2,13995
+skoda,yeti outdoor,2016,24974,petrol,semi-auto,1.2,13299
+skoda,yeti outdoor,2017,22379,diesel,manual,2.0,11291
+toyota,auris,2015,55715,hybrid,automatic,1.8,13499
+toyota,auris,2015,14303,hybrid,automatic,1.8,11961
+toyota,auris,2016,39888,hybrid,automatic,1.8,12999
+toyota,auris,2016,24023,hybrid,automatic,1.8,14987
+toyota,auris,2016,31453,hybrid,automatic,1.8,13295
+toyota,auris,2007,84000,petrol,automatic,1.6,3395
+toyota,auris,2017,19417,hybrid,automatic,1.8,16195
+toyota,auris,2018,19628,hybrid,automatic,1.8,17495
+toyota,auris,2017,35459,petrol,manual,1.2,10295
+toyota,auris,2017,8479,petrol,manual,1.2,11691
+toyota,auris,2017,14753,hybrid,automatic,1.8,17780
+toyota,auris,2015,53987,hybrid,automatic,1.8,12995
+toyota,auris,2018,15100,hybrid,automatic,1.8,17695
+toyota,auris,2016,40323,diesel,manual,1.6,8992
+toyota,auris,2017,21960,hybrid,automatic,1.8,17495
+toyota,auris,2015,8200,hybrid,automatic,1.8,15995
+toyota,auris,2017,20996,hybrid,automatic,1.8,17245
+toyota,auris,2013,54968,diesel,manual,1.4,6450
+toyota,auris,2017,20390,petrol,manual,1.2,9990
+toyota,auris,2016,41281,petrol,manual,1.2,8871
+toyota,avensis,2015,11653,diesel,manual,2.0,10399
+toyota,avensis,2016,7800,diesel,manual,2.0,11499
+toyota,avensis,2015,69426,diesel,manual,2.0,8600
+toyota,avensis,2018,37191,diesel,manual,1.6,13695
+toyota,avensis,2014,44537,diesel,manual,2.0,7999
+toyota,avensis,2012,58000,petrol,automatic,1.8,8995
+toyota,avensis,2016,55086,diesel,manual,1.6,10995
+toyota,avensis,2013,57480,diesel,manual,2.0,7498
+toyota,avensis,2018,31427,diesel,manual,1.6,12295
+toyota,avensis,2018,46168,diesel,manual,1.6,11290
+toyota,avensis,2016,47352,diesel,manual,1.6,10249
+toyota,avensis,2009,89000,diesel,manual,2.0,4994
+toyota,avensis,2018,34505,diesel,manual,1.6,13500
+toyota,avensis,2016,86021,diesel,manual,1.6,7395
+toyota,avensis,2016,29210,petrol,manual,1.8,11495
+toyota,avensis,2016,17895,diesel,manual,1.6,9750
+toyota,avensis,2009,114000,diesel,manual,2.0,2890
+toyota,avensis,2017,18953,petrol,automatic,1.8,16495
+toyota,avensis,2016,40889,diesel,manual,1.6,11495
+toyota,avensis,2018,18785,diesel,manual,1.6,12667
+toyota,aygo,2015,52120,petrol,manual,1.0,6795
+toyota,aygo,2017,16044,petrol,manual,1.0,7295
+toyota,aygo,2017,14130,petrol,manual,1.0,8200
+toyota,aygo,2019,5000,petrol,manual,1.0,9990
+toyota,aygo,2017,14770,petrol,semi-auto,1.0,9106
+toyota,aygo,2016,13870,petrol,manual,1.0,6795
+toyota,aygo,2017,27000,petrol,manual,1.0,8495
+toyota,aygo,2017,25978,petrol,manual,1.0,6500
+toyota,aygo,2017,13323,petrol,manual,1.0,7500
+toyota,aygo,2017,12945,petrol,automatic,1.0,8999
+toyota,aygo,2018,12302,petrol,manual,1.0,8500
+toyota,aygo,2018,5788,petrol,manual,1.0,8951
+toyota,aygo,2018,6442,petrol,manual,1.0,8248
+toyota,aygo,2017,22095,petrol,manual,1.0,7550
+toyota,aygo,2017,20546,petrol,manual,1.0,8890
+toyota,aygo,2014,21498,petrol,manual,1.0,6000
+toyota,aygo,2017,26779,petrol,manual,1.0,7750
+toyota,aygo,2016,9300,petrol,manual,1.0,6380
+toyota,aygo,2017,19321,petrol,manual,1.0,7490
+toyota,aygo,2017,18589,petrol,manual,1.0,7000
+toyota,c-hr,2018,8829,hybrid,automatic,1.8,22490
+toyota,c-hr,2019,16690,hybrid,automatic,1.8,22498
+toyota,c-hr,2017,25411,hybrid,automatic,1.8,19491
+toyota,c-hr,2018,25414,petrol,manual,1.2,16998
+toyota,c-hr,2017,10000,petrol,manual,1.2,16795
+toyota,c-hr,2017,11772,petrol,automatic,1.2,17298
+toyota,c-hr,2019,236,petrol,manual,1.2,22995
+toyota,c-hr,2018,13741,hybrid,automatic,1.8,20795
+toyota,c-hr,2019,1379,hybrid,automatic,2.0,24998
+toyota,c-hr,2018,15441,hybrid,automatic,1.8,22995
+toyota,c-hr,2017,27850,petrol,automatic,1.2,14860
+toyota,c-hr,2017,12000,petrol,manual,1.2,16499
+toyota,c-hr,2019,8758,hybrid,automatic,1.8,22498
+toyota,c-hr,2018,14000,petrol,automatic,1.2,17990
+toyota,c-hr,2018,15736,petrol,automatic,1.2,17800
+toyota,c-hr,2018,19404,hybrid,automatic,1.8,21490
+toyota,c-hr,2017,38674,hybrid,automatic,1.8,17995
+toyota,c-hr,2018,12814,hybrid,automatic,1.8,23440
+toyota,c-hr,2017,21758,hybrid,automatic,1.8,20495
+toyota,c-hr,2017,28973,petrol,manual,1.2,16995
+toyota,camry,2019,10732,hybrid,automatic,2.5,25990
+toyota,camry,2019,6340,hybrid,automatic,2.5,25490
+toyota,camry,2019,5059,hybrid,automatic,2.5,27545
+toyota,camry,2019,5145,hybrid,automatic,2.5,24990
+toyota,camry,2019,4998,hybrid,automatic,2.5,28495
+toyota,camry,2019,4189,hybrid,automatic,2.5,27550
+toyota,camry,2019,3000,hybrid,automatic,2.5,26990
+toyota,camry,2019,4600,hybrid,automatic,2.5,29990
+toyota,camry,2019,4416,hybrid,automatic,2.5,26491
+toyota,camry,2020,10000,hybrid,automatic,2.5,26490
+toyota,camry,2019,6000,hybrid,automatic,2.5,25990
+toyota,corolla,2019,3695,petrol,manual,1.2,17890
+toyota,corolla,2019,5000,hybrid,automatic,1.8,21991
+toyota,corolla,2019,10500,hybrid,automatic,1.8,19990
+toyota,corolla,2019,9500,hybrid,automatic,1.8,23990
+toyota,corolla,2019,5830,hybrid,automatic,2.0,22790
+toyota,corolla,2019,9304,hybrid,automatic,1.8,22070
+toyota,corolla,2019,8970,petrol,manual,1.2,19540
+toyota,corolla,2019,6551,petrol,manual,1.2,17995
+toyota,corolla,2019,10,petrol,manual,1.2,15991
+toyota,corolla,2019,12158,hybrid,automatic,1.8,19995
+toyota,corolla,2019,7575,hybrid,automatic,1.8,22000
+toyota,corolla,2019,10011,petrol,manual,1.2,19290
+toyota,corolla,2019,10420,hybrid,automatic,1.8,21495
+toyota,corolla,2020,3000,petrol,manual,1.2,18990
+toyota,corolla,2019,5600,petrol,manual,1.2,23495
+toyota,corolla,2019,7899,hybrid,automatic,1.8,21450
+toyota,corolla,2020,2141,hybrid,automatic,1.8,28495
+toyota,corolla,2019,3837,petrol,manual,1.2,16200
+toyota,corolla,2019,2430,hybrid,automatic,1.8,25000
+toyota,corolla,2019,5087,petrol,manual,1.2,18498
+toyota,gt86,2020,1500,petrol,semi-auto,2.0,26995
+toyota,gt86,2019,7056,petrol,manual,2.0,25121
+toyota,gt86,2017,13930,petrol,semi-auto,2.0,18495
+toyota,gt86,2014,39761,petrol,manual,2.0,13000
+toyota,gt86,2017,10089,petrol,manual,2.0,17249
+toyota,gt86,2016,19460,petrol,semi-auto,2.0,15995
+toyota,gt86,2017,20219,petrol,manual,2.0,18250
+toyota,gt86,2019,3934,petrol,automatic,2.0,23495
+toyota,gt86,2019,3150,petrol,manual,2.0,24990
+toyota,gt86,2020,1055,petrol,manual,2.0,27995
+toyota,gt86,2019,4500,petrol,manual,2.0,23997
+toyota,gt86,2017,18544,petrol,manual,2.0,18621
+toyota,gt86,2019,2680,petrol,manual,2.0,26995
+toyota,gt86,2020,3000,petrol,manual,2.0,31000
+toyota,gt86,2020,516,petrol,manual,2.0,27998
+toyota,gt86,2019,2488,petrol,manual,2.0,24995
+toyota,gt86,2017,14345,petrol,manual,2.0,17000
+toyota,gt86,2018,5260,petrol,manual,2.0,20695
+toyota,gt86,2017,6445,petrol,manual,2.0,20995
+toyota,gt86,2017,10456,petrol,manual,2.0,18522
+toyota,hilux,2019,19211,diesel,manual,2.4,23600
+toyota,hilux,2018,26198,diesel,automatic,2.4,22498
+toyota,hilux,2018,10115,diesel,manual,2.4,22498
+toyota,hilux,2020,100,diesel,manual,2.4,23495
+toyota,hilux,2013,35683,diesel,manual,3.0,15995
+toyota,hilux,2016,93112,diesel,automatic,2.4,20149
+toyota,hilux,2018,5006,diesel,automatic,2.4,22498
+toyota,hilux,2019,1950,diesel,automatic,2.4,24995
+toyota,hilux,2018,15146,diesel,automatic,2.4,20998
+toyota,hilux,2018,21189,diesel,automatic,2.4,23698
+toyota,hilux,2018,35041,diesel,automatic,2.4,20998
+toyota,hilux,2017,11517,diesel,automatic,2.4,24748
+toyota,hilux,2017,8793,diesel,automatic,2.4,20630
+toyota,hilux,2017,17235,diesel,automatic,2.4,21998
+toyota,hilux,2017,35855,diesel,automatic,2.4,19490
+toyota,hilux,2019,10663,diesel,manual,2.4,23990
+toyota,hilux,2018,26000,diesel,automatic,2.4,22495
+toyota,hilux,2016,55232,diesel,manual,3.0,14485
+toyota,hilux,2018,20511,diesel,manual,2.4,20995
+toyota,hilux,2017,57932,diesel,manual,2.4,23400
+toyota,iq,2011,30000,petrol,automatic,1.0,5500
+toyota,iq,2013,72913,petrol,manual,1.3,4950
+toyota,iq,2009,74095,petrol,manual,1.0,2699
+toyota,iq,2012,72498,petrol,manual,1.0,2495
+toyota,iq,2009,27292,petrol,automatic,1.0,3995
+toyota,iq,2013,41142,petrol,manual,1.0,4849
+toyota,iq,2009,43000,petrol,manual,1.0,3495
+toyota,iq,2011,29000,petrol,automatic,1.0,5995
+toyota,land cruiser,2013,33000,diesel,automatic,3.0,25350
+toyota,land cruiser,2015,27845,diesel,semi-auto,2.8,31200
+toyota,land cruiser,2008,174419,diesel,automatic,3.0,6950
+toyota,land cruiser,2019,8813,diesel,semi-auto,2.8,47795
+toyota,land cruiser,2015,16871,diesel,automatic,3.0,32498
+toyota,land cruiser,2020,4000,diesel,automatic,2.8,54550
+toyota,land cruiser,2019,6254,diesel,semi-auto,2.8,50995
+toyota,land cruiser,2019,789,diesel,automatic,2.8,48995
+toyota,land cruiser,2020,27,diesel,automatic,2.8,45950
+toyota,land cruiser,2005,80750,diesel,manual,3.0,8000
+toyota,land cruiser,2014,36137,diesel,automatic,3.0,30442
+toyota,land cruiser,2004,143000,diesel,automatic,3.0,6450
+toyota,land cruiser,2015,32364,diesel,automatic,3.0,29795
+toyota,land cruiser,2019,11712,diesel,semi-auto,2.8,39498
+toyota,land cruiser,2014,53252,diesel,manual,3.0,23995
+toyota,land cruiser,2017,10023,diesel,semi-auto,2.8,39995
+toyota,land cruiser,2019,10083,diesel,semi-auto,2.8,42444
+toyota,land cruiser,2017,30071,diesel,semi-auto,2.8,31495
+toyota,land cruiser,2020,3104,diesel,semi-auto,2.8,52291
+toyota,land cruiser,2017,21000,diesel,semi-auto,2.8,33870
+toyota,prius,2015,19350,hybrid,automatic,1.8,17495
+toyota,prius,2017,3881,hybrid,automatic,1.8,20795
+toyota,prius,2015,11872,hybrid,automatic,1.8,22995
+toyota,prius,2019,464,hybrid,automatic,1.8,23498
+toyota,prius,2016,53500,hybrid,automatic,1.8,17495
+toyota,prius,2016,37908,hybrid,automatic,1.8,18490
+toyota,prius,2016,31432,hybrid,automatic,1.8,16995
+toyota,prius,2013,33905,hybrid,automatic,1.8,11500
+toyota,prius,2017,21387,hybrid,automatic,1.8,19195
+toyota,prius,2013,52217,hybrid,automatic,1.8,13522
+toyota,prius,2017,52926,hybrid,automatic,1.8,18000
+toyota,prius,2014,65829,hybrid,automatic,1.8,15995
+toyota,prius,2018,31786,hybrid,automatic,1.8,22890
+toyota,prius,2016,28578,hybrid,automatic,1.8,18595
+toyota,prius,2016,21184,hybrid,automatic,1.8,19390
+toyota,prius,2017,25000,hybrid,automatic,1.8,19495
+toyota,prius,2017,28031,hybrid,automatic,1.8,19313
+toyota,prius,2017,58458,hybrid,automatic,1.8,14800
+toyota,prius,2017,3440,hybrid,automatic,1.8,20995
+toyota,prius,2018,9843,hybrid,automatic,1.8,21995
+toyota,proace verso,2019,10524,diesel,automatic,2.0,27249
+toyota,proace verso,2019,10,diesel,automatic,2.0,27998
+toyota,proace verso,2019,240,diesel,automatic,2.0,27998
+toyota,proace verso,2019,10,diesel,manual,2.0,25200
+toyota,proace verso,2019,9119,diesel,automatic,2.0,28456
+toyota,proace verso,2019,2456,diesel,manual,2.0,25488
+toyota,proace verso,2020,1255,diesel,automatic,2.0,47990
+toyota,proace verso,2019,5633,diesel,automatic,2.0,27990
+toyota,proace verso,2019,9441,diesel,manual,2.0,24450
+toyota,proace verso,2019,6570,diesel,manual,2.0,23950
+toyota,proace verso,2019,7350,diesel,manual,2.0,24990
+toyota,proace verso,2019,588,diesel,manual,2.0,24498
+toyota,proace verso,2020,1000,diesel,automatic,2.0,37950
+toyota,proace verso,2019,5,diesel,automatic,2.0,27998
+toyota,proace verso,2019,50,diesel,automatic,2.0,27998
+toyota,rav4,2016,29489,hybrid,automatic,2.5,21495
+toyota,rav4,2017,23605,hybrid,automatic,2.5,23070
+toyota,rav4,2015,44095,diesel,automatic,2.2,13700
+toyota,rav4,2017,17681,petrol,automatic,2.0,20990
+toyota,rav4,2013,39555,diesel,automatic,2.2,12495
+toyota,rav4,2017,19296,hybrid,automatic,2.5,21999
+toyota,rav4,2013,57962,diesel,manual,2.2,10500
+toyota,rav4,2015,64609,diesel,manual,2.0,11999
+toyota,rav4,2014,59627,diesel,manual,2.0,10995
+toyota,rav4,2016,18863,petrol,automatic,2.0,17750
+toyota,rav4,2016,12442,petrol,automatic,2.0,19995
+toyota,rav4,2016,47000,diesel,manual,2.0,14010
+toyota,rav4,2019,9709,hybrid,automatic,2.5,29995
+toyota,rav4,2017,37386,hybrid,automatic,2.5,18798
+toyota,rav4,2017,33900,petrol,automatic,2.0,18991
+toyota,rav4,2013,29445,diesel,manual,2.2,11995
+toyota,rav4,2013,45000,diesel,automatic,2.2,10990
+toyota,rav4,2014,30726,diesel,manual,2.0,12495
+toyota,rav4,2016,26895,hybrid,automatic,2.5,23490
+toyota,rav4,2016,101510,hybrid,automatic,2.5,16000
+toyota,supra,2019,1902,petrol,semi-auto,3.0,51995
+toyota,supra,2019,2771,petrol,automatic,3.0,48950
+toyota,supra,2019,3000,petrol,semi-auto,3.0,49990
+toyota,supra,2019,10,petrol,automatic,3.0,49499
+toyota,supra,2019,4153,petrol,semi-auto,3.0,51995
+toyota,supra,2019,162,petrol,automatic,3.0,49490
+toyota,supra,2019,9909,other,automatic,3.0,59995
+toyota,supra,2019,5,petrol,semi-auto,3.0,47500
+toyota,supra,2019,250,petrol,semi-auto,3.0,51995
+toyota,supra,2019,327,petrol,semi-auto,3.0,47498
+toyota,supra,2019,500,petrol,semi-auto,3.0,49994
+toyota,supra,2019,1000,petrol,semi-auto,3.0,49991
+toyota,urban cruiser,2011,36154,petrol,manual,1.3,4985
+toyota,urban cruiser,2012,46000,diesel,manual,1.4,4995
+toyota,urban cruiser,2011,60700,petrol,manual,1.3,3995
+toyota,urban cruiser,2011,45128,petrol,manual,1.3,4495
+toyota,verso,2012,65700,diesel,manual,2.0,5995
+toyota,verso,2017,26242,petrol,semi-auto,1.8,14995
+toyota,verso,2017,41630,diesel,manual,1.6,11990
+toyota,verso,2017,36756,petrol,manual,1.6,10500
+toyota,verso,2016,9444,other,automatic,1.8,16700
+toyota,verso,2011,54000,diesel,manual,2.0,5995
+toyota,verso,2017,19432,petrol,semi-auto,1.8,16781
+toyota,verso,2017,6800,petrol,semi-auto,1.8,15495
+toyota,verso,2016,37305,diesel,manual,1.6,11295
+toyota,verso,2011,29761,diesel,manual,2.0,7995
+toyota,verso,2017,23850,diesel,manual,1.6,12995
+toyota,verso,2017,16412,petrol,semi-auto,1.8,16500
+toyota,verso,2017,23161,petrol,manual,1.6,11998
+toyota,verso,2017,25050,petrol,semi-auto,1.8,12990
+toyota,verso,2016,25725,petrol,manual,1.6,11000
+toyota,verso,2011,74488,petrol,manual,1.6,5899
+toyota,verso,2015,10500,petrol,automatic,1.8,14274
+toyota,verso,2013,55965,petrol,manual,1.6,8490
+toyota,verso,2018,21981,petrol,manual,1.6,12498
+toyota,verso,2016,25001,petrol,automatic,1.8,12999
+toyota,verso-s,2012,61237,petrol,automatic,1.3,5795
+toyota,verso-s,2013,33900,petrol,manual,1.3,6995
+toyota,verso-s,2011,73000,petrol,manual,1.3,4450
+toyota,yaris,2018,22224,petrol,manual,1.5,10495
+toyota,yaris,2016,27490,hybrid,automatic,1.5,11695
+toyota,yaris,2017,31512,petrol,manual,1.3,9498
+toyota,yaris,2017,18145,petrol,manual,1.3,9799
+toyota,yaris,2017,19678,petrol,manual,1.3,8994
+toyota,yaris,2012,28900,petrol,manual,1.3,6995
+toyota,yaris,2019,1069,petrol,manual,1.5,13495
+toyota,yaris,2018,15990,hybrid,automatic,1.5,13495
+toyota,yaris,2013,70000,hybrid,automatic,1.5,7495
+toyota,yaris,2017,13830,hybrid,automatic,1.5,13295
+toyota,yaris,2018,15716,petrol,manual,1.5,11500
+toyota,yaris,2016,15015,petrol,manual,1.3,9700
+toyota,yaris,2013,39963,hybrid,automatic,1.5,8698
+toyota,yaris,2019,11403,petrol,manual,1.5,12000
+toyota,yaris,2015,44052,petrol,manual,1.3,7298
+toyota,yaris,2017,19280,hybrid,automatic,1.5,13995
+toyota,yaris,2015,41830,hybrid,automatic,1.5,10290
+toyota,yaris,2017,25071,petrol,manual,1.3,10122
+toyota,yaris,2016,20216,hybrid,automatic,1.5,12500
+toyota,yaris,2017,7292,hybrid,automatic,1.5,12995
+vauxhall,adam,2017,4110,petrol,manual,1.2,7870
+vauxhall,adam,2015,23594,petrol,manual,1.4,7799
+vauxhall,adam,2018,20679,petrol,manual,1.2,8325
+vauxhall,adam,2017,14299,petrol,manual,1.0,8399
+vauxhall,adam,2014,44001,petrol,manual,1.2,6290
+vauxhall,adam,2018,4624,petrol,manual,1.2,9450
+vauxhall,adam,2018,2339,petrol,manual,1.2,9249
+vauxhall,adam,2016,22145,petrol,manual,1.2,6895
+vauxhall,adam,2015,43951,petrol,manual,1.2,6495
+vauxhall,adam,2016,14005,petrol,manual,1.4,7450
+vauxhall,adam,2017,7390,petrol,manual,1.2,7999
+vauxhall,adam,2017,25280,petrol,manual,1.2,7499
+vauxhall,adam,2018,25731,petrol,manual,0.0,9000
+vauxhall,adam,2018,9744,petrol,manual,1.2,8998
+vauxhall,adam,2019,1857,petrol,manual,1.2,9999
+vauxhall,adam,2019,2569,petrol,manual,1.2,10400
+vauxhall,adam,2017,33000,petrol,manual,1.2,8495
+vauxhall,adam,2019,13,petrol,manual,1.2,10500
+vauxhall,adam,2017,10257,petrol,manual,1.2,7491
+vauxhall,adam,2014,40955,petrol,manual,1.4,6345
+vauxhall,agila,2008,44000,petrol,manual,1.2,2000
+vauxhall,agila,2004,62000,petrol,manual,1.0,1395
+vauxhall,agila,2012,32028,petrol,automatic,1.2,5200
+vauxhall,agila,2009,21098,petrol,automatic,1.2,5113
+vauxhall,agila,2013,31090,petrol,automatic,1.2,5990
+vauxhall,agila,2011,25669,petrol,manual,1.2,4655
+vauxhall,agila,2014,45400,petrol,manual,1.0,3595
+vauxhall,agila,2014,18488,petrol,automatic,1.2,7250
+vauxhall,agila,2015,60000,petrol,manual,1.2,4695
+vauxhall,agila,2008,63000,petrol,manual,1.2,1999
+vauxhall,agila,2011,19079,petrol,automatic,1.2,5499
+vauxhall,agila,2014,28221,petrol,manual,1.2,4995
+vauxhall,agila,2015,18953,petrol,manual,1.0,4599
+vauxhall,agila,2005,36000,petrol,manual,1.2,1995
+vauxhall,agila,2014,34267,petrol,manual,1.2,4291
+vauxhall,agila,2013,21461,petrol,manual,1.2,4391
+vauxhall,agila,2009,62000,petrol,manual,1.2,2995
+vauxhall,agila,2011,28299,petrol,manual,1.2,3699
+vauxhall,agila,2014,25102,petrol,manual,1.2,4599
+vauxhall,ampera,2014,64764,hybrid,automatic,0.0,11400
+vauxhall,ampera,2014,50486,hybrid,automatic,0.0,10495
+vauxhall,ampera,2015,34461,electric,automatic,1.4,12999
+vauxhall,antara,2014,27495,diesel,manual,2.2,6790
+vauxhall,antara,2007,116000,diesel,manual,2.0,2895
+vauxhall,antara,2014,62308,diesel,semi-auto,2.2,6580
+vauxhall,antara,2013,55470,diesel,manual,2.2,5995
+vauxhall,antara,2013,47600,diesel,manual,2.2,8990
+vauxhall,antara,2013,82059,diesel,manual,2.2,5495
+vauxhall,antara,2012,49000,diesel,manual,2.2,7495
+vauxhall,antara,2014,39003,diesel,manual,2.2,6490
+vauxhall,antara,2012,35100,diesel,manual,2.2,7850
+vauxhall,antara,2008,99000,diesel,manual,2.0,2990
+vauxhall,antara,2012,63725,diesel,manual,2.2,5695
+vauxhall,antara,2013,79856,diesel,semi-auto,2.2,5490
+vauxhall,antara,2015,65000,diesel,manual,2.2,7000
+vauxhall,antara,2013,53469,diesel,manual,2.2,6999
+vauxhall,antara,2012,53730,diesel,automatic,2.2,6599
+vauxhall,antara,2013,67400,diesel,manual,2.2,5299
+vauxhall,antara,2015,37617,diesel,manual,2.2,6999
+vauxhall,antara,2012,50478,diesel,manual,2.2,5800
+vauxhall,antara,2012,67686,diesel,manual,2.2,5490
+vauxhall,antara,2012,75023,diesel,manual,2.2,4995
+vauxhall,astra,2019,6803,petrol,manual,1.0,11499
+vauxhall,astra,2017,26668,petrol,automatic,1.4,10087
+vauxhall,astra,2013,39138,petrol,manual,1.6,5498
+vauxhall,astra,2017,21626,petrol,manual,1.4,9998
+vauxhall,astra,2019,25,diesel,manual,1.6,16995
+vauxhall,astra,2020,22,petrol,manual,1.2,15500
+vauxhall,astra,2017,20157,petrol,manual,1.0,8999
+vauxhall,astra,2016,19062,petrol,manual,1.4,9250
+vauxhall,astra,2018,50,petrol,manual,1.4,16295
+vauxhall,astra,2019,9590,petrol,manual,1.0,11900
+vauxhall,astra,2015,56000,petrol,manual,1.6,6495
+vauxhall,astra,2017,9674,petrol,manual,2.0,17400
+vauxhall,astra,2020,1850,petrol,manual,1.2,15960
+vauxhall,astra,2016,11900,petrol,manual,1.0,9995
+vauxhall,astra,2017,26299,petrol,manual,1.4,8475
+vauxhall,astra,2013,58595,petrol,manual,1.4,5999
+vauxhall,astra,2019,1455,petrol,manual,1.4,16500
+vauxhall,astra,2019,1937,diesel,manual,1.6,13494
+vauxhall,astra,2017,31323,petrol,manual,1.4,9150
+vauxhall,astra,2019,17359,petrol,manual,1.4,10995
+vauxhall,cascada,2013,18000,diesel,manual,2.0,9995
+vauxhall,cascada,2016,35954,diesel,manual,2.0,9991
+vauxhall,cascada,2015,68601,diesel,manual,2.0,7995
+vauxhall,cascada,2014,13000,petrol,automatic,1.6,12995
+vauxhall,combo life,2019,8541,petrol,manual,1.2,13999
+vauxhall,combo life,2020,10,diesel,manual,1.5,21295
+vauxhall,combo life,2019,1,petrol,manual,1.2,18448
+vauxhall,combo life,2019,17957,diesel,manual,1.5,15990
+vauxhall,combo life,2019,2083,diesel,manual,1.5,16991
+vauxhall,combo life,2019,2500,petrol,manual,1.2,14990
+vauxhall,combo life,2019,12545,diesel,manual,1.5,13498
+vauxhall,combo life,2018,10070,diesel,manual,1.5,15979
+vauxhall,combo life,2019,6223,diesel,manual,1.5,18000
+vauxhall,combo life,2019,2915,diesel,manual,1.5,19200
+vauxhall,combo life,2019,9000,petrol,manual,1.2,15760
+vauxhall,combo life,2018,1146,diesel,manual,1.5,14985
+vauxhall,combo life,2019,11200,petrol,manual,1.2,13498
+vauxhall,combo life,2018,11935,diesel,manual,1.5,15690
+vauxhall,combo life,2019,1001,diesel,manual,1.5,17445
+vauxhall,combo life,2019,2721,petrol,manual,1.2,14244
+vauxhall,combo life,2019,12000,diesel,manual,1.5,18299
+vauxhall,combo life,2019,7821,diesel,manual,1.5,16990
+vauxhall,combo life,2019,6846,petrol,manual,1.2,14106
+vauxhall,combo life,2018,10875,diesel,manual,1.5,13499
+vauxhall,corsa,2016,23591,petrol,manual,1.4,7995
+vauxhall,corsa,2015,44730,petrol,manual,1.4,6290
+vauxhall,corsa,2015,11224,petrol,manual,1.4,7834
+vauxhall,corsa,2014,76276,petrol,manual,1.4,3999
+vauxhall,corsa,2016,40185,petrol,manual,1.4,6995
+vauxhall,corsa,2015,29797,petrol,manual,1.2,6381
+vauxhall,corsa,2017,27944,petrol,manual,1.4,8500
+vauxhall,corsa,2019,4359,petrol,manual,1.4,11495
+vauxhall,corsa,2018,5000,petrol,manual,1.4,7990
+vauxhall,corsa,2017,18464,petrol,manual,1.4,8400
+vauxhall,corsa,2019,9649,petrol,manual,1.4,9999
+vauxhall,corsa,2015,49572,petrol,manual,1.0,5999
+vauxhall,corsa,2018,16187,petrol,manual,1.4,8330
+vauxhall,corsa,2018,3406,petrol,manual,1.4,9000
+vauxhall,corsa,2017,19615,petrol,manual,1.4,7099
+vauxhall,corsa,2012,104142,petrol,manual,1.4,3699
+vauxhall,corsa,2016,16094,petrol,manual,1.4,6699
+vauxhall,corsa,2016,30330,petrol,manual,1.4,5998
+vauxhall,corsa,2016,42732,petrol,manual,1.4,6799
+vauxhall,corsa,2014,46237,petrol,manual,1.2,4600
+vauxhall,crossland x,2019,6027,petrol,manual,1.2,14799
+vauxhall,crossland x,2017,16471,petrol,manual,1.2,11000
+vauxhall,crossland x,2019,7362,petrol,manual,1.2,14800
+vauxhall,crossland x,2019,18440,petrol,manual,1.2,11999
+vauxhall,crossland x,2020,10,petrol,manual,1.2,15299
+vauxhall,crossland x,2019,2560,petrol,manual,1.2,11390
+vauxhall,crossland x,2019,2015,petrol,manual,1.2,15798
+vauxhall,crossland x,2020,1000,petrol,manual,1.2,18995
+vauxhall,crossland x,2020,100,petrol,semi-auto,1.2,18990
+vauxhall,crossland x,2019,10000,diesel,manual,1.5,15299
+vauxhall,crossland x,2019,10871,petrol,manual,1.2,12190
+vauxhall,crossland x,2019,3421,diesel,manual,1.5,15871
+vauxhall,crossland x,2019,6870,petrol,manual,1.2,14295
+vauxhall,crossland x,2019,641,petrol,manual,1.2,12950
+vauxhall,crossland x,2019,740,petrol,manual,1.2,13999
+vauxhall,crossland x,2020,10,petrol,manual,1.2,15495
+vauxhall,crossland x,2018,4631,petrol,manual,1.2,10899
+vauxhall,crossland x,2019,8235,petrol,manual,1.2,11994
+vauxhall,crossland x,2019,1139,diesel,manual,1.6,13699
+vauxhall,crossland x,2019,3698,diesel,manual,1.5,13500
+vauxhall,grandland x,2019,15500,diesel,manual,1.5,21980
+vauxhall,grandland x,2019,12817,petrol,manual,1.2,16499
+vauxhall,grandland x,2018,18290,diesel,manual,1.6,13890
+vauxhall,grandland x,2018,23807,petrol,automatic,1.2,13695
+vauxhall,grandland x,2018,29094,diesel,manual,1.5,13998
+vauxhall,grandland x,2019,1398,petrol,manual,1.2,17995
+vauxhall,grandland x,2019,14776,petrol,manual,1.2,17995
+vauxhall,grandland x,2019,4083,petrol,automatic,1.2,18997
+vauxhall,grandland x,2019,4200,petrol,automatic,1.2,21990
+vauxhall,grandland x,2019,12211,petrol,manual,1.2,16620
+vauxhall,grandland x,2018,3856,petrol,automatic,1.2,15246
+vauxhall,grandland x,2019,13016,petrol,manual,1.2,16299
+vauxhall,grandland x,2018,29094,diesel,manual,1.5,13989
+vauxhall,grandland x,2019,13284,diesel,manual,1.5,15798
+vauxhall,grandland x,2019,100,petrol,manual,1.2,21490
+vauxhall,grandland x,2019,13040,petrol,manual,1.2,15699
+vauxhall,grandland x,2019,8500,petrol,manual,1.2,15495
+vauxhall,grandland x,2019,6459,petrol,manual,1.2,16500
+vauxhall,grandland x,2019,15,petrol,manual,1.2,23495
+vauxhall,grandland x,2019,2200,petrol,automatic,1.2,22990
+vauxhall,gtc,2016,31050,diesel,manual,1.6,9670
+vauxhall,gtc,2016,30000,petrol,manual,2.0,13995
+vauxhall,gtc,2016,15466,petrol,automatic,1.4,10498
+vauxhall,gtc,2015,36429,petrol,manual,1.6,7999
+vauxhall,gtc,2018,9882,petrol,manual,2.0,18998
+vauxhall,gtc,2017,26738,petrol,manual,1.4,11395
+vauxhall,gtc,2016,27004,petrol,manual,1.4,6713
+vauxhall,gtc,2015,32160,petrol,manual,1.6,8790
+vauxhall,gtc,2017,33894,petrol,manual,2.0,14510
+vauxhall,gtc,2014,52994,diesel,manual,2.0,6349
+vauxhall,gtc,2017,11547,petrol,manual,1.4,10499
+vauxhall,gtc,2015,47870,diesel,manual,2.0,7700
+vauxhall,gtc,2016,7754,petrol,manual,1.4,7820
+vauxhall,gtc,2017,25983,petrol,manual,2.0,15289
+vauxhall,gtc,2016,44310,petrol,automatic,1.4,9240
+vauxhall,gtc,2017,16541,petrol,manual,2.0,16491
+vauxhall,gtc,2015,32584,petrol,manual,1.4,7498
+vauxhall,gtc,2017,24628,petrol,automatic,1.4,8795
+vauxhall,gtc,2017,34404,petrol,manual,2.0,14950
+vauxhall,gtc,2015,32300,diesel,manual,2.0,8499
+vauxhall,insignia,2015,53939,diesel,manual,2.0,7495
+vauxhall,insignia,2017,44800,diesel,manual,2.0,11999
+vauxhall,insignia,2015,126000,diesel,manual,2.0,5492
+vauxhall,insignia,2016,27666,diesel,manual,1.6,7995
+vauxhall,insignia,2018,19736,diesel,automatic,1.6,13400
+vauxhall,insignia,2014,45016,diesel,manual,2.0,5995
+vauxhall,insignia,2017,20260,petrol,manual,1.5,14298
+vauxhall,insignia,2017,32235,petrol,manual,1.4,9899
+vauxhall,insignia,2018,47913,diesel,manual,2.0,13850
+vauxhall,insignia,2013,39723,diesel,manual,2.0,9000
+vauxhall,insignia,2016,30003,diesel,manual,1.6,8999
+vauxhall,insignia,2018,33122,diesel,manual,2.0,14170
+vauxhall,insignia,2018,43213,diesel,manual,2.0,14299
+vauxhall,insignia,2017,29500,diesel,manual,1.6,9499
+vauxhall,insignia,2015,36501,diesel,manual,1.6,8998
+vauxhall,insignia,2016,35088,diesel,automatic,1.6,9299
+vauxhall,insignia,2018,26902,diesel,manual,1.6,14295
+vauxhall,insignia,2016,52990,diesel,manual,1.6,7850
+vauxhall,insignia,2014,75810,petrol,manual,1.8,5388
+vauxhall,insignia,2016,36770,diesel,manual,1.6,8699
+vauxhall,kadjar,2019,15101,petrol,manual,1.3,15100
+vauxhall,kadjar,2018,16546,petrol,manual,1.3,12895
+vauxhall,kadjar,2019,13983,petrol,manual,1.3,15300
+vauxhall,meriva,2016,11259,diesel,manual,1.6,8695
+vauxhall,meriva,2011,55000,diesel,automatic,1.7,3995
+vauxhall,meriva,2015,18871,petrol,manual,1.4,6698
+vauxhall,meriva,2017,11436,diesel,manual,1.6,8795
+vauxhall,meriva,2012,41500,petrol,manual,1.4,3995
+vauxhall,meriva,2017,31475,petrol,manual,1.4,7789
+vauxhall,meriva,2017,20672,petrol,manual,1.4,8698
+vauxhall,meriva,2010,62000,petrol,manual,1.4,3495
+vauxhall,meriva,2017,6000,petrol,manual,1.4,8490
+vauxhall,meriva,2017,9279,petrol,automatic,1.4,9000
+vauxhall,meriva,2016,20028,petrol,manual,1.4,7590
+vauxhall,meriva,2016,16142,petrol,manual,1.4,6295
+vauxhall,meriva,2017,16888,petrol,manual,1.4,7150
+vauxhall,meriva,2017,7079,petrol,manual,1.4,9298
+vauxhall,meriva,2015,22982,petrol,manual,1.4,6797
+vauxhall,meriva,2016,44367,petrol,automatic,1.4,7640
+vauxhall,meriva,2009,119337,diesel,manual,1.7,1695
+vauxhall,meriva,2017,20756,petrol,manual,1.4,8698
+vauxhall,meriva,2017,40202,petrol,manual,1.4,6995
+vauxhall,meriva,2017,44108,petrol,manual,1.4,6298
+vauxhall,mokka,2015,34076,petrol,automatic,1.4,8999
+vauxhall,mokka,2014,62864,diesel,manual,1.7,6499
+vauxhall,mokka,2014,46025,diesel,manual,1.7,6698
+vauxhall,mokka,2013,57039,diesel,manual,1.7,6998
+vauxhall,mokka,2015,55247,diesel,manual,1.6,7799
+vauxhall,mokka,2016,48293,diesel,manual,1.6,7450
+vauxhall,mokka,2015,49276,diesel,automatic,1.7,8990
+vauxhall,mokka,2013,22439,petrol,manual,1.6,7100
+vauxhall,mokka,2016,20850,petrol,manual,1.4,10895
+vauxhall,mokka,2017,41621,petrol,manual,1.6,10200
+vauxhall,mokka,2014,52824,diesel,manual,1.7,7299
+vauxhall,mokka,2017,25134,petrol,manual,1.4,12000
+vauxhall,mokka,2015,29886,diesel,manual,1.6,8995
+vauxhall,mokka,2016,26415,petrol,automatic,1.4,11495
+vauxhall,mokka,2015,64674,diesel,manual,1.7,7450
+vauxhall,mokka,2015,17385,diesel,manual,1.6,9500
+vauxhall,mokka,2013,38139,diesel,manual,1.7,8495
+vauxhall,mokka,2015,69281,petrol,manual,1.4,6995
+vauxhall,mokka,2014,30824,petrol,manual,1.6,7498
+vauxhall,mokka,2016,11379,petrol,manual,1.4,11000
+vauxhall,mokka x,2019,8456,petrol,manual,1.4,14698
+vauxhall,mokka x,2019,13071,petrol,automatic,1.4,14260
+vauxhall,mokka x,2019,16137,petrol,manual,1.4,12200
+vauxhall,mokka x,2019,12000,petrol,manual,1.4,13999
+vauxhall,mokka x,2019,50,petrol,manual,1.4,17499
+vauxhall,mokka x,2017,9304,diesel,manual,1.6,12990
+vauxhall,mokka x,2017,14886,petrol,manual,1.4,12000
+vauxhall,mokka x,2017,8363,petrol,manual,1.6,10491
+vauxhall,mokka x,2019,9411,petrol,manual,1.4,12998
+vauxhall,mokka x,2018,7994,petrol,manual,1.4,13336
+vauxhall,mokka x,2018,12001,petrol,manual,1.4,11999
+vauxhall,mokka x,2017,19558,diesel,manual,1.6,11499
+vauxhall,mokka x,2018,23125,petrol,semi-auto,1.4,12810
+vauxhall,mokka x,2018,10305,petrol,manual,1.4,12995
+vauxhall,mokka x,2019,10366,petrol,manual,1.4,12890
+vauxhall,mokka x,2017,19561,petrol,manual,1.6,11795
+vauxhall,mokka x,2019,9825,petrol,manual,1.4,13999
+vauxhall,mokka x,2019,20536,petrol,manual,1.4,12799
+vauxhall,mokka x,2019,17550,petrol,manual,1.4,13691
+vauxhall,mokka x,2019,7614,petrol,manual,1.4,13298
+vauxhall,tigra,2007,48640,petrol,manual,1.4,2499
+vauxhall,tigra,2009,34000,petrol,manual,1.4,2995
+vauxhall,tigra,2006,92000,petrol,manual,1.8,1795
+vauxhall,vectra,2005,147000,petrol,manual,3.2,1450
+vauxhall,vectra,2008,131000,diesel,automatic,1.9,1695
+vauxhall,vectra,2007,75000,petrol,manual,1.8,1795
+vauxhall,vectra,2005,74000,petrol,manual,1.8,1495
+vauxhall,viva,2016,13850,petrol,manual,1.0,5881
+vauxhall,viva,2017,12669,petrol,manual,1.0,6240
+vauxhall,viva,2016,18771,petrol,manual,1.0,6230
+vauxhall,viva,2016,6732,petrol,semi-auto,1.0,8799
+vauxhall,viva,2016,13566,petrol,manual,1.0,5598
+vauxhall,viva,2017,10379,petrol,manual,1.0,5991
+vauxhall,viva,2019,25,petrol,manual,1.0,8990
+vauxhall,viva,2016,7648,petrol,manual,1.0,6600
+vauxhall,viva,2017,12000,petrol,manual,1.0,6500
+vauxhall,viva,2017,5857,petrol,manual,1.0,6288
+vauxhall,viva,2016,22081,petrol,manual,1.0,6180
+vauxhall,viva,2018,4048,petrol,manual,1.0,7392
+vauxhall,viva,2019,7011,petrol,manual,1.0,7494
+vauxhall,viva,2018,32716,petrol,manual,1.0,5998
+vauxhall,viva,2017,12594,petrol,manual,1.0,6599
+vauxhall,viva,2017,21996,petrol,manual,1.0,6192
+vauxhall,viva,2016,20900,petrol,manual,1.0,5740
+vauxhall,viva,2019,4699,petrol,manual,1.0,7561
+vauxhall,viva,2016,9608,petrol,manual,1.0,6980
+vauxhall,viva,2016,25420,petrol,manual,1.0,5500
+vauxhall,vivaro,2018,13585,diesel,manual,1.6,19998
+vauxhall,vivaro,2018,18673,diesel,manual,1.6,16495
+vauxhall,vivaro,2018,16273,diesel,manual,1.6,16999
+vauxhall,vivaro,2018,22036,diesel,manual,1.6,18500
+vauxhall,vivaro,2017,25885,diesel,manual,1.6,14900
+vauxhall,vivaro,2018,22036,diesel,manual,1.6,19500
+vauxhall,vivaro,2016,40230,diesel,manual,1.6,13750
+vauxhall,vivaro,2018,5000,diesel,manual,1.6,27995
+vauxhall,vivaro,2016,29652,diesel,manual,1.6,12995
+vauxhall,vivaro,2015,72717,diesel,manual,1.6,10207
+vauxhall,vivaro,2016,37409,diesel,manual,1.6,13498
+vauxhall,vivaro,2016,51206,diesel,manual,1.6,14856
+vauxhall,vivaro,2015,64000,diesel,manual,1.6,14499
+vauxhall,vivaro,2017,30156,diesel,manual,1.6,15498
+vauxhall,vivaro,2018,23242,diesel,manual,1.6,15249
+vauxhall,vivaro,2016,13000,diesel,manual,1.6,13988
+vauxhall,vivaro,2015,59204,diesel,manual,1.6,11300
+vauxhall,vivaro,2017,24000,diesel,manual,1.6,13980
+vauxhall,vivaro,2018,6392,diesel,manual,1.6,20790
+vauxhall,vivaro,2017,33918,diesel,manual,1.6,14999
+vauxhall,zafira,2017,19215,petrol,manual,1.4,10998
+vauxhall,zafira,2017,20291,petrol,automatic,1.4,11700
+vauxhall,zafira,2014,18798,petrol,manual,1.8,6755
+vauxhall,zafira,2015,28034,petrol,manual,1.4,9236
+vauxhall,zafira,2017,20066,petrol,manual,1.4,12000
+vauxhall,zafira,2015,19504,diesel,manual,2.0,9700
+vauxhall,zafira,2017,29603,petrol,manual,1.4,10600
+vauxhall,zafira,2017,24263,petrol,manual,1.4,12490
+vauxhall,zafira,2017,18450,petrol,manual,1.4,11995
+vauxhall,zafira,2016,66113,petrol,manual,1.4,8999
+vauxhall,zafira,2017,34496,petrol,manual,1.4,9991
+vauxhall,zafira,2017,24855,petrol,automatic,1.4,10795
+vauxhall,zafira,2017,12913,petrol,automatic,1.4,13400
+vauxhall,zafira,2017,22676,petrol,manual,1.4,10499
+vauxhall,zafira,2016,17963,petrol,manual,1.4,10471
+vauxhall,zafira,2017,33917,petrol,manual,1.4,10941
+vauxhall,zafira,2016,13857,diesel,manual,1.6,12422
+vauxhall,zafira,2008,82000,petrol,manual,1.6,2650
+vauxhall,zafira,2016,20173,diesel,automatic,2.0,10240
+vauxhall,zafira,2017,17636,petrol,manual,1.4,11698
+vauxhall,zafira tourer,2017,15843,petrol,manual,1.4,10795
+vauxhall,zafira tourer,2016,22983,petrol,manual,1.4,9950
+vauxhall,zafira tourer,2018,8500,petrol,manual,1.4,13999
+vauxhall,zafira tourer,2017,28000,petrol,manual,1.4,9950
+vauxhall,zafira tourer,2016,44500,diesel,manual,1.6,8850
+vauxhall,zafira tourer,2017,15000,petrol,automatic,1.4,12200
+vauxhall,zafira tourer,2017,23370,petrol,manual,1.4,10500
+vauxhall,zafira tourer,2017,34416,petrol,automatic,1.4,10790
+vauxhall,zafira tourer,2016,32363,petrol,manual,1.4,9999
+vauxhall,zafira tourer,2017,16425,petrol,manual,1.4,11499
+vauxhall,zafira tourer,2014,45000,diesel,manual,2.0,7699
+vauxhall,zafira tourer,2014,59548,diesel,manual,2.0,6450
+vauxhall,zafira tourer,2016,21491,petrol,automatic,1.4,11925
+vauxhall,zafira tourer,2017,5318,petrol,automatic,1.4,13599
+vauxhall,zafira tourer,2017,22688,petrol,manual,1.4,11250
+vauxhall,zafira tourer,2017,29221,petrol,manual,1.4,11499
+vauxhall,zafira tourer,2017,27477,petrol,automatic,1.4,11275
+vauxhall,zafira tourer,2017,8190,petrol,manual,1.4,12999
+vauxhall,zafira tourer,2017,16107,petrol,manual,1.4,12200
+vauxhall,zafira tourer,2013,121349,petrol,manual,1.8,3750
+vw,amarok,2016,58349,diesel,automatic,2.0,16995
+vw,amarok,2017,27540,diesel,automatic,3.0,25999
+vw,amarok,2019,19841,diesel,automatic,3.0,27990
+vw,amarok,2015,97834,diesel,automatic,2.0,12995
+vw,amarok,2019,2569,diesel,automatic,3.0,31995
+vw,amarok,2015,50114,diesel,manual,2.0,15985
+vw,amarok,2019,10000,diesel,automatic,3.0,35995
+vw,amarok,2016,32990,diesel,automatic,2.0,18850
+vw,amarok,2017,37683,diesel,automatic,3.0,23495
+vw,amarok,2019,9895,diesel,automatic,3.0,30999
+vw,amarok,2018,5940,diesel,automatic,3.0,30999
+vw,amarok,2015,22743,diesel,automatic,2.0,18595
+vw,amarok,2015,45325,diesel,manual,2.0,15490
+vw,amarok,2018,11625,diesel,automatic,3.0,29994
+vw,amarok,2019,5648,diesel,automatic,3.0,39990
+vw,amarok,2019,1250,diesel,automatic,3.0,36999
+vw,amarok,2017,30653,diesel,automatic,3.0,25999
+vw,amarok,2018,31000,diesel,automatic,3.0,26000
+vw,amarok,2019,18000,diesel,automatic,3.0,28991
+vw,amarok,2019,12589,diesel,automatic,3.0,32990
+vw,arteon,2019,2494,diesel,automatic,2.0,32495
+vw,arteon,2019,8000,diesel,semi-auto,2.0,33950
+vw,arteon,2019,100,diesel,manual,2.0,23950
+vw,arteon,2019,5851,diesel,semi-auto,2.0,24985
+vw,arteon,2019,5619,petrol,automatic,2.0,35750
+vw,arteon,2019,13005,petrol,semi-auto,1.5,22995
+vw,arteon,2019,2187,petrol,automatic,1.5,22999
+vw,arteon,2019,9956,petrol,automatic,2.0,26690
+vw,arteon,2019,3080,petrol,automatic,1.5,27950
+vw,arteon,2019,6600,diesel,automatic,2.0,27371
+vw,arteon,2020,1786,petrol,automatic,2.0,31450
+vw,arteon,2019,4989,diesel,semi-auto,2.0,24995
+vw,arteon,2019,2400,diesel,automatic,2.0,26900
+vw,arteon,2018,5317,diesel,manual,2.0,20899
+vw,arteon,2019,5021,diesel,semi-auto,2.0,29995
+vw,arteon,2019,3994,diesel,manual,2.0,26000
+vw,arteon,2019,6789,diesel,semi-auto,2.0,29995
+vw,arteon,2019,20,diesel,semi-auto,2.0,31498
+vw,arteon,2018,26009,petrol,semi-auto,2.0,22175
+vw,arteon,2019,7000,petrol,semi-auto,2.0,28995
+vw,beetle,2014,31872,diesel,manual,1.6,7695
+vw,beetle,2014,11000,diesel,manual,1.6,11495
+vw,beetle,2016,50139,petrol,manual,1.4,13790
+vw,beetle,2014,30323,diesel,manual,2.0,12751
+vw,beetle,2016,22857,diesel,manual,2.0,13700
+vw,beetle,2015,55239,petrol,manual,1.2,7795
+vw,beetle,2015,49197,diesel,manual,2.0,8995
+vw,beetle,2015,35212,diesel,manual,1.6,8995
+vw,beetle,2016,18442,diesel,manual,2.0,12000
+vw,beetle,2017,9984,petrol,semi-auto,1.2,14491
+vw,beetle,2014,37864,petrol,manual,1.2,8311
+vw,beetle,2006,103875,petrol,manual,1.6,1799
+vw,beetle,2016,23991,petrol,manual,2.0,13990
+vw,beetle,2014,61917,petrol,manual,1.2,10000
+vw,beetle,2017,30446,petrol,manual,1.2,12240
+vw,beetle,2014,41587,petrol,semi-auto,2.0,10410
+vw,beetle,2013,61410,diesel,manual,2.0,7299
+vw,beetle,2017,17859,petrol,manual,0.0,13800
+vw,beetle,2007,40000,petrol,manual,1.6,3850
+vw,beetle,2013,16969,petrol,manual,2.0,10999
+vw,caddy,2016,20688,diesel,manual,2.0,12995
+vw,caddy,2012,26142,diesel,manual,1.6,9995
+vw,caddy,2016,59523,diesel,automatic,2.0,11999
+vw,caddy,2015,54641,diesel,manual,2.0,12490
+vw,caddy,2015,45500,diesel,manual,2.0,13590
+vw,caddy,2017,25797,diesel,automatic,2.0,15995
+vw,caddy life,2013,27000,diesel,semi-auto,1.6,11495
+vw,caddy life,2017,20123,diesel,semi-auto,2.0,15998
+vw,caddy life,2017,15986,diesel,manual,2.0,14990
+vw,caddy life,2017,15860,petrol,manual,2.0,19995
+vw,caddy life,2019,2156,diesel,manual,2.0,17995
+vw,caddy life,2019,3000,diesel,automatic,2.0,19995
+vw,caddy life,2020,1724,diesel,manual,2.0,16995
+vw,caddy life,2020,1700,diesel,manual,2.0,22000
+vw,caddy maxi,2015,93113,diesel,automatic,1.6,9949
+vw,caddy maxi,2015,66000,diesel,semi-auto,1.6,9995
+vw,caddy maxi,2017,25510,diesel,semi-auto,2.0,15950
+vw,caddy maxi,2012,53000,diesel,semi-auto,1.6,9995
+vw,caddy maxi life,2019,1374,diesel,semi-auto,2.0,24295
+vw,caddy maxi life,2017,25810,diesel,manual,2.0,15995
+vw,caddy maxi life,2019,13507,diesel,semi-auto,2.0,18495
+vw,caddy maxi life,2018,40604,diesel,automatic,2.0,14991
+vw,caddy maxi life,2019,3349,diesel,manual,2.0,19499
+vw,caddy maxi life,2019,11971,diesel,semi-auto,2.0,19495
+vw,caddy maxi life,2019,10194,diesel,semi-auto,2.0,18695
+vw,caddy maxi life,2019,12961,diesel,semi-auto,2.0,19795
+vw,caddy maxi life,2017,32110,diesel,semi-auto,2.0,16994
+vw,caddy maxi life,2020,1000,diesel,semi-auto,2.0,20990
+vw,caddy maxi life,2016,20625,diesel,semi-auto,2.0,16495
+vw,caddy maxi life,2019,63,diesel,automatic,2.0,18991
+vw,caddy maxi life,2019,6693,diesel,manual,2.0,19499
+vw,caddy maxi life,2019,13411,diesel,automatic,2.0,18450
+vw,caddy maxi life,2019,100,diesel,automatic,2.0,21999
+vw,caddy maxi life,2020,5000,diesel,semi-auto,2.0,23995
+vw,caddy maxi life,2019,2759,diesel,manual,2.0,19999
+vw,caddy maxi life,2019,13857,diesel,semi-auto,2.0,18490
+vw,caddy maxi life,2019,11744,diesel,semi-auto,2.0,19795
+vw,caddy maxi life,2018,3961,diesel,semi-auto,2.0,20990
+vw,california,2019,6739,diesel,automatic,2.0,57991
+vw,california,2019,7750,diesel,automatic,2.0,52991
+vw,california,2019,10501,diesel,automatic,2.0,54999
+vw,california,2019,12895,diesel,manual,2.0,52995
+vw,california,2019,7486,diesel,automatic,2.0,57991
+vw,california,2019,8783,diesel,automatic,2.0,55999
+vw,california,2019,10288,diesel,automatic,2.0,57991
+vw,california,2019,4653,diesel,automatic,2.0,57991
+vw,california,2019,3544,diesel,semi-auto,2.0,69994
+vw,california,2019,7259,diesel,automatic,2.0,57991
+vw,california,2018,7865,diesel,automatic,2.0,54999
+vw,california,2020,1000,diesel,semi-auto,2.0,61995
+vw,california,2019,8991,diesel,semi-auto,2.0,56995
+vw,california,2019,3500,diesel,semi-auto,2.0,54995
+vw,california,2019,10080,diesel,automatic,2.0,57991
+vw,caravelle,2019,9221,diesel,semi-auto,2.0,39999
+vw,caravelle,2019,9200,diesel,automatic,2.0,38500
+vw,caravelle,2019,12815,diesel,semi-auto,2.0,33995
+vw,caravelle,2019,8500,diesel,automatic,2.0,40980
+vw,caravelle,2019,7583,diesel,automatic,2.0,39950
+vw,caravelle,2019,947,diesel,automatic,2.0,49996
+vw,caravelle,2019,8022,diesel,semi-auto,2.0,43000
+vw,caravelle,2019,4000,diesel,automatic,2.0,41990
+vw,caravelle,2019,50,diesel,automatic,2.0,40999
+vw,caravelle,2015,55000,diesel,semi-auto,2.0,25995
+vw,caravelle,2013,46000,diesel,automatic,2.0,22995
+vw,caravelle,2012,45000,diesel,automatic,2.0,21995
+vw,caravelle,2011,53000,diesel,automatic,2.0,22995
+vw,caravelle,2019,1329,diesel,semi-auto,2.0,54994
+vw,caravelle,2011,86000,diesel,automatic,2.0,19995
+vw,caravelle,2019,5000,diesel,automatic,2.0,40996
+vw,caravelle,2019,2198,diesel,semi-auto,2.0,40999
+vw,caravelle,2020,1001,diesel,automatic,2.0,47000
+vw,caravelle,2019,60,diesel,automatic,2.0,40999
+vw,caravelle,2019,4500,diesel,semi-auto,2.0,41000
+vw,cc,2015,68539,diesel,manual,2.0,9225
+vw,cc,2015,32878,diesel,semi-auto,2.0,12999
+vw,cc,2014,40348,diesel,semi-auto,2.0,9960
+vw,cc,2013,69811,diesel,manual,2.0,7345
+vw,cc,2012,98000,diesel,manual,2.0,6695
+vw,cc,2016,13841,petrol,semi-auto,1.8,14302
+vw,cc,2016,48488,diesel,automatic,2.0,11549
+vw,cc,2015,84932,diesel,manual,2.0,8998
+vw,cc,2016,89603,diesel,automatic,2.0,9588
+vw,cc,2011,74000,diesel,automatic,2.0,7440
+vw,cc,2016,75387,diesel,automatic,2.0,10329
+vw,cc,2013,74000,diesel,manual,2.0,7990
+vw,cc,2016,4289,petrol,semi-auto,1.8,15000
+vw,cc,2016,36700,diesel,manual,2.0,10850
+vw,cc,2015,60687,diesel,manual,2.0,9995
+vw,cc,2014,72719,diesel,manual,2.0,7627
+vw,cc,2015,36602,diesel,manual,2.0,11292
+vw,cc,2013,52000,diesel,manual,2.0,9995
+vw,cc,2015,70920,diesel,automatic,2.0,10000
+vw,cc,2016,33810,diesel,semi-auto,2.0,13495
+vw,eos,2012,74000,diesel,manual,2.0,5990
+vw,eos,2008,127000,petrol,automatic,2.0,3695
+vw,eos,2006,92640,diesel,manual,2.0,2995
+vw,eos,2015,41850,diesel,manual,2.0,12495
+vw,eos,2011,43000,petrol,manual,1.4,7195
+vw,eos,2008,65000,diesel,manual,2.0,4995
+vw,eos,2014,58000,diesel,manual,2.0,8950
+vw,fox,2007,74000,petrol,manual,1.2,2295
+vw,fox,2006,82704,petrol,manual,1.2,1250
+vw,fox,2008,88102,petrol,manual,1.2,1799
+vw,fox,2009,70000,petrol,manual,1.4,1590
+vw,golf,2018,29551,petrol,semi-auto,2.0,23980
+vw,golf,2015,57512,diesel,manual,1.6,8498
+vw,golf,2020,407,petrol,semi-auto,1.5,22995
+vw,golf,2016,36584,petrol,manual,1.4,12791
+vw,golf,2019,3000,petrol,manual,1.5,17491
+vw,golf,2020,999,petrol,semi-auto,1.5,21000
+vw,golf,2019,5000,petrol,semi-auto,2.0,30990
+vw,golf,2015,51062,diesel,manual,2.0,9869
+vw,golf,2016,9720,petrol,manual,1.4,12795
+vw,golf,2020,50,petrol,semi-auto,2.0,31498
+vw,golf,2015,40020,petrol,manual,2.0,15295
+vw,golf,2019,2283,petrol,semi-auto,1.5,19980
+vw,golf,2016,48023,petrol,semi-auto,1.4,10998
+vw,golf,2019,10304,petrol,manual,1.0,12150
+vw,golf,2019,6275,petrol,semi-auto,2.0,29999
+vw,golf,2016,43050,diesel,semi-auto,2.0,11450
+vw,golf,2019,14378,petrol,manual,1.0,12489
+vw,golf,2017,28146,diesel,manual,1.6,13495
+vw,golf,2020,844,petrol,automatic,1.5,24990
+vw,golf,2017,34425,diesel,semi-auto,2.0,16298
+vw,golf sv,2019,2600,diesel,manual,1.6,18495
+vw,golf sv,2015,12532,diesel,semi-auto,1.6,10260
+vw,golf sv,2016,40421,diesel,manual,2.0,9450
+vw,golf sv,2017,21519,petrol,semi-auto,1.4,13568
+vw,golf sv,2015,50642,diesel,manual,2.0,9995
+vw,golf sv,2016,29441,diesel,manual,1.6,10298
+vw,golf sv,2019,1966,diesel,manual,1.6,16195
+vw,golf sv,2018,9848,petrol,manual,1.5,17695
+vw,golf sv,2016,46021,diesel,manual,1.6,8812
+vw,golf sv,2019,2533,petrol,semi-auto,1.5,17480
+vw,golf sv,2019,2722,petrol,automatic,1.5,19290
+vw,golf sv,2019,2987,petrol,semi-auto,1.5,21691
+vw,golf sv,2018,4020,petrol,semi-auto,1.0,14980
+vw,golf sv,2015,23501,diesel,manual,1.6,9995
+vw,golf sv,2017,15265,diesel,manual,1.6,11495
+vw,golf sv,2017,16806,petrol,manual,1.4,11950
+vw,golf sv,2015,25082,diesel,manual,1.6,10495
+vw,golf sv,2015,47980,petrol,automatic,1.4,10113
+vw,golf sv,2018,4588,petrol,automatic,1.5,18490
+vw,golf sv,2019,3911,diesel,semi-auto,2.0,20650
+vw,jetta,2016,34567,diesel,automatic,2.0,9466
+vw,jetta,2012,72000,diesel,automatic,1.6,5995
+vw,jetta,2015,29546,diesel,manual,2.0,10000
+vw,jetta,2015,48985,diesel,manual,2.0,8995
+vw,jetta,2014,28044,diesel,automatic,2.0,9990
+vw,jetta,2016,36889,diesel,manual,2.0,9899
+vw,jetta,2012,110750,diesel,manual,1.6,3995
+vw,jetta,2016,39836,diesel,semi-auto,2.0,11795
+vw,jetta,2017,12649,petrol,semi-auto,1.4,11490
+vw,jetta,2016,19019,diesel,semi-auto,2.0,11495
+vw,jetta,2014,1,diesel,manual,1.6,7985
+vw,jetta,2015,59854,diesel,manual,2.0,8498
+vw,jetta,2015,42048,diesel,manual,2.0,8000
+vw,jetta,2015,84700,diesel,manual,2.0,8495
+vw,jetta,2011,10000,diesel,manual,1.6,5480
+vw,jetta,2016,57605,diesel,manual,2.0,9995
+vw,jetta,2015,20173,diesel,manual,2.0,9298
+vw,jetta,2015,65015,diesel,manual,2.0,6999
+vw,jetta,2015,69988,diesel,manual,2.0,7498
+vw,jetta,2015,28120,diesel,manual,2.0,9690
+vw,passat,2016,74572,diesel,manual,2.0,11463
+vw,passat,2019,6997,petrol,manual,1.5,23495
+vw,passat,2016,93620,diesel,manual,1.6,8000
+vw,passat,2017,17653,diesel,semi-auto,1.6,14195
+vw,passat,2015,50961,diesel,manual,1.6,9000
+vw,passat,2019,5223,diesel,semi-auto,2.0,25995
+vw,passat,2020,2000,diesel,semi-auto,2.0,28500
+vw,passat,2018,23580,petrol,semi-auto,1.4,15495
+vw,passat,2017,30051,diesel,manual,2.0,13000
+vw,passat,2019,8928,diesel,semi-auto,2.0,27990
+vw,passat,2019,4919,petrol,automatic,1.5,24391
+vw,passat,2016,109000,diesel,manual,2.0,9794
+vw,passat,2014,115900,diesel,manual,2.0,5995
+vw,passat,2015,106000,diesel,manual,2.0,7793
+vw,passat,2019,5000,petrol,automatic,2.0,30650
+vw,passat,2016,33784,diesel,semi-auto,2.0,14998
+vw,passat,2015,85060,diesel,manual,2.0,8450
+vw,passat,2015,67000,diesel,manual,2.0,9990
+vw,passat,2017,27437,diesel,manual,2.0,16995
+vw,passat,2017,23600,diesel,manual,2.0,14690
+vw,polo,2020,1248,petrol,manual,1.0,14440
+vw,polo,2019,1810,petrol,manual,1.0,14290
+vw,polo,2017,16822,petrol,manual,1.2,9795
+vw,polo,2016,9798,petrol,manual,1.2,10498
+vw,polo,2017,23644,petrol,semi-auto,1.2,12122
+vw,polo,2017,23432,petrol,manual,1.2,10495
+vw,polo,2015,22345,petrol,manual,1.0,9726
+vw,polo,2015,37930,petrol,automatic,1.2,8500
+vw,polo,2018,15401,petrol,manual,1.0,10700
+vw,polo,2016,45750,petrol,manual,1.4,10700
+vw,polo,2016,14784,petrol,manual,1.2,9799
+vw,polo,2020,2000,petrol,manual,1.0,14990
+vw,polo,2017,29262,petrol,manual,1.2,10495
+vw,polo,2016,40258,petrol,manual,1.2,9995
+vw,polo,2013,46350,petrol,manual,1.2,4995
+vw,polo,2018,10100,petrol,manual,1.0,11989
+vw,polo,2015,22731,petrol,manual,1.0,8495
+vw,polo,2016,4302,petrol,semi-auto,1.4,13295
+vw,polo,2017,12122,petrol,manual,1.2,9950
+vw,polo,2017,46019,petrol,manual,1.2,9490
+vw,scirocco,2017,12377,diesel,manual,2.0,17000
+vw,scirocco,2016,17615,petrol,manual,2.0,13495
+vw,scirocco,2017,14942,diesel,manual,2.0,16991
+vw,scirocco,2014,60680,diesel,manual,2.0,9391
+vw,scirocco,2017,3688,diesel,manual,2.0,17998
+vw,scirocco,2016,39081,diesel,manual,2.0,13340
+vw,scirocco,2017,18739,diesel,semi-auto,2.0,16500
+vw,scirocco,2015,63004,diesel,manual,2.0,10990
+vw,scirocco,2018,27885,petrol,manual,2.0,16725
+vw,scirocco,2016,22600,diesel,manual,2.0,15990
+vw,scirocco,2015,54000,diesel,manual,2.0,11995
+vw,scirocco,2017,13382,diesel,semi-auto,2.0,15290
+vw,scirocco,2017,24784,diesel,manual,2.0,14995
+vw,scirocco,2015,46000,diesel,manual,2.0,12995
+vw,scirocco,2017,9287,diesel,manual,2.0,16798
+vw,scirocco,2008,82156,petrol,manual,2.0,5000
+vw,scirocco,2016,14772,petrol,manual,1.4,13268
+vw,scirocco,2010,90000,diesel,manual,2.0,6500
+vw,scirocco,2017,9268,petrol,semi-auto,2.0,20891
+vw,scirocco,2009,80000,petrol,manual,2.0,6275
+vw,sharan,2019,9297,diesel,semi-auto,2.0,23799
+vw,sharan,2018,6196,diesel,semi-auto,2.0,23485
+vw,sharan,2019,4323,diesel,semi-auto,2.0,26990
+vw,sharan,2019,1144,diesel,automatic,2.0,25999
+vw,sharan,2018,23350,petrol,manual,1.4,18995
+vw,sharan,2019,5019,diesel,semi-auto,2.0,29995
+vw,sharan,2019,15618,diesel,semi-auto,2.0,18490
+vw,sharan,2019,4375,diesel,semi-auto,2.0,29050
+vw,sharan,2020,250,petrol,semi-auto,1.4,36999
+vw,sharan,2019,14958,diesel,manual,2.0,18582
+vw,sharan,2017,29987,diesel,manual,2.0,17992
+vw,sharan,2019,13461,diesel,semi-auto,2.0,19990
+vw,sharan,2019,17160,diesel,automatic,2.0,24000
+vw,sharan,2020,2930,diesel,semi-auto,2.0,31391
+vw,sharan,2018,4416,diesel,manual,2.0,21291
+vw,sharan,2019,6944,diesel,semi-auto,2.0,28890
+vw,sharan,2016,30625,diesel,automatic,2.0,17700
+vw,sharan,2013,52311,diesel,semi-auto,2.0,12489
+vw,sharan,2015,64442,diesel,automatic,2.0,14000
+vw,sharan,2017,29409,diesel,manual,2.0,19990
+vw,shuttle,2018,24339,diesel,manual,2.0,18998
+vw,shuttle,2019,12699,diesel,semi-auto,2.0,26490
+vw,shuttle,2018,22072,diesel,manual,2.0,19998
+vw,shuttle,2017,4828,diesel,semi-auto,2.0,32995
+vw,shuttle,2017,39013,diesel,manual,2.0,19498
+vw,shuttle,2018,25724,diesel,manual,2.0,19998
+vw,shuttle,2018,31824,diesel,manual,2.0,22750
+vw,shuttle,2018,20677,diesel,semi-auto,2.0,20625
+vw,shuttle,2017,18722,diesel,manual,2.0,17998
+vw,shuttle,2019,11542,diesel,semi-auto,2.0,26990
+vw,shuttle,2019,10563,diesel,automatic,2.0,26990
+vw,shuttle,2018,9289,diesel,manual,2.0,21999
+vw,shuttle,2018,21146,diesel,manual,2.0,19498
+vw,shuttle,2018,33441,diesel,manual,2.0,20998
+vw,shuttle,2018,22628,diesel,manual,2.0,19998
+vw,shuttle,2018,23027,diesel,manual,2.0,19998
+vw,shuttle,2019,3757,diesel,semi-auto,2.0,30900
+vw,shuttle,2016,20074,diesel,manual,2.0,16998
+vw,shuttle,2019,8329,diesel,manual,2.0,19995
+vw,shuttle,2014,37158,diesel,manual,2.0,16790
+vw,t-cross,2019,30431,petrol,automatic,1.0,22990
+vw,t-cross,2019,4812,petrol,manual,1.0,19790
+vw,t-cross,2019,2500,diesel,manual,1.6,19000
+vw,t-cross,2019,2305,petrol,automatic,1.0,19590
+vw,t-cross,2019,2000,petrol,manual,1.0,19950
+vw,t-cross,2019,350,petrol,manual,1.0,20725
+vw,t-cross,2020,2000,petrol,automatic,1.0,21642
+vw,t-cross,2019,99,petrol,manual,1.0,17150
+vw,t-cross,2019,5086,petrol,manual,1.0,21132
+vw,t-cross,2019,2000,petrol,automatic,1.0,19966
+vw,t-cross,2019,3514,petrol,manual,1.0,18195
+vw,t-cross,2019,2830,petrol,manual,1.0,17495
+vw,t-cross,2019,6000,petrol,automatic,1.0,19975
+vw,t-cross,2019,5225,petrol,manual,1.0,17990
+vw,t-cross,2019,6242,petrol,automatic,1.0,22950
+vw,t-cross,2019,5000,petrol,manual,1.0,17999
+vw,t-cross,2019,6500,diesel,manual,1.6,20490
+vw,t-cross,2020,1728,petrol,automatic,1.0,22000
+vw,t-cross,2019,10387,diesel,manual,1.6,17950
+vw,t-cross,2019,5999,petrol,manual,1.0,17490
+vw,t-roc,2019,6770,diesel,semi-auto,2.0,25491
+vw,t-roc,2018,14000,petrol,manual,1.0,18990
+vw,t-roc,2019,2000,diesel,manual,1.6,19697
+vw,t-roc,2019,2150,petrol,automatic,2.0,28495
+vw,t-roc,2018,10582,petrol,manual,1.5,20990
+vw,t-roc,2018,26736,petrol,manual,1.5,19961
+vw,t-roc,2020,2000,petrol,semi-auto,2.0,28995
+vw,t-roc,2019,1000,petrol,automatic,2.0,32990
+vw,t-roc,2018,16077,petrol,manual,1.5,19299
+vw,t-roc,2020,3107,diesel,automatic,2.0,25490
+vw,t-roc,2020,1500,petrol,manual,1.5,25495
+vw,t-roc,2018,22584,petrol,manual,1.0,17685
+vw,t-roc,2018,6542,petrol,semi-auto,1.5,23450
+vw,t-roc,2018,16034,petrol,manual,1.5,20000
+vw,t-roc,2018,11273,petrol,semi-auto,1.5,23995
+vw,t-roc,2019,4281,diesel,semi-auto,2.0,23690
+vw,t-roc,2019,15996,petrol,manual,1.0,18995
+vw,t-roc,2019,2632,diesel,automatic,2.0,26000
+vw,t-roc,2019,1000,petrol,semi-auto,2.0,31995
+vw,t-roc,2018,24301,petrol,manual,1.0,16990
+vw,tiguan,2019,13875,petrol,manual,1.5,21495
+vw,tiguan,2017,48760,diesel,automatic,2.0,18673
+vw,tiguan,2017,25787,diesel,manual,2.0,19998
+vw,tiguan,2016,27207,diesel,manual,2.0,12850
+vw,tiguan,2017,38329,diesel,manual,2.0,16491
+vw,tiguan,2018,22184,diesel,semi-auto,2.0,22062
+vw,tiguan,2017,35630,diesel,semi-auto,2.0,17771
+vw,tiguan,2016,14780,diesel,semi-auto,2.0,23991
+vw,tiguan,2015,72414,diesel,manual,2.0,10500
+vw,tiguan,2014,27153,petrol,manual,1.4,12700
+vw,tiguan,2019,6635,diesel,manual,2.0,27190
+vw,tiguan,2017,27366,diesel,manual,2.0,20790
+vw,tiguan,2018,14438,petrol,manual,1.4,18995
+vw,tiguan,2019,8639,diesel,semi-auto,2.0,28995
+vw,tiguan,2019,12861,petrol,manual,1.5,21490
+vw,tiguan,2020,3000,diesel,manual,2.0,32400
+vw,tiguan,2019,9077,diesel,automatic,2.0,30850
+vw,tiguan,2019,7041,diesel,semi-auto,2.0,29000
+vw,tiguan,2017,22147,diesel,semi-auto,2.0,25312
+vw,tiguan,2019,7337,diesel,manual,2.0,24480
+vw,tiguan allspace,2019,18000,diesel,semi-auto,2.0,33990
+vw,tiguan allspace,2019,12425,diesel,automatic,2.0,27000
+vw,tiguan allspace,2020,5000,diesel,manual,2.0,33990
+vw,tiguan allspace,2019,7442,diesel,semi-auto,2.0,27995
+vw,tiguan allspace,2019,3500,diesel,semi-auto,2.0,33290
+vw,tiguan allspace,2019,1385,diesel,semi-auto,2.0,28490
+vw,tiguan allspace,2018,23694,diesel,semi-auto,2.0,23000
+vw,tiguan allspace,2019,1577,diesel,semi-auto,2.0,29490
+vw,tiguan allspace,2018,12971,petrol,semi-auto,1.4,27999
+vw,tiguan allspace,2019,5407,diesel,semi-auto,2.0,27599
+vw,tiguan allspace,2019,8268,petrol,semi-auto,1.5,24989
+vw,tiguan allspace,2019,4000,diesel,automatic,2.0,29491
+vw,tiguan allspace,2019,2678,diesel,semi-auto,2.0,32950
+vw,tiguan allspace,2019,2036,diesel,automatic,2.0,26995
+vw,tiguan allspace,2019,15856,diesel,automatic,2.0,28950
+vw,tiguan allspace,2019,5000,diesel,automatic,2.0,29950
+vw,tiguan allspace,2019,3033,diesel,manual,2.0,25495
+vw,tiguan allspace,2020,407,diesel,manual,2.0,25950
+vw,tiguan allspace,2019,3700,diesel,semi-auto,2.0,29000
+vw,tiguan allspace,2019,94,petrol,manual,1.5,24998
+vw,touareg,2015,41000,diesel,semi-auto,3.0,19900
+vw,touareg,2017,49632,diesel,automatic,3.0,23890
+vw,touareg,2017,20786,diesel,automatic,3.0,23750
+vw,touareg,2016,34192,diesel,automatic,3.0,22465
+vw,touareg,2015,54660,diesel,semi-auto,3.0,18900
+vw,touareg,2019,2117,diesel,automatic,3.0,43990
+vw,touareg,2017,65150,diesel,semi-auto,3.0,21990
+vw,touareg,2017,30505,diesel,semi-auto,3.0,23998
+vw,touareg,2019,1400,diesel,automatic,3.0,42985
+vw,touareg,2017,28383,diesel,semi-auto,3.0,24298
+vw,touareg,2019,6306,diesel,semi-auto,3.0,41782
+vw,touareg,2016,28008,diesel,semi-auto,3.0,22498
+vw,touareg,2016,27431,diesel,semi-auto,3.0,23798
+vw,touareg,2019,18000,diesel,semi-auto,3.0,49000
+vw,touareg,2019,9395,diesel,semi-auto,3.0,39999
+vw,touareg,2016,26000,diesel,automatic,3.0,20990
+vw,touareg,2019,6500,diesel,automatic,3.0,42499
+vw,touareg,2013,98441,diesel,automatic,3.0,13975
+vw,touareg,2018,8455,diesel,automatic,3.0,38490
+vw,touareg,2016,46742,diesel,automatic,3.0,21990
+vw,touran,2019,5985,petrol,semi-auto,1.5,25490
+vw,touran,2017,28000,diesel,semi-auto,1.6,16995
+vw,touran,2013,69000,diesel,manual,1.6,8995
+vw,touran,2014,27916,diesel,manual,1.6,10295
+vw,touran,2011,63700,diesel,semi-auto,2.0,7995
+vw,touran,2016,32400,diesel,manual,1.6,14990
+vw,touran,2018,19500,diesel,manual,2.0,19450
+vw,touran,2019,9229,petrol,semi-auto,1.5,25290
+vw,touran,2017,23746,diesel,semi-auto,1.6,14995
+vw,touran,2016,54400,diesel,manual,1.6,13495
+vw,touran,2016,49241,diesel,semi-auto,1.6,14495
+vw,touran,2018,2933,petrol,automatic,1.5,23990
+vw,touran,2019,8409,diesel,manual,1.6,21695
+vw,touran,2018,24007,diesel,semi-auto,1.6,16698
+vw,touran,2016,23649,diesel,manual,2.0,15999
+vw,touran,2016,27305,diesel,semi-auto,1.6,14750
+vw,touran,2017,30547,diesel,manual,1.6,16000
+vw,touran,2016,31004,diesel,manual,1.6,14950
+vw,touran,2017,22000,petrol,semi-auto,1.4,20495
+vw,touran,2019,1185,petrol,automatic,1.5,27950
+vw,up,2018,12106,petrol,manual,1.0,7490
+vw,up,2017,6130,petrol,manual,1.0,9250
+vw,up,2018,16099,petrol,manual,1.0,12990
+vw,up,2017,26203,petrol,manual,1.0,7240
+vw,up,2018,7330,petrol,manual,1.0,8995
+vw,up,2019,1479,petrol,manual,1.0,10690
+vw,up,2016,20016,petrol,manual,1.0,5500
+vw,up,2015,28221,petrol,manual,1.0,5999
+vw,up,2013,48260,petrol,manual,1.0,4920
+vw,up,2014,28500,petrol,manual,1.0,5799
+vw,up,2013,65497,petrol,manual,1.0,4298
+vw,up,2015,38881,petrol,manual,1.0,6395
+vw,up,2017,29540,petrol,manual,1.0,8495
+vw,up,2019,1900,petrol,manual,1.0,9980
+vw,up,2015,20818,petrol,automatic,1.0,8159
+vw,up,2019,4048,petrol,manual,1.0,8950
+vw,up,2016,36429,petrol,manual,1.0,5995
+vw,up,2015,41825,petrol,manual,1.0,5700
+vw,up,2017,14215,petrol,manual,1.0,7995
+vw,up,2016,37700,petrol,manual,1.0,6400
